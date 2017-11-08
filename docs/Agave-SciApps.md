@@ -8,15 +8,14 @@ Optimizing modular Agave apps for SciApps
   * The system and public data is set up to avoid unnecessary data transfer among TACC, CSHL and UA
 * Define an output explicitly if you want to use it in building automated SciApps workflows
   * For an example, check the examplar [variant calling workflow](../wrappers/platypus_workflow/README.md)
-    * The basic idea is to build one-to-one relationship between output_id and output_file
-      * Such relationship is built by placing the output_file in the output_id folder
-      * The wrapper script of 'next app' will extract the name of output_file if the input is a folder with a single item inside it
-    * Such modifications are necessary for following situations
-      * SciApps workflow can capture input_output relationship (make sure output_id and default output are the same in app JSON)
-      * Retain sample name in output_file name
-      * Support merging of replicates at run time (not collapse on filename)
-  * Alternatively, SciApps supports fixed output name if provided as default output name  
-  * Defined outputs (in app JSON) are the only ones that will be displayed on SciApps right panel for building workflow
+    * The basic idea is to build one-to-one relationship between output file and default_ouput ('default' value of an output in app JSON)
+      * Such relationship is built by placing the output_file in the default_output folder
+        * The wrapper script of 'next app' will extract the name of output_file if the input is a folder with a single item inside it
+        * Such modifications are necessary for retaining sample_name in output filename
+          * Supporting merging of replicates at run time (not collapse on filename)
+      * Alternatively, just rename output file as default_output if sample name is not necessary to be retained
+      * In both cases, make sure to define default_output in app JSON
+  * Defined default_outputs (in app JSON) are the only ones that will be displayed on SciApps right panel for building workflow
 * Use [installed Singularity images](Singularity-SciApps.md) if you can, and put wrapper scripts in your CyVerse Data Store
   * Remove existing code that handles installation of any packages
   * This will ensure that the same workflow can be easily pointed to XSEDE/Stampede2 or other cloud for execution
