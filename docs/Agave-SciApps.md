@@ -8,12 +8,14 @@ Optimizing modular Agave apps for SciApps
   * The system and public data is set up to avoid unnecessary data transfer among TACC, CSHL and UA
 * Define an output explicitly if you want to use it in building automated SciApps workflows
   * For an example, check the examplar [variant calling workflow](../wrappers/platypus_workflow/README.md)
-    * The basic idea is to build one-to-one relationship between output file and default_ouput ('default' value of an output in app JSON)
-      * Such relationship is built by placing the output_file in the default_output folder
+    * The basic idea is to build one-to-one relationship between output_file and default_ouput ('default' value of an output in app JSON)
+      * Such relationship can be built in the wrapper script by creating a default_output folder and placing the output_file in there
         * The wrapper script of 'next app' will extract the name of output_file if the input is a folder with a single item inside it
-        * Such modifications are necessary for retaining sample_name in output filename
+        * Such modifications are necessary for retaining sample_name in output_file name
           * Supporting merging of replicates at run time (not collapse on filename)
-      * Alternatively, just rename output file as default_output if sample name is not necessary to be retained
+      * Alternatively, the relationship can be built by renaming output_file as default_output
+        * The wrapper script of 'next app' will just use the input directly
+        * Works if sample name is not necessary to be retained
       * In both cases, make sure to define default_output in app JSON
   * Defined default_outputs (in app JSON) are the only ones that will be displayed on SciApps right panel for building workflow
 * Use [installed Singularity images](Singularity-SciApps.md) if you can, and put wrapper scripts in your CyVerse Data Store
