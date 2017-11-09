@@ -6,7 +6,7 @@ Information about the MaizeCode project on leveraging the CyVerse infrastructure
   * [SciApps platform guide](https://cyverse-sciapps-guide.readthedocs-hosted.com/en/latest/index.html)
   * [Optimizing modular Agave apps for SciApps](docs/Agave-SciApps.md)
   * [Listing of Singularity images installed on SciApps](docs/Singularity-SciApps.md)
-    * [DE Tool development using Bioconda and Biocontainers](https://wiki.cyverse.org/wiki/display/csmgmt/DE+Tool+Docker+Image+registration+and+installation+using+Bioconda+and+Biocontainers)
+    * [DE Tool development using Bioconda and Biocontainers](https://pods.iplantcollaborative.org/wiki/display/TUT/Biocontainers+for+the+Discovery+Environment) ([internal link](https://wiki.cyverse.org/wiki/display/csmgmt/DE+Tool+Docker+Image+registration+and+installation+using+Bioconda+and+Biocontainers))
     * [BioConda recipes](https://github.com/bioconda/bioconda-recipes)
     * [Docker 2 Singularity](https://github.com/singularityware/docker2singularity)
 * Data Release

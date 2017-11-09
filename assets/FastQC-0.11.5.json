@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "FastQC",
-    "lastModified": "2017-11-06T11:58:15.000-06:00",
+    "lastModified": "2017-11-08T12:31:25.000-06:00",
     "longDescription": "A quality control tool for high throughput sequence data",
     "modules": [],
     "name": "FastQC",
@@ -81,10 +81,10 @@
                 "description": "Output directory.",
                 "label": "Output Directory"
             },
-            "id": "outdirName",
+            "id": "fastqcOut",
             "semantics": {
                 "fileTypes": [
-                    "directory"
+                    "raw-0"
                 ],
                 "maxCardinality": 1,
                 "minCardinality": 1,
@@ -100,32 +100,6 @@
     "owner": "xiaofei_iplant",
     "parallelism": "PARALLEL",
     "parameters": [
-        {
-            "details": {
-                "argument": null,
-                "description": "Create all outputs in this specified output directory",
-                "label": "Output Folder",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "outdirName",
-            "semantics": {
-                "maxCardinality": 1,
-                "minCardinality": 1,
-                "ontology": [
-                    "xs:string"
-                ]
-            },
-            "value": {
-                "default": "fastqcOut",
-                "enquote": false,
-                "order": 0,
-                "required": true,
-                "type": "string",
-                "validator": "",
-                "visible": true
-            }
-        },
         {
             "details": {
                 "argument": null,
@@ -145,7 +119,7 @@
             "value": {
                 "default": false,
                 "enquote": false,
-                "order": 2,
+                "order": 1,
                 "required": false,
                 "type": "bool",
                 "validator": null,
@@ -153,7 +127,7 @@
             }
         }
     ],
-    "revision": 5,
+    "revision": 6,
     "shortDescription": "Quality control",
     "tags": [
         "Beta"
