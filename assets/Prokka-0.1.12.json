@@ -93,6 +93,24 @@
                 "order": 0,
                 "validator": null
             }
+        },
+        {
+            "details": {
+                "description": "JBrowse view of annotation results",
+                "label": "JBrowse view of annotation results"
+            },
+            "id": "gff_out",
+            "semantics": {
+                "fileTypes": [],
+                "maxCardinality": -1,
+                "minCardinality": 0,
+                "ontology": []
+            },
+            "value": {
+                "default": "jbrowse_output.jbrowse",
+                "order": 1,
+                "validator": null
+            }
         }
     ],
     "owner": "lwang",
