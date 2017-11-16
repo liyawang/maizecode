@@ -41,7 +41,7 @@
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "The BAM folder for  variant calling",
+                "label": "The BAM file to variant call",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -69,7 +69,7 @@
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "Reference folder containing .tar w/ (.fa .dict .fa.{.amb .ann .bwt .fai .pac .sa})",
+                "label": "Reference .tar w/ (.fa .dict .fa.{.amb .ann .bwt .fai .pac .sa})",
                 "repeatArgument": false,
                 "showArgument": false
             },
