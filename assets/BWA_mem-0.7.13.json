@@ -1,345 +1,371 @@
 {
-  "id": "BWA_mem-0.7.13",
-  "name": "BWA_mem",
-  "icon": null,
-  "uuid": "5679266107590438425-242ac117-0001-005",
-  "parallelism": "PARALLEL",
-  "defaultProcessorsPerNode": 16,
-  "defaultMemoryPerNode": 32,
-  "defaultNodeCount": 1,
-  "defaultMaxRunTime": "35:56:00",
-  "defaultQueue": "debug",
-  "version": "0.7.13",
-  "revision": 1,
-  "isPublic": false,
-  "helpURI": "http://bio-bwa.sourceforge.net/bwa.shtml",
-  "label": "BWA-mem",
-  "owner": "xiaofei_iplant",
-  "shortDescription": "BWA-mem mapper",
-  "longDescription": "Maps reads including longer reads to a reference sequence",
-  "tags": [
-    "Beta"
-  ],
-  "ontology": [
-    "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
-  ],
-  "executionType": "HPC",
-  "executionSystem": "sciapps.org",
-  "deploymentPath": "xiaofei_iplant/application/BWA-0.7.13",
-  "deploymentSystem": "data.iplantcollaborative.org",
-  "templatePath": "bwa_mem_wrapper.sh",
-  "testPath": "bwa_mem_test.sh",
-  "checkpointable": true,
-  "lastModified": "2017-10-13T10:10:48.000-05:00",
-  "modules": [],
-  "available": true,
-  "inputs": [
-    {
-      "id": "tarIdxRefInp",
-      "value": {
-        "validator": "",
-        "visible": true,
-        "required": true,
-        "order": 1,
-        "enquote": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Indexed Reference",
-        "description": "Indexed reference genome folder (can take *.tar.gz)",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [
-          "http://sswapmeet.sswap.info/sequence/FASTA"
-        ],
-        "fileTypes": [
-          "raw-0"
-        ]
-      }
+    "_links": {
+        "executionSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
+        },
+        "history": {
+            "href": "https://agave.iplantc.org/apps/v2/BWA_mem-0.7.13/history"
+        },
+        "metadata": {
+            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%225679266107590438425-242ac117-0001-005%22%7D"
+        },
+        "owner": {
+            "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
+        },
+        "permissions": {
+            "href": "https://agave.iplantc.org/apps/v2/BWA_mem-0.7.13/pems"
+        },
+        "self": {
+            "href": "https://agave.iplantc.org/apps/v2/BWA_mem-0.7.13"
+        },
+        "storageSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
+        }
     },
-    {
-      "id": "read1",
-      "value": {
-        "validator": "",
-        "visible": true,
-        "required": true,
-        "order": 2,
-        "enquote": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Select Read1 in Fastq",
-        "description": "Query file 1 in fastq format (can take *.gz)",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [
-          "http://sswapmeet.sswap.info/sequence/FASTQ"
-        ],
-        "fileTypes": [
-          "raw-0"
-        ]
-      }
-    },
-    {
-      "id": "read2",
-      "value": {
-        "validator": "",
-        "visible": true,
-        "required": false,
-        "order": 3,
-        "enquote": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Select Read2 in Fastq (for paired-end data)",
-        "description": "Query file 2 in fastq format (can take *.gz)",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [
-          "http://sswapmeet.sswap.info/sequence/FASTQ"
-        ],
-        "fileTypes": [
-          "raw-0"
-        ]
-      }
-    }
-  ],
-  "parameters": [
-    {
-      "id": "min_score",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "number",
-        "order": 0,
-        "enquote": false,
-        "default": 30,
-        "validator": ""
-      },
-      "details": {
-        "label": "Minimum Score",
-        "description": "Minimum score to output",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:integer"
-        ]
-      }
-    },
-    {
-      "id": "miniMapQual",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "number",
-        "order": 0,
-        "enquote": false,
-        "default": 0,
-        "validator": ""
-      },
-      "details": {
-        "label": "Minimum mapping quality",
-        "description": "Skip alignments with MAPQ smaller than INT",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:integer"
-        ]
-      }
-    },
-    {
-      "id": "requiredAlignment",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "number",
-        "order": 0,
-        "enquote": false,
-        "default": 0,
-        "validator": ""
-      },
-      "details": {
-        "label": "Required Flag",
-        "description": "Only output alignments with all bits set in INT present in the FLAG field",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:integer"
-        ]
-      }
-    },
-    {
-      "id": "read_type",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "enumeration",
-        "order": 2,
-        "enquote": false,
-        "default": "",
-        "enum_values": [
-          {
-            "": "Illumina, default"
-          },
-          {
-            "pacbio": "PacBio"
-          },
-          {
-            "ont2d": "Oxford Nanopore"
-          },
-          {
-            "intractg": "Intra-species contigs to ref"
-          }
-        ]
-      },
-      "details": {
-        "label": "Read Type",
-        "description": "Type of sequencing reads",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:string"
-        ]
-      }
-    },
-    {
-      "id": "M",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "bool",
-        "order": 3,
-        "enquote": false,
-        "default": true,
-        "validator": null
-      },
-      "details": {
-        "label": "M",
-        "description": "Mark shorter split hits as secondary (for Picard compatibility)",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:boolean"
-        ]
-      }
-    },
-    {
-      "id": "sort_type",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "enumeration",
-        "order": 6,
-        "enquote": false,
-        "default": "",
-        "enum_values": [
-          {
-            "": "by coordinates"
-          },
-          {
-            "-n": "by name"
-          }
-        ]
-      },
-      "details": {
-        "label": "Sorting Method for BAMs",
-        "description": "Coordinate or name sorting",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:string"
-        ]
-      }
-    }
-  ],
-  "outputs": [
-    {
-      "id": "Output",
-      "value": {
-        "validator": null,
-        "order": 0,
-        "default": "bwa.sorted.bam"
-      },
-      "details": {
-        "label": "Output File",
-        "description": "The name of the output file."
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [],
-        "fileTypes": [
-          "TEXT-0"
-        ]
-      }
-    }
-  ],
-  "_links": {
-    "self": {
-      "href": "https://agave.iplantc.org/apps/v2/BWA_mem-0.7.13"
-    },
-    "executionSystem": {
-      "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
-    },
-    "storageSystem": {
-      "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
-    },
-    "history": {
-      "href": "https://agave.iplantc.org/apps/v2/BWA_mem-0.7.13/history"
-    },
-    "metadata": {
-      "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%225679266107590438425-242ac117-0001-005%22%7D"
-    },
-    "owner": {
-      "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
-    },
-    "permissions": {
-      "href": "https://agave.iplantc.org/apps/v2/BWA_mem-0.7.13/pems"
-    }
-  }
+    "available": true,
+    "checkpointable": true,
+    "defaultMaxRunTime": "35:56:00",
+    "defaultMemoryPerNode": 32,
+    "defaultNodeCount": 1,
+    "defaultProcessorsPerNode": 16,
+    "defaultQueue": "debug",
+    "deploymentPath": "xiaofei_iplant/application/BWA-0.7.13",
+    "deploymentSystem": "data.iplantcollaborative.org",
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "helpURI": "http://bio-bwa.sourceforge.net/bwa.shtml",
+    "icon": null,
+    "id": "BWA_mem-0.7.13",
+    "inputs": [
+        {
+            "details": {
+                "argument": null,
+                "description": "Query file 1 in fastq format (can take *.gz)",
+                "label": "Select Read1 in Fastq",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "read1",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTQ"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 1,
+                "required": true,
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Query file 2 in fastq format (can take *.gz)",
+                "label": "Select Read2 in Fastq (for paired-end data)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "read2",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTQ"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Indexed reference genome folder",
+                "label": "Indexed Reference",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "tarIdxRefBundle",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTA"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 3,
+                "required": true,
+                "validator": "",
+                "visible": true
+            }
+        }
+    ],
+    "isPublic": false,
+    "label": "BWA-mem",
+    "lastModified": "2017-11-15T15:31:36.000-06:00",
+    "longDescription": "Maps reads including longer reads to a reference sequence",
+    "modules": [],
+    "name": "BWA_mem",
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "outputs": [
+        {
+            "details": {
+                "description": "BWA-mem output folder",
+                "label": "Output File"
+            },
+            "id": "bwa_mem_out",
+            "semantics": {
+                "fileTypes": [
+                    "TEXT-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "bwa_mem_out",
+                "order": 0,
+                "validator": null
+            }
+        }
+    ],
+    "owner": "xiaofei_iplant",
+    "parallelism": "PARALLEL",
+    "parameters": [
+        {
+            "details": {
+                "argument": null,
+                "description": "Minimum score to output",
+                "label": "Minimum Score",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "min_score",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 30,
+                "enquote": false,
+                "order": 0,
+                "required": false,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Skip alignments with MAPQ smaller than INT",
+                "label": "Minimum mapping quality",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "miniMapQual",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 0,
+                "enquote": false,
+                "order": 0,
+                "required": false,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Only output alignments with all bits set in INT present in the FLAG field",
+                "label": "Required Flag",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "requiredAlignment",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 0,
+                "enquote": false,
+                "order": 0,
+                "required": false,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Type of sequencing reads",
+                "label": "Read Type",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "read_type",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "": "Illumina, default"
+                    },
+                    {
+                        "pacbio": "PacBio"
+                    },
+                    {
+                        "ont2d": "Oxford Nanopore"
+                    },
+                    {
+                        "intractg": "Intra-species contigs to ref"
+                    }
+                ],
+                "order": 2,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Mark shorter split hits as secondary (for Picard compatibility)",
+                "label": "M",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "M",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": true,
+                "enquote": false,
+                "order": 3,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Coordinate or name sorting",
+                "label": "Sorting Method for BAMs",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "sort_type",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "": "by coordinates"
+                    },
+                    {
+                        "-n": "by name"
+                    }
+                ],
+                "order": 6,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Sample name for fastq(s)",
+                "label": "Sample Name",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "smpId",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "smpId",
+                "enquote": false,
+                "order": 7,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        }
+    ],
+    "revision": 4,
+    "shortDescription": "BWA-mem mapper",
+    "tags": [
+        "Beta"
+    ],
+    "templatePath": "bwa_mem_wrapper.sh",
+    "testPath": "bwa_mem_test.sh",
+    "uuid": "5679266107590438425-242ac117-0001-005",
+    "version": "0.7.13"
 }
