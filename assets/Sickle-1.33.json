@@ -10,7 +10,7 @@
   "defaultMaxRunTime": "35:56:00",
   "defaultQueue": "debug",
   "version": "1.33",
-  "revision": 1,
+  "revision": 8,
   "isPublic": false,
   "helpURI": "https://github.com/najoshi/sickle",
   "label": "Sickle",
@@ -30,12 +30,12 @@
   "templatePath": "sickle_wrapper.sh",
   "testPath": "sickle_test.sh",
   "checkpointable": true,
-  "lastModified": "2017-10-26T13:12:50.000-05:00",
+  "lastModified": "2017-11-09T13:11:09.000-06:00",
   "modules": [],
   "available": true,
   "inputs": [
     {
-      "id": "seqR1",
+      "id": "seqDir1",
       "value": {
         "validator": "",
         "visible": true,
@@ -45,7 +45,7 @@
         "default": ""
       },
       "details": {
-        "label": "READ1",
+        "label": "Read1 input",
         "description": "Input fastq file OR input paired-end forward fastq file",
         "argument": null,
         "showArgument": false,
@@ -58,12 +58,12 @@
           "http://sswapmeet.sswap.info/sequence"
         ],
         "fileTypes": [
-          "TEXT-0"
+          "raw-0"
         ]
       }
     },
     {
-      "id": "seqR2",
+      "id": "seqDir2",
       "value": {
         "validator": "",
         "visible": true,
@@ -73,7 +73,7 @@
         "default": ""
       },
       "details": {
-        "label": "READ2 (PE)",
+        "label": "Read2 input (PE)",
         "description": "Input paired-end reverse fastq file",
         "argument": null,
         "showArgument": false,
@@ -86,7 +86,7 @@
           "http://sswapmeet.sswap.info/sequence"
         ],
         "fileTypes": [
-          "TEXT-0"
+          "raw-0"
         ]
       }
     }
@@ -191,14 +191,14 @@
       },
       "details": {
         "label": "Output Directory",
-        "description": "Trimmed FASTQ output directory."
+        "description": "Sickle trimmed FASTQ output directory."
       },
       "semantics": {
         "minCardinality": 1,
         "maxCardinality": 1,
         "ontology": [],
         "fileTypes": [
-          "directory"
+          "raw-0"
         ]
       }
     }
