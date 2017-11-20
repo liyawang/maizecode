@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "BWA-mem",
-    "lastModified": "2017-11-15T15:31:36.000-06:00",
+    "lastModified": "2017-11-20T14:19:49.000-06:00",
     "longDescription": "Maps reads including longer reads to a reference sequence",
     "modules": [],
     "name": "BWA_mem",
@@ -140,7 +140,7 @@
             "id": "bwa_mem_out",
             "semantics": {
                 "fileTypes": [
-                    "TEXT-0"
+                    "raw-0"
                 ],
                 "maxCardinality": 1,
                 "minCardinality": 1,
@@ -359,7 +359,7 @@
             }
         }
     ],
-    "revision": 4,
+    "revision": 5,
     "shortDescription": "BWA-mem mapper",
     "tags": [
         "Beta"
