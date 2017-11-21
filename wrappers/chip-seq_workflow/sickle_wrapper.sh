@@ -121,8 +121,8 @@ mv ss_* sickleOut
 
 
 
-ls | grep -v sickleOut | grep -v *.err | grep -v *.out | grep -v ipcexe |xargs rm -rf
-trap "ls | grep -v sickleOut | grep -v *.err | grep -v *.out | grep -v ipcexe |xargs rm -rf" exit
+ls | grep -v sickleOut | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe |xargs rm -rf
+trap "ls | grep -v sickleOut | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe |xargs rm -rf" exit
 
 
 
