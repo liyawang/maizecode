@@ -80,17 +80,17 @@ if [ -n "$seqDir2" ]; then
     	seqDir1=$(basename $seqDir1 .gz)
     	seqDir2=$(basename $seqDir2 .gz)
     	echo "sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir2 -s "ss_single.fq""
-    	echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir1 -s "ss_single.fq""
+    	echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir2 -s "ss_single.fq""
         # sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir2 -s "ss_single.fq
-        singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir1 -s "ss_single.fq"
+        singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir2 -s "ss_single.fq"
 	else
         if [[ "$seqDir1" =~ .*\.gz$ ]] || [[ "$seqDir2" =~ .*\.gz$ ]]; then
             echo "Both inputs should be gzipped or not."
         else
             echo "sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir2 -s "ss_single.fq""
-            echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir1 -s "ss_single.fq""
+            echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir2 -s "ss_single.fq""
             # sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir2 -s "ss_single.fq"
-            singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir1 -s "ss_single.fq"
+            singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img sickle pe $runthis -o "ss_"$seqDir1 -p "ss_"$seqDir2 -s "ss_single.fq"
         fi
     fi
 
