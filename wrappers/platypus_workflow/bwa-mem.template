@@ -9,19 +9,14 @@ barcode=${inputBarcode}
 
 ## PRE-PROCESSING INPUTS
 
-# Get read file if preprocessed 
-if [ -d "$data_a" -a $(ls $data_a | wc -l) == 1 ]; then
-	inp_name=$(ls $data_a)
-	mv $data_a/$inp_name .
-	rm -rf $data_a
-	data_a=${inp_name}
-fi
-
-if [ -d "$data_b" -a $(ls $data_b | wc -l) == 1 ]; then
-        inp_name=$(ls $data_b)
-       	mv $data_b/$inp_name .
-       	rm -rf $data_b
-       	data_b=${inp_name}
+# Get read files if preprocessed 
+if [ -d "$data_a" -a "$data_a" == "$data_b" ]; then
+        inp_name=$(ls $data_a)
+       	mv $data_a/* .
+       	rm -rf $data_a
+	inp_array=(${inp_name////})
+       	data_a=${inp_array[0]}
+	data_b=${inp_array[1]}
 fi
 
 # gunzip input files if needed
