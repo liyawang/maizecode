@@ -27,7 +27,7 @@
     "defaultMaxRunTime": "35:56:00",
     "defaultMemoryPerNode": 32,
     "defaultNodeCount": 1,
-    "defaultProcessorsPerNode": 16,
+    "defaultProcessorsPerNode": 4,
     "defaultQueue": "debug",
     "deploymentPath": "xiaofei_iplant/application/FastQC_0.11.5",
     "deploymentSystem": "data.iplantcollaborative.org",
@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "FastQC",
-    "lastModified": "2017-11-09T14:15:34.000-06:00",
+    "lastModified": "2017-12-08T13:14:14.000-06:00",
     "longDescription": "A quality control tool for high throughput sequence data",
     "modules": [],
     "name": "FastQC",
@@ -127,7 +127,7 @@
             }
         }
     ],
-    "revision": 7,
+    "revision": 8,
     "shortDescription": "Quality control",
     "tags": [
         "Beta"

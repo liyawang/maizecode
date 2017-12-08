@@ -1,198 +1,224 @@
 {
-  "id": "HOMER_makeTagDir-2015.11.10",
-  "name": "HOMER_makeTagDir",
-  "icon": null,
-  "uuid": "5352854921423950311-242ac117-0001-005",
-  "parallelism": "PARALLEL",
-  "defaultProcessorsPerNode": 16,
-  "defaultMemoryPerNode": 32,
-  "defaultNodeCount": 1,
-  "defaultMaxRunTime": "35:56:00",
-  "defaultQueue": "debug2",
-  "version": "2015.11.10",
-  "revision": 1,
-  "isPublic": false,
-  "helpURI": "http://homer.salk.edu",
-  "label": "HOMER_makeTagDir",
-  "owner": "xiaofei_iplant",
-  "shortDescription": "Transform alignments to platform independent data structure",
-  "longDescription": "Transform the sequence alignment into platform independent data structure representing the experiment, analogous to loading the data into a database",
-  "tags": [
-    "Beta"
-  ],
-  "ontology": [
-    "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
-  ],
-  "executionType": "HPC",
-  "executionSystem": "sciapps.org",
-  "deploymentPath": "xiaofei_iplant/application/HOMER_singularity",
-  "deploymentSystem": "data.iplantcollaborative.org",
-  "templatePath": "homer_mkTagDir_wrapper.sh",
-  "testPath": "homer_mkTagDir_test.sh",
-  "checkpointable": true,
-  "lastModified": "2017-10-30T15:02:43.000-05:00",
-  "modules": [],
-  "available": true,
-  "inputs": [
-    {
-      "id": "bamInput",
-      "value": {
-        "validator": "",
-        "visible": true,
-        "required": true,
-        "order": 1,
-        "enquote": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Select SAM/BAM/BED input file",
-        "description": "Alignment input file",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [
-          "http://sswapmeet.sswap.info/sequence/"
-        ],
-        "fileTypes": [
-          "TEXT-0"
-        ]
-      }
-    }
-  ],
-  "parameters": [
-    {
-      "id": "tbp",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "number",
-        "order": 1,
-        "enquote": false,
-        "default": 0,
-        "validator": null
-      },
-      "details": {
-        "label": "tbp",
-        "description": "Maximum tags per bp",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:interger"
-        ]
-      }
+    "_links": {
+        "executionSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
+        },
+        "history": {
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_makeTagDir-2015.11.10/history"
+        },
+        "metadata": {
+            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%225352854921423950311-242ac117-0001-005%22%7D"
+        },
+        "owner": {
+            "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
+        },
+        "permissions": {
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_makeTagDir-2015.11.10/pems"
+        },
+        "self": {
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_makeTagDir-2015.11.10"
+        },
+        "storageSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
+        }
     },
-    {
-      "id": "format",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "enumeration",
-        "order": 2,
-        "enquote": false,
-        "default": "sam",
-        "enum_values": [
-          {
-            "sam": "sam"
-          },
-          {
-            "bed": "bed"
-          }
-        ]
-      },
-      "details": {
-        "label": "FORMAT",
-        "description": "Format of alignment files",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:string"
-        ]
-      }
-    },
-    {
-      "id": "single",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "bool",
-        "order": 3,
-        "enquote": false,
-        "default": true,
-        "validator": null
-      },
-      "details": {
-        "label": "SINGLE",
-        "description": "Create a single tags.tsv file for all chromosomes",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:boolean"
-        ]
-      }
-    }
-  ],
-  "outputs": [
-    {
-      "id": "homerTagDir",
-      "value": {
-        "validator": null,
-        "order": 1,
-        "default": "homerTagDir"
-      },
-      "details": {
-        "label": "homerTagDir",
-        "description": "HOMER tag directory output"
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [],
-        "fileTypes": [
-          "directory"
-        ]
-      }
-    }
-  ],
-  "_links": {
-    "self": {
-      "href": "https://agave.iplantc.org/apps/v2/HOMER_makeTagDir-2015.11.10"
-    },
-    "executionSystem": {
-      "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
-    },
-    "storageSystem": {
-      "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
-    },
-    "history": {
-      "href": "https://agave.iplantc.org/apps/v2/HOMER_makeTagDir-2015.11.10/history"
-    },
-    "metadata": {
-      "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%225352854921423950311-242ac117-0001-005%22%7D"
-    },
-    "owner": {
-      "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
-    },
-    "permissions": {
-      "href": "https://agave.iplantc.org/apps/v2/HOMER_makeTagDir-2015.11.10/pems"
-    }
-  }
+    "available": true,
+    "checkpointable": true,
+    "defaultMaxRunTime": "35:56:00",
+    "defaultMemoryPerNode": 32,
+    "defaultNodeCount": 1,
+    "defaultProcessorsPerNode": 1,
+    "defaultQueue": "debug2",
+    "deploymentPath": "xiaofei_iplant/application/HOMER_singularity",
+    "deploymentSystem": "data.iplantcollaborative.org",
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "helpURI": "http://homer.salk.edu",
+    "icon": null,
+    "id": "HOMER_makeTagDir-2015.11.10",
+    "inputs": [
+        {
+            "details": {
+                "argument": null,
+                "description": "Alignment input file",
+                "label": "Select SAM/BAM/BED input file",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "bamInput",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 1,
+                "required": true,
+                "validator": "",
+                "visible": true
+            }
+        }
+    ],
+    "isPublic": false,
+    "label": "HOMER_makeTagDir",
+    "lastModified": "2017-12-08T13:17:38.000-06:00",
+    "longDescription": "Transform the sequence alignment into platform independent data structure representing the experiment, analogous to loading the data into a database",
+    "modules": [],
+    "name": "HOMER_makeTagDir",
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "outputs": [
+        {
+            "details": {
+                "description": "HOMER tag directory output",
+                "label": "homerTagDir"
+            },
+            "id": "homerTagDir",
+            "semantics": {
+                "fileTypes": [
+                    "directory"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "homerTagDir",
+                "order": 1,
+                "validator": null
+            }
+        }
+    ],
+    "owner": "xiaofei_iplant",
+    "parallelism": "PARALLEL",
+    "parameters": [
+        {
+            "details": {
+                "argument": null,
+                "description": "Maximum tags per bp",
+                "label": "tbp",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "tbp",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:interger"
+                ]
+            },
+            "value": {
+                "default": 0,
+                "enquote": false,
+                "order": 1,
+                "required": false,
+                "type": "number",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Format of alignment files",
+                "label": "FORMAT",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "format",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "sam",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "sam": "sam"
+                    },
+                    {
+                        "bed": "bed"
+                    }
+                ],
+                "order": 2,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Create a single tags.tsv file for all chromosomes",
+                "label": "SINGLE",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "single",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": true,
+                "enquote": false,
+                "order": 3,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Sample name for alignment file",
+                "label": "Sample Name",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "smpId",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "smpId",
+                "enquote": false,
+                "order": 4,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        }
+    ],
+    "revision": 2,
+    "shortDescription": "Transform alignments to platform independent data structure",
+    "tags": [
+        "Beta"
+    ],
+    "templatePath": "homer_mkTagDir_wrapper.sh",
+    "testPath": "homer_mkTagDir_test.sh",
+    "uuid": "5352854921423950311-242ac117-0001-005",
+    "version": "2015.11.10"
 }
