@@ -27,7 +27,7 @@
     "defaultMaxRunTime": "35:56:00",
     "defaultMemoryPerNode": 32,
     "defaultNodeCount": 1,
-    "defaultProcessorsPerNode": 16,
+    "defaultProcessorsPerNode": 8,
     "defaultQueue": "debug",
     "deploymentPath": "xiaofei_iplant/application/BWA-0.7.13",
     "deploymentSystem": "data.iplantcollaborative.org",
@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "BWA-mem",
-    "lastModified": "2017-11-20T14:19:49.000-06:00",
+    "lastModified": "2017-12-08T09:25:33.000-06:00",
     "longDescription": "Maps reads including longer reads to a reference sequence",
     "modules": [],
     "name": "BWA_mem",
@@ -359,7 +359,7 @@
             }
         }
     ],
-    "revision": 5,
+    "revision": 6,
     "shortDescription": "BWA-mem mapper",
     "tags": [
         "Beta"
