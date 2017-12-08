@@ -1,5 +1,5 @@
 # maizecode
-Information about the MaizeCode project on leveraging the CyVerse infrastructure and SciApps.
+Information about the MaizeCode project on utilizing the CyVerse infrastructure and SciApps.
 
 * [MaizeCode Data Management Overview](docs/MaizeCode-data-management.md)
 * Apps and Workflows Development
