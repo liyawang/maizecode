@@ -27,7 +27,7 @@
     "defaultMaxRunTime": "24:00:00",
     "defaultMemoryPerNode": 64,
     "defaultNodeCount": 1,
-    "defaultProcessorsPerNode": 8,
+    "defaultProcessorsPerNode": 6,
     "defaultQueue": "debug",
     "deploymentPath": "lwang/applications/assembly",
     "deploymentSystem": "data.iplantcollaborative.org",
