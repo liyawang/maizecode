@@ -4,7 +4,7 @@
   "icon": null,
   "uuid": "8204559068034372071-242ac117-0001-005",
   "parallelism": "SERIAL",
-  "defaultProcessorsPerNode": 12,
+  "defaultProcessorsPerNode": 1,
   "defaultMemoryPerNode": 24,
   "defaultNodeCount": 1,
   "defaultMaxRunTime": "47:59:59",
