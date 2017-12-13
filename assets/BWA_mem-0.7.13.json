@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "BWA-mem",
-    "lastModified": "2017-12-08T09:25:33.000-06:00",
+    "lastModified": "2017-12-13T09:35:42.000-06:00",
     "longDescription": "Maps reads including longer reads to a reference sequence",
     "modules": [],
     "name": "BWA_mem",
@@ -331,35 +331,9 @@
                 "type": "enumeration",
                 "visible": true
             }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "Sample name for fastq(s)",
-                "label": "Sample Name",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "smpId",
-            "semantics": {
-                "maxCardinality": 1,
-                "minCardinality": 0,
-                "ontology": [
-                    "xs:string"
-                ]
-            },
-            "value": {
-                "default": "smpId",
-                "enquote": false,
-                "order": 7,
-                "required": false,
-                "type": "string",
-                "validator": null,
-                "visible": true
-            }
         }
     ],
-    "revision": 6,
+    "revision": 7,
     "shortDescription": "BWA-mem mapper",
     "tags": [
         "Beta"

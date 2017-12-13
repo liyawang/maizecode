@@ -29,7 +29,7 @@
     "defaultNodeCount": 1,
     "defaultProcessorsPerNode": 1,
     "defaultQueue": "debug2",
-    "deploymentPath": "xiaofei_iplant/application/HOMER_singularity",
+    "deploymentPath": "xiaofei_iplant/application/HOMER_singularity_makeTagDir",
     "deploymentSystem": "data.iplantcollaborative.org",
     "executionSystem": "sciapps.org",
     "executionType": "HPC",
@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "HOMER_makeTagDir",
-    "lastModified": "2017-12-08T13:17:38.000-06:00",
+    "lastModified": "2017-12-13T10:02:30.000-06:00",
     "longDescription": "Transform the sequence alignment into platform independent data structure representing the experiment, analogous to loading the data into a database",
     "modules": [],
     "name": "HOMER_makeTagDir",
@@ -188,31 +188,31 @@
         {
             "details": {
                 "argument": null,
-                "description": "Sample name for alignment file",
-                "label": "Sample Name",
+                "description": "Indicate if the sample is backgroud control which is useful for downstream peak calling app",
+                "label": "ctrlIndicator",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "smpId",
+            "id": "ctrlIndicator",
             "semantics": {
                 "maxCardinality": 1,
                 "minCardinality": 0,
                 "ontology": [
-                    "xs:string"
+                    "xs:boolean"
                 ]
             },
             "value": {
-                "default": "smpId",
+                "default": false,
                 "enquote": false,
                 "order": 4,
                 "required": false,
-                "type": "string",
+                "type": "bool",
                 "validator": null,
                 "visible": true
             }
         }
     ],
-    "revision": 2,
+    "revision": 4,
     "shortDescription": "Transform alignments to platform independent data structure",
     "tags": [
         "Beta"
