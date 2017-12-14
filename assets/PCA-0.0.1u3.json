@@ -1,22 +1,22 @@
 {
     "_links": {
         "executionSystem": {
-            "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
+            "href": "https://agave.iplantc.org/systems/v2/cshl-compute-01"
         },
         "history": {
-            "href": "https://agave.iplantc.org/apps/v2/PCA-0.0.1/history"
+            "href": "https://agave.iplantc.org/apps/v2/PCA-0.0.1u3/history"
         },
         "metadata": {
-            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%226653955614670459366-242ac118-0001-005%22%7D"
+            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%228952192547083260391-242ac117-0001-005%22%7D"
         },
         "owner": {
             "href": "https://agave.iplantc.org/profiles/v2/lwang"
         },
         "permissions": {
-            "href": "https://agave.iplantc.org/apps/v2/PCA-0.0.1/pems"
+            "href": "https://agave.iplantc.org/apps/v2/PCA-0.0.1u3/pems"
         },
         "self": {
-            "href": "https://agave.iplantc.org/apps/v2/PCA-0.0.1"
+            "href": "https://agave.iplantc.org/apps/v2/PCA-0.0.1u3"
         },
         "storageSystem": {
             "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
@@ -29,13 +29,13 @@
     "defaultNodeCount": 1,
     "defaultProcessorsPerNode": 1,
     "defaultQueue": "debug",
-    "deploymentPath": "/lwang/applications/pca/bin",
+    "deploymentPath": "/api/v2/apps/PCA-0.0.1u3.zip",
     "deploymentSystem": "data.iplantcollaborative.org",
-    "executionSystem": "sciapps.org",
+    "executionSystem": "cshl-compute-01",
     "executionType": "HPC",
     "helpURI": "https://stat.ethz.ch/R-manual/R-patched/library/stats/html/prcomp.html",
     "icon": null,
-    "id": "PCA-0.0.1",
+    "id": "PCA-0.0.1u3",
     "inputs": [
         {
             "details": {
@@ -66,9 +66,9 @@
             }
         }
     ],
-    "isPublic": false,
+    "isPublic": true,
     "label": "PCA",
-    "lastModified": "2017-10-24T17:35:14.000-05:00",
+    "lastModified": "2017-12-05T08:56:34.000-06:00",
     "longDescription": "PCA function performs PCA with R's prcomp function. It takes a marker file in Hapmap format and outputs population structure (pca_output.txt, formatted for TASSEL), eigenvalues (eigval_out), scree plot (scree_out.png), and pairwise plot of the first three PCs (pcplot_out.png)",
     "modules": [],
     "name": "PCA",
@@ -99,28 +99,6 @@
         {
             "details": {
                 "description": "Output filename",
-                "label": "scree_out PCA results"
-            },
-            "id": "output2",
-            "semantics": {
-                "fileTypes": [
-                    "raw-0"
-                ],
-                "maxCardinality": 1,
-                "minCardinality": 1,
-                "ontology": [
-                    "http://sswapmeet.sswap.info"
-                ]
-            },
-            "value": {
-                "default": "scree_out.png",
-                "order": 0,
-                "validator": null
-            }
-        },
-        {
-            "details": {
-                "description": "Output filename",
                 "label": "pcplot PCA results"
             },
             "id": "output1",
@@ -136,6 +114,28 @@
             },
             "value": {
                 "default": "pcplot_out.png",
+                "order": 0,
+                "validator": null
+            }
+        },
+        {
+            "details": {
+                "description": "Output filename",
+                "label": "scree_out PCA results"
+            },
+            "id": "output2",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info"
+                ]
+            },
+            "value": {
+                "default": "scree_out.png",
                 "order": 0,
                 "validator": null
             }
@@ -204,13 +204,13 @@
             }
         }
     ],
-    "revision": 9,
+    "revision": 3,
     "shortDescription": "Perform PCA with R's prcomp function",
     "tags": [
         "GWAS"
     ],
     "templatePath": "pca_wrapper.sh",
     "testPath": "pca_test_wrapper.sh",
-    "uuid": "6653955614670459366-242ac118-0001-005",
+    "uuid": "8952192547083260391-242ac117-0001-005",
     "version": "0.0.1"
 }
