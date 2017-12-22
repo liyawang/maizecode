@@ -1,313 +1,293 @@
 {
-  "id": "HOMER_findPeaks-2015.11.10",
-  "name": "HOMER_findPeaks",
-  "icon": null,
-  "uuid": "2080777036639310311-242ac117-0001-005",
-  "parallelism": "PARALLEL",
-  "defaultProcessorsPerNode": 16,
-  "defaultMemoryPerNode": 32,
-  "defaultNodeCount": 1,
-  "defaultMaxRunTime": "35:56:00",
-  "defaultQueue": "debug2",
-  "version": "2015.11.10",
-  "revision": 1,
-  "isPublic": false,
-  "helpURI": "http://homer.salk.edu",
-  "label": "HOMER_findPeaks",
-  "owner": "xiaofei_iplant",
-  "shortDescription": "Finding Enriched Peaks, Regions, and Transcripts",
-  "longDescription": "HOMER contains a program called findPeaks that performs all of the peak calling and transcript identification analysis",
-  "tags": [
-    "Beta"
-  ],
-  "ontology": [
-    "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
-  ],
-  "executionType": "HPC",
-  "executionSystem": "sciapps.org",
-  "deploymentPath": "xiaofei_iplant/application/HOMER_singularity",
-  "deploymentSystem": "data.iplantcollaborative.org",
-  "templatePath": "homer_findpeaks_wrapper.sh",
-  "testPath": "homer_findpeaks_test.sh",
-  "checkpointable": true,
-  "lastModified": "2017-10-30T15:01:27.000-05:00",
-  "modules": [],
-  "available": true,
-  "inputs": [
-    {
-      "id": "marksDir",
-      "value": {
-        "validator": "",
-        "visible": true,
-        "required": true,
-        "order": 1,
-        "enquote": false,
-        "default": ""
-      },
-      "details": {
-        "label": "ChIP-seq Tag File",
-        "description": "HOMER tag directory of ChIP-seq against protein of interest",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [
-          "http://sswapmeet.sswap.info/sequence/FASTA"
-        ],
-        "fileTypes": [
-          "directory"
-        ]
-      }
+    "_links": {
+        "executionSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
+        },
+        "history": {
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-2015.11.10/history"
+        },
+        "metadata": {
+            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%222080777036639310311-242ac117-0001-005%22%7D"
+        },
+        "owner": {
+            "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
+        },
+        "permissions": {
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-2015.11.10/pems"
+        },
+        "self": {
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-2015.11.10"
+        },
+        "storageSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
+        }
     },
-    {
-      "id": "ctrlDir",
-      "value": {
-        "validator": "",
-        "visible": true,
-        "required": false,
-        "order": 2,
-        "enquote": false,
-        "default": ""
-      },
-      "details": {
-        "label": "ChIP-seq Control File",
-        "description": "Directory of Control (INPUT, IgG, MOCK, etc.)",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [
-          "http://sswapmeet.sswap.info/sequence/FASTA"
-        ],
-        "fileTypes": [
-          "directory"
-        ]
-      }
-    }
-  ],
-  "parameters": [
-    {
-      "id": "style",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "enumeration",
-        "order": 1,
-        "enquote": false,
-        "default": "factor",
-        "enum_values": [
-          {
-            "factor": "factor"
-          },
-          {
-            "histone": "histone"
-          },
-          {
-            "groseq": "groseq"
-          },
-          {
-            "tss": "tss"
-          },
-          {
-            "dnase": "dnase"
-          },
-          {
-            "super": "super"
-          },
-          {
-            "mC": "mC"
-          }
-        ]
-      },
-      "details": {
-        "label": "STYLE",
-        "description": "Specialized options for specific analysis strategies",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:string"
-        ]
-      }
-    },
-    {
-      "id": "size",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "number",
-        "order": 2,
-        "enquote": false,
-        "default": 0,
-        "validator": null
-      },
-      "details": {
-        "label": "Peak Size",
-        "description": "Specifies the width of peaks",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:interger"
-        ]
-      }
-    },
-    {
-      "id": "minDist",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "number",
-        "order": 3,
-        "enquote": false,
-        "default": 0,
-        "validator": null
-      },
-      "details": {
-        "label": "minDist",
-        "description": "Maximum distance used to stitch peaks togethe",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:interger"
-        ]
-      }
-    },
-    {
-      "id": "gsize",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "number",
-        "order": 4,
-        "enquote": false,
-        "default": 0,
-        "validator": null
-      },
-      "details": {
-        "label": "gsize",
-        "description": "Effective mappable genome size",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:interger"
-        ]
-      }
-    },
-    {
-      "id": "region",
-      "value": {
-        "visible": true,
-        "required": false,
-        "type": "bool",
-        "order": 5,
-        "enquote": false,
-        "default": false,
-        "validator": null
-      },
-      "details": {
-        "label": "region",
-        "description": "Stitch adjacent enriched peaks into regions",
-        "argument": null,
-        "showArgument": false,
-        "repeatArgument": false
-      },
-      "semantics": {
-        "minCardinality": 0,
-        "maxCardinality": 1,
-        "ontology": [
-          "xs:boolean"
-        ]
-      }
-    }
-  ],
-  "outputs": [
-    {
-      "id": "homerOut",
-      "value": {
-        "validator": null,
-        "order": 0,
-        "default": "homerPeaksOut.txt"
-      },
-      "details": {
-        "label": "homerPeaks",
-        "description": "homer peaks Output"
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [],
-        "fileTypes": [
-          "TEXT-0"
-        ]
-      }
-    },
-    {
-      "id": "homerBedOut",
-      "value": {
-        "validator": null,
-        "order": 0,
-        "default": "homerBed"
-      },
-      "details": {
-        "label": "homerBedOut",
-        "description": "homer peaks Output in BED"
-      },
-      "semantics": {
-        "minCardinality": 1,
-        "maxCardinality": 1,
-        "ontology": [],
-        "fileTypes": [
-          "TEXT-0"
-        ]
-      }
-    }
-  ],
-  "_links": {
-    "self": {
-      "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-2015.11.10"
-    },
-    "executionSystem": {
-      "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
-    },
-    "storageSystem": {
-      "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
-    },
-    "history": {
-      "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-2015.11.10/history"
-    },
-    "metadata": {
-      "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%222080777036639310311-242ac117-0001-005%22%7D"
-    },
-    "owner": {
-      "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
-    },
-    "permissions": {
-      "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-2015.11.10/pems"
-    }
-  }
+    "available": true,
+    "checkpointable": true,
+    "defaultMaxRunTime": "35:56:00",
+    "defaultMemoryPerNode": 32,
+    "defaultNodeCount": 1,
+    "defaultProcessorsPerNode": 1,
+    "defaultQueue": "debug2",
+    "deploymentPath": "xiaofei_iplant/application/HOMER_singularity_findPeaks",
+    "deploymentSystem": "data.iplantcollaborative.org",
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "helpURI": "http://homer.salk.edu",
+    "icon": null,
+    "id": "HOMER_findPeaks-2015.11.10",
+    "inputs": [
+        {
+            "details": {
+                "argument": null,
+                "description": "HOMER tag directory of ChIP-seq against protein of interest",
+                "label": "ChIP-seq Tag File",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "marksDir",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTA"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 1,
+                "required": true,
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Directory of Control (INPUT, IgG, MOCK, etc.)",
+                "label": "ChIP-seq Control File",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "ctrlDir",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTA"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "validator": "",
+                "visible": true
+            }
+        }
+    ],
+    "isPublic": false,
+    "label": "HOMER_findPeaks",
+    "lastModified": "2017-12-22T09:15:16.000-06:00",
+    "longDescription": "HOMER contains a program called findPeaks that performs all of the peak calling and transcript identification analysis",
+    "modules": [],
+    "name": "HOMER_findPeaks",
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "outputs": [
+        {
+            "details": {
+                "description": "homer peaks output",
+                "label": "homerPeaksOut"
+            },
+            "id": "homerPeaksOut",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "homerPeaksOut",
+                "order": 0,
+                "validator": null
+            }
+        }
+    ],
+    "owner": "xiaofei_iplant",
+    "parallelism": "PARALLEL",
+    "parameters": [
+        {
+            "details": {
+                "argument": null,
+                "description": "Specialized options for specific analysis strategies",
+                "label": "STYLE",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "style",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "factor",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "factor": "factor"
+                    },
+                    {
+                        "histone": "histone"
+                    },
+                    {
+                        "groseq": "groseq"
+                    },
+                    {
+                        "tss": "tss"
+                    },
+                    {
+                        "dnase": "dnase"
+                    },
+                    {
+                        "super": "super"
+                    },
+                    {
+                        "mC": "mC"
+                    }
+                ],
+                "order": 1,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Specifies the width of peaks",
+                "label": "Peak Size",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "size",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:interger"
+                ]
+            },
+            "value": {
+                "default": 0,
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "type": "number",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Maximum distance used to stitch peaks togethe",
+                "label": "minDist",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "minDist",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:interger"
+                ]
+            },
+            "value": {
+                "default": 0,
+                "enquote": false,
+                "order": 3,
+                "required": false,
+                "type": "number",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Effective mappable genome size",
+                "label": "gsize",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "gsize",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:interger"
+                ]
+            },
+            "value": {
+                "default": 0,
+                "enquote": false,
+                "order": 4,
+                "required": false,
+                "type": "number",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Stitch adjacent enriched peaks into regions",
+                "label": "region",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "region",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 5,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        }
+    ],
+    "revision": 2,
+    "shortDescription": "Finding Enriched Peaks, Regions, and Transcripts",
+    "tags": [
+        "Beta"
+    ],
+    "templatePath": "homer_findpeaks_wrapper.sh",
+    "testPath": "homer_findpeaks_test.sh",
+    "uuid": "2080777036639310311-242ac117-0001-005",
+    "version": "2015.11.10"
 }
