@@ -3,6 +3,60 @@
     "tags": [
       "Beta"
     ],
+    "id": "STAR_index-2.5.3",
+    "label": "Prepare STAR index",
+    "name": "STAR_index",
+    "version": "2.5.3"
+  },
+  {
+    "tags": [
+      "Beta"
+    ],
+    "id": "STAR_align-2.5.3",
+    "label": "Perform STAR alignment",
+    "name": "STAR_align",
+    "version": "2.5.3"
+  },
+  {
+    "tags": [
+      "Beta"
+    ],
+    "id": "RSEM_ref_prepare-1.3.0",
+    "label": "Prepare RSEM reference",
+    "name": "RSEM_ref_prepare",
+    "version": "1.3.0"
+  },
+  {
+    "tags": [
+      "Beta"
+    ],
+    "id": "RSEM_quant-1.3.0",
+    "label": "Calculate expression with RSEM",
+    "name": "RSEM_quant",
+    "version": "1.3.0"
+  },
+  {
+    "tags": [
+      "Beta"
+    ],
+    "id": "RSEM_de-1.3.0",
+    "label": "Differential expression analysis with RSEM and Ebseq",
+    "name": "RSEM_de",
+    "version": "1.3.0"
+  },
+  {
+    "tags": [
+      "Beta"
+    ],
+    "id": "RSEM_de_iso-1.3.0",
+    "label": "Differential expression analysis with RSEM and Ebseq",
+    "name": "RSEM_de_iso",
+    "version": "1.3.0"
+  },  
+  {
+    "tags": [
+      "Beta"
+    ],
     "id": "Platypus_cshl-0.5.2",
     "label": "Single Animal Variant Pipeline",
     "name": "Platypus_cshl",
