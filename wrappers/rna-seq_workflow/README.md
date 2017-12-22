@@ -1,4 +1,4 @@
-<img src="ENCODE_RNAseq.png">
+<img src="ENCODE_RNAseq.gif">
 
 # ENCODE expression workflow
 
