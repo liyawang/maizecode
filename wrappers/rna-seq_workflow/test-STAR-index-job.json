@@ -1,0 +1,13 @@
+{
+    "jobName": "test",
+    "softwareName": "STAR_index-2.5.3",
+    "requestedTime": "04:00:00",
+    "archive": false,
+    "archivePath": "",
+    "inputs": {
+        "referenceFasta": "agave://sciapps.org/data/sorghum/BTx623/assembly/Sbicolor_Sorbi1.31.fa.gz",
+	"annotationGTF":"agave://sciapps.org/data/sorghum/BTx623/assembly/Sbicolor_Sorbi1.34.gtf.gz"
+    },
+    "parameters": {
+    }
+}

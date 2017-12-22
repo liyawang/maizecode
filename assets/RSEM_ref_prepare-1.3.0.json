@@ -1,0 +1,111 @@
+{
+  "helpURI": "https://github.com/deweylab/RSEM",
+  "label": "RSEM_ref_prepare",
+  "defaultNodeCount": 1,
+  "defaultMaxRunTime": "04:00:00",
+  "shortDescription": "Prepare references for RSEM",
+  "longDescription": "Prepare references for RSEM",
+  "executionSystem": "sciapps.org",
+  "executionType": "HPC",
+  "parallelism": "SERIAL",
+  "deploymentPath": "lwang/apps/rnaseq/rsem/index",
+  "deploymentSystem": "data.iplantcollaborative.org",
+  "templatePath": "rsem-index.sh",
+  "testPath": "rsem-index-test.sh",
+  "tags": [
+    "RNA-seq quantification"
+  ],
+  "ontology": [
+    "RNA-seq quantification"
+  ],
+  "modules": [],
+  "inputs": [
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+	"description": "Can be gzipped",
+        "label": "Specify the reference genome file"
+      },
+      "semantics": {
+        "maxCardinality": 1,
+        "ontology": [],
+        "minCardinality": 1
+      },
+      "value": {
+	"default": "",
+        "visible": true,
+        "required": true,
+        "order": 1
+      },
+      "id": "referenceFasta"
+    },
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+	"description": "Can be gzipped (--gtf)",
+        "label": "Specify the annotation file (in gtf)"
+      },
+      "semantics": {
+        "maxCardinality": 1,
+        "ontology": [],
+        "minCardinality": 1
+      },
+      "value": {
+	"default": "",
+        "visible": true,
+        "required": true,
+        "order": 2
+      },
+      "id": "annotationGTF"
+    }
+  ],
+  "parameters": [],
+  "checkpointable": false,
+  "outputs": [
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+        "label": "RSEM index"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": []
+      },
+      "value": {
+        "visible": false,
+        "required": true,
+        "default": "RSEM_prep",
+        "order": 0
+      },
+      "id": "RSEM_prep"
+    },
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+        "label": "RSEM transcript"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": []
+      },
+      "value": {
+        "visible": false,
+        "required": true,
+        "default": "RSEM_transcript",
+        "order": 1
+      },
+      "id": "RSEM_transcript"
+    }
+  ],
+  "name": "RSEM_ref_prepare",
+  "version": "1.3.0",
+  "defaultQueue": "debug",
+  "defaultMemoryPerNode": 24,
+  "defaultProcessorsPerNode": 1
+}

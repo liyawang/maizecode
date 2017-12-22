@@ -1,0 +1,172 @@
+{
+  "helpURI": "https://github.com/deweylab/RSEM",
+  "label": "RSEM_quant",
+  "defaultNodeCount": 1,
+  "defaultMaxRunTime": "47:00:00",
+  "shortDescription": "Calculate expression from alignments to transcriptome",
+  "longDescription": "Calculate expression from alignments to transcriptome",
+  "executionSystem": "sciapps.org",
+  "executionType": "HPC",
+  "parallelism": "SERIAL",
+  "deploymentPath": "lwang/apps/rnaseq/rsem/quant",
+  "deploymentSystem": "data.iplantcollaborative.org",
+  "templatePath": "rsem-quant.sh",
+  "testPath": "rsem-quant-test.sh",
+  "tags": [
+    "RNA-seq quantification"
+  ],
+  "ontology": [
+    "RNA-seq quantification"
+  ],
+  "modules": [],
+  "inputs": [
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+	"description": "Need to be in bam format",
+        "label": "Specify the transcriptome alignment file"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": []
+      },
+      "value": {
+	"default": "",
+        "visible": true,
+        "required": true,
+        "order": 0
+      },
+      "id": "alignedToTrans"
+    },
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+	"description": "Compressed as a tgz or tar file",
+        "label": "Specify the references generated for RSEM"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": []
+      },
+      "value": {
+	"default": "",
+        "visible": true,
+        "required": true,
+        "order": 1
+      },
+      "id": "RSEMprep"
+    }
+  ],
+  "parameters": [
+    {
+      "id": "isPaired",
+      "value": {
+        "visible": true,
+        "required": false,
+        "type": "bool",
+        "order": 1,
+        "enquote": false,
+        "default": true,
+        "validator": null
+      },
+      "details": {
+        "label": "Input alignment is from paired-end reads (--paired-end)",
+        "description": "",
+        "argument": null,
+        "showArgument": false,
+        "repeatArgument": false
+      },
+      "semantics": {
+        "minCardinality": 0,
+        "maxCardinality": 1,
+        "ontology": [
+          "xs:boolean"
+        ]
+      }
+    },
+    {
+      "id": "forwardProb",
+      "value": {
+        "visible": true,
+        "required": true,
+        "type": "enumeration",
+        "order": 2,
+        "enquote": false,
+        "default": "1",
+        "enum_values": [
+          {
+            "1": "Strand-specific protocol where all (upstream) reads are derived from the forward strand (1)"
+          },
+          {
+            "0": "Strand-specific protocol where all (upstream) reads are derived from the reverse strand (0)"
+          },
+          {
+            "0.5": "Non-strand-specific protocol (0.5)"
+          }
+        ]
+      },
+      "details": {
+        "label": "Probability of generating a read from the forward strand of a transcript (--forward-prob)",
+        "description": "",
+        "argument": null,
+        "showArgument": false,
+        "repeatArgument": false
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+          "xs:string"
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "id": "genesQuant",
+      "value": {
+        "validator": null,
+        "order": 1,
+        "default": "geneResults"
+      },
+      "details": {
+        "label": "Quantification of gene expression",
+        "description": null
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [],
+        "fileTypes": []
+      }
+    },
+    {
+      "id": "isoformQuant",
+      "value": {
+        "validator": null,
+        "order": 1,
+        "default": "isoformResults"
+      },
+      "details": {
+        "label": "Quantification of isoform expression",
+        "description": null
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [],
+        "fileTypes": []
+      }
+    }
+  ],
+  "checkpointable": false,
+  "name": "RSEM_quant",
+  "version": "1.3.0",
+  "defaultQueue": "debug",
+  "defaultProcessorsPerNode": 8,
+  "defaultMemoryPerNode": 24
+}

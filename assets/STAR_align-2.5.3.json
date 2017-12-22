@@ -1,0 +1,401 @@
+{
+  "helpURI": "https://github.com/alexdobin/STAR",
+  "label": "STAR_align",
+  "defaultNodeCount": 1,
+  "defaultMaxRunTime": "47:00:00",
+  "shortDescription": "Performing STAR alignment",
+  "longDescription": "Performing STAR alignment with pre-built indexes",
+  "executionSystem": "sciapps.org",
+  "executionType": "HPC",
+  "parallelism": "SERIAL",
+  "deploymentPath": "lwang/apps/rnaseq/star/align",
+  "deploymentSystem": "data.iplantcollaborative.org",
+  "templatePath": "star-align.sh",
+  "testPath": "star-align-test.sh",
+  "tags": [
+    "Sequence alignment"
+  ],
+  "ontology": [
+    "Sequence alignment"
+  ],
+  "modules": [],
+  "inputs": [
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+	"description": "Need to be gzipped (--readFilesIn)",
+        "label": "Specify first set of reads"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": []
+      },
+      "value": {
+        "visible": true,
+        "required": true,
+        "default": "",
+        "order": 1
+      },
+      "id": "inputSequence1"
+    },
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+	"description": "Need to be gzipped",
+        "label": "Optional second set of reads (paired)"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": []
+      },
+      "value": {
+        "visible": true,
+        "required": false,
+        "default": "",
+        "order": 2
+      },
+      "id": "inputSequence2"
+    },
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+	"description": "Need to be placed in a folder and compressed as XXX.tgz where XXX is the folder name (--genomeDir)",
+        "label": "Pre-built genome indexes for STAR"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "ontology": [],
+        "maxCardinality": 1
+      },
+      "value": {
+        "visible": true,
+        "required": true,
+        "default": "",
+        "order": 3
+      },
+      "id": "referenceBundle"
+    }
+  ],
+  "parameters": [
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Output filtering (--outFilterType)",
+        "showArgument": true,
+        "argument": "--outFilterType "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+		"xs:string"
+	]
+      },
+      "id": "outFilterType",
+      "value": {
+        "type": "enumeration",
+        "default": "BySJout",
+	"enum_values": [
+		{
+			"BySJout": "Keep only those reads that contain junctions that passed filtering (BySJout)"
+		},
+		{
+			"Normal": "Standard filtering using only current alignment (Normal)"
+		}
+	],	
+        "visible": true,
+        "required": true,
+        "order": 1
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Mximum number of loci the read is allowed to map to (--outFilterMultimapNmax)",
+        "showArgument": true,
+        "argument": "--outFilterMultimapNmax "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+		"xs:integer"
+	]
+      },
+      "id": "outFilterMultimapNmax",
+      "value": {
+        "type": "number",
+        "default": 20,
+        "visible": true,
+        "required": true,
+        "order": 2
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Minimum overhang for spliced alignments (--alignSJoverhangMin)",
+        "showArgument": true,
+        "argument": "--alignSJoverhangMin "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+                "xs:integer"
+        ]
+      },
+      "id": "alignSJoverhangMin",
+      "value": {
+        "type": "number",
+        "default": 8,
+        "visible": true,
+        "required": true,
+        "order": 3
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Minimum overhang for annotated (sjdb) spliced alignments (--alignSJDBoverhangMin)",
+        "showArgument": true,
+        "argument": "--alignSJDBoverhangMin "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+                "xs:integer"
+        ]
+      },
+      "id": "alignSJDBoverhangMin",
+      "value": {
+        "type": "number",
+        "default": 1,
+        "visible": true,
+        "required": true,
+        "order": 4
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Maximum mismatch allowed in alignments (--outFilterMismatchNmax)",
+        "showArgument": true,
+        "argument": "--outFilterMismatchNmax "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+                "xs:integer"
+        ]
+      },
+      "id": "outFilterMismatchNmax",
+      "value": {
+        "type": "number",
+        "default": 999,
+        "visible": true,
+        "required": true,
+        "order": 5
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Maximum allowed ratio of mismatch to read length (--outFilterMismatchNoverReadLmax)",
+        "showArgument": true,
+        "argument": "--outFilterMismatchNoverReadLmax "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+                "xs:float"
+        ]
+      },
+      "id": "outFilterMismatchNoverReadLmax",
+      "value": {
+        "type": "number",
+        "default": 0.04,
+        "visible": true,
+        "required": true,
+        "order": 6
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Minimum intron size (--alignIntronMin)",
+        "showArgument": true,
+        "argument": "--alignIntronMin "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+                "xs:integer"
+        ]
+      },
+      "id": "alignIntronMin",
+      "value": {
+        "type": "number",
+        "default": 20,
+        "visible": true,
+        "required": true,
+        "order": 7
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Maximum intron size (--alignIntronMax)",
+        "showArgument": true,
+        "argument": "--alignIntronMax "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+                "xs:integer"
+        ]
+      },
+      "id": "alignIntronMax",
+      "value": {
+        "type": "number",
+        "default": 300000,
+        "visible": true,
+        "required": true,
+        "order": 8
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Mximum gap between two mates (--alignMatesGapMax)",
+        "showArgument": true,
+        "argument": "--alignMatesGapMax "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+                "xs:integer"
+        ]
+      },
+      "id": "alignMatesGapMax",
+      "value": {
+        "type": "number",
+        "default": 300000,
+        "visible": true,
+        "required": true,
+        "order": 9
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Output unmapped reads (--outSAMunmapped)",
+        "showArgument": true,
+        "argument": "--outSAMunmapped "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+                "xs:string"
+        ]
+      },
+      "id": "outSAMunmapped",
+      "value": {
+        "type": "enumeration",
+        "default": "Within",
+        "enum_values": [
+                {
+                        "None": "No output (None)"
+                },
+                {
+                        "Within": "Output unmapped reads within the main BAM file (Within)"
+                }
+        ],     
+        "visible": true,
+        "required": true,
+        "order": 10
+      }
+    },
+    {
+      "details": {
+        "repeatArgument": false,
+        "label": "Extra alignment score for alignmets that cross database junctions (--sjdbScore)",
+        "showArgument": true,
+        "argument": "--sjdbScore "
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+                "xs:integer"
+        ]
+      },
+      "id": "sjdbScore",
+      "value": {
+        "type": "number",
+        "default": 1,
+        "visible": true,
+        "required": true,
+        "order": 11
+      }
+    }    
+  ],
+  "checkpointable": false,
+  "outputs": [
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+        "label": "alignedToGenome"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": []
+      },
+      "value": {
+        "visible": true,
+        "required": true,
+        "default": "alignedToGenome",
+        "order": 1
+      },
+      "id": "alignedToGenome"
+    },
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+        "label": "alignedToTranscriptome"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": []
+      },
+      "value": {
+        "visible": true,
+        "required": true,
+        "default": "alignedToTranscriptome",
+        "order": 2
+      },
+      "id": "alignedToTranscriptome"
+    }
+  ],
+  "name": "STAR_align",
+  "version": "2.5.3",
+  "defaultQueue": "debug",
+  "defaultMemoryPerNode": 32,
+  "defaultProcessorsPerNode": 8
+}

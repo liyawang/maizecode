@@ -1,0 +1,14 @@
+{
+    "jobName": "test",
+    "softwareName": "STAR_align-2.5.3",
+    "requestedTime": "04:00:00",
+    "archive": false,
+    "archivePath": "",
+    "inputs": {
+	"inputSequence1": "agave://sciapps.org/data/sorghum/BTx623/P/rnaseq/G3AHR1_R1.gz",
+        "inputSequence2": "agave://sciapps.org/data/sorghum/BTx623/P/rnaseq/G3AHR1_R2.gz",
+        "referenceBundle": "https://agave.iplantc.org/jobs/v2/7015030760075947545-242ac113-0001-007/outputs/media/star_index.tgz"
+    },
+    "parameters": {
+    }
+}

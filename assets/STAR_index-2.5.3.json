@@ -1,0 +1,92 @@
+{
+  "helpURI": "https://github.com/alexdobin/STAR",
+  "label": "STAR_index",
+  "defaultNodeCount": 1,
+  "defaultMaxRunTime": "47:00:00",
+  "shortDescription": "Generating genome indexes for STAR",
+  "longDescription": "Generating genome indexes for STAR and output as star_index.tgz",
+  "executionSystem": "sciapps.org",
+  "executionType": "HPC",
+  "parallelism": "SERIAL",
+  "deploymentPath": "lwang/apps/rnaseq/star/index",
+  "deploymentSystem": "data.iplantcollaborative.org",
+  "templatePath": "star-index.sh",
+  "testPath": "star-index-test.sh",
+  "tags": [
+    "Genome indexing"
+  ],
+  "ontology": [
+    "Genome indexing"
+  ],
+  "modules": [],
+  "inputs": [
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+	"description": "(--genomeFastaFiles)",
+        "label": "Specify the reference genome file. Can be gzipped"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": ["xs:string"]
+      },
+      "value": {
+	"default": "",
+        "visible": true,
+        "required": true,
+        "order": 1
+      },
+      "id": "referenceFasta",
+      "fileTypes": ["raw-0"]
+    },
+    {
+      "details": {
+        "showArgument": false,
+        "repeatArgument": false,
+	"description": "(--sjdbGTFfile)",
+        "label": "Specify the annotation file (in gtf). Can be gzipped"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": ["xs:string"]
+      },
+      "value": {
+	"default": "",
+        "visible": true,
+        "required": true,
+        "order": 2
+      },
+      "id": "annotationGTF",
+      "fileTypes": ["raw-0"]
+    }
+  ],
+  "outputs": [
+    {
+      "details": {
+        "label": "index",
+	"description": "STAR index bundle"
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": ["xs:string"]
+      },
+      "value": {
+        "validator": null,
+        "default": "star_index",
+        "order": 1
+      },
+      "id": "index",
+      "fileTypes": ["raw-0"]
+    }
+  ],
+  "parameters": [],
+  "checkpointable": false,
+  "version": "2.5.3",
+  "name": "STAR_index",
+  "defaultQueue": "debug",
+  "defaultProcessorsPerNode": 8
+}
