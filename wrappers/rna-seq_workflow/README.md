@@ -1,3 +1,5 @@
+<img src="ENCODE_RNAseq.png">
+
 # ENCODE expression workflow
 
 * Wrapper scripts used for building the expression workflow
