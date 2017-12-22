@@ -1,5 +1,3 @@
-<img src="ENCODE_RNAseq.gif">
-
 # ENCODE expression workflow
 
 * Wrapper scripts used for building the expression workflow
@@ -14,3 +12,6 @@
   * [test-STAR_align-job.json](test-STAR-align-job.json)
 * Workflow json file that can be saved and loaded at https://de2.sciapps.org (local)
   * [ENCODE_RNAseq_3Reps.json](ENCODE_RNAseq_3Reps.json)
+* Screenshot of part of the workflow for one sample
+<img src="ENCODE_RNAseq.gif">
+
