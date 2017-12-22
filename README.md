@@ -3,6 +3,8 @@ Information about the MaizeCode project on utilizing the CyVerse infrastructure 
 
 * [MaizeCode Data Management Overview](docs/MaizeCode-data-management.md)
 * Apps and Workflows Development
+  * List of workflows
+    * [RNA-Seq workflow](wrappers/rna-seq_workflow/README.md)
   * [SciApps platform guide](https://cyverse-sciapps-guide.readthedocs-hosted.com/en/latest/index.html)
   * [Optimizing modular Agave apps for SciApps](docs/Agave-SciApps.md)
   * [Listing of Singularity images installed on SciApps](docs/Singularity-SciApps.md)
