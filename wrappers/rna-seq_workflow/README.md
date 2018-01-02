@@ -10,6 +10,6 @@
   * [test-STAR_align-job.json](test-STAR-align-job.json)
 * Workflow json file that can be loaded at https://de2.sciapps.org (local)
   * [encode_rnaseq_workflow.json](encode_rnaseq_workflow.json)
-* Screenshot of part of the workflow for one sample
+* Screenshot of the workflow
 <img src="ENCODE_RNAseq.gif" width="770">
 
