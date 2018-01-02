@@ -9,7 +9,7 @@
   * [test-STAR-index-job.json](test-STAR-index-job.json)
   * [test-STAR_align-job.json](test-STAR-align-job.json)
 * Workflow json file that can be loaded at https://de2.sciapps.org (local)
-  * [encode_rnaseq_workflow.json](encode_rnaseq_workflow.json)
+  * [encode_rnaseq_workflow.json](https://cdn.rawgit.com/warelab/maizecode/1e3c16c1/wrappers/rna-seq_workflow/encode_rnaseq_workflow.json)
 * Screenshot of the workflow
 <img src="ENCODE_RNAseq.gif" width="770">
 
