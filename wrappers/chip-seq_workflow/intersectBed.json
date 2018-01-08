@@ -1,0 +1,397 @@
+{
+    "name": "intersectBed",
+    "parallelism": "PARALLEL",
+    "version": "2.26.0",
+    "helpURI": "http://bedtools.readthedocs.io/en/latest/content/tools/intersect.html",
+    "label": "intersectBed",
+    "shortDescription": "Overlapped genomic features.",
+    "longDescription": "BEDTools intersect is to screen overlaps between two sets of genomic features.",
+    "author": "Xiaofei Wang",
+    "datePublished": "03/30/17",
+    "tags": [
+        "Beta"
+    ],
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "defaultMaxRunTime": "35:56:00",
+    "defaultQueue": "debug",
+    "defaultNodeCount": 1,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 1,
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "deploymentPath": "xiaofei_iplant/application/intersectBed-2.26.0",
+    "templatePath": "intersectBed_wrapper.sh",
+    "testPath": "intersectBed_test.sh",
+    "checkpointable": true,
+    "modules": [],
+    "inputs": [
+        {
+            "id": "aInput",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": false,
+                "order": 1
+            },
+            "details": {
+                "label": "Select a bed/gff/vcf file(A)",
+                "description": "Each feature in A is compared to B in search of overlaps."
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        },
+
+        {
+            "id": "abam",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": false,
+                "order": 2
+            },
+            "details": {
+                "label": "Or select a bam file (A)",
+                "description": "BEDTools intersectBed works with both BED/GFF/VCF and BAM files as input."
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        },
+
+
+              {
+            "id": "bInput",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": true,
+                "order": 3
+            },
+            "details": {
+                "label": "Select a bed/gff/vcf file (B)",
+                "description": "B file is to search of overlaps."
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        }
+                ],
+
+    "parameters": [
+                    {
+            "id": "bamInpOutFormat",
+            "value": {
+                "default": "",
+                "type": "enumeration",
+                "enum_values": [
+                    { "": "compressed BAM output, default"},
+                    { "ubam": "unompressed BAM output"},
+                    {"bed": "BED output"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 1
+            },
+            "details": {
+                "label": "When using BAM as input, write as",
+                "description": "Output format for BAM input (A).",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+
+        {
+           "id": "wa",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 2
+            },
+            "details": {
+                "label": "wa",
+                "description": "Write the original entry in A for each overlap.",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },
+
+        {
+           "id": "wb",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 3
+            },
+            "details": {
+                "label": "wb",
+                "description": "Write the original entry in B for each overlap.",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },
+
+        {
+           "id": "wo",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 4
+            },
+            "details": {
+                "label": "wo",
+                "description": "Write the original A and B entries plus the number of base pairs of overlap between the two features.",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },
+
+
+        {
+           "id": "wao",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 5
+            },
+            "details": {
+                "label": "wao",
+                "description": "Write the original A and B entries plus the number of base pairs of overlap between the two features. However, A features w/o overlap are also reported.",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },
+
+        {
+           "id": "u",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 6
+            },
+            "details": {
+                "label": "u",
+                "description": "Write the original A entry once if any overlaps found in B.",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },
+
+        {
+           "id": "c",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 7
+            },
+            "details": {
+                "label": "c",
+                "description": "For each entry in A, report the number of overlaps with B.",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },
+
+        {
+           "id": "v",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 8
+            },
+            "details": {
+                "label": "v",
+                "description": "Only report those entries in A that have no overlaps with B.",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },
+
+        {
+            "id": "Fb",
+            "value": {
+                "validator": "",
+                "required": false,
+                "visible": true,
+                "type": "string"
+            },
+            "details": {
+                "label": "F",
+                "description": "Minimum overlap required as a fraction of B.",
+                "visible": true,
+                "order": 10
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        }, 
+
+
+        {
+            "id": "f",
+            "value": {
+                "default": "0.5",
+                "validator": "",
+                "required": false,
+                "visible": true,
+                "type": "string"
+            },
+            "details": {
+                "label": "f",
+                "description": "Minimum overlap required as a fraction of A.",
+                "visible": true,
+                "order": 9
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },  
+
+        {
+           "id": "r",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 11
+            },
+            "details": {
+                "label": "r",
+                "description": "Require that the fraction overlap be reciprocal for A and B.",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },      
+        {
+            "id": "strand",
+            "value": {
+                "default": "",
+                "type": "enumeration",
+                "enum_values": [
+                    { "": "None, default"},
+                    { "s": "Same strand"},
+                    { "S": "Opposite strand"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 12
+            },
+            "details": {
+                "label": "Strandedness",
+                "description": "Type of sequencing reads",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        }
+
+    ],
+
+
+    "outputs": [
+        {
+            "id": "commonPeaks",
+            "details": {
+                "description": "Intersected genomic features output folder"
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "commonPeaks",
+                "required": true,
+                "type": "string",
+                "visible": true,
+                "order": 1
+            }
+        }
+
+    ]
+}

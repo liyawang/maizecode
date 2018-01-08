@@ -1,0 +1,218 @@
+{
+    "name": "HOMER_findPeaks",
+    "parallelism": "PARALLEL",
+    "version": "2015.11.10",
+    "helpURI": "http://homer.salk.edu",
+    "label": "HOMER_findPeaks",
+    "shortDescription": "Finding Enriched Peaks, Regions, and Transcripts",
+    "longDescription": "HOMER contains a program called findPeaks that performs all of the peak calling and transcript identification analysis",
+    "author": "Xiaofei Wang",
+    "datePublished": "02/23/17",
+    "tags": [
+        "Beta"
+    ],
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "defaultMaxRunTime": "35:56:00",
+    "defaultQueue": "debug2",
+    "defaultNodeCount": 1,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 1,
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "deploymentPath": "xiaofei_iplant/application/HOMER_singularity_findPeaks",
+    "templatePath": "homer_findpeaks_wrapper.sh",
+    "testPath": "homer_findpeaks_test.sh",
+    "checkpointable": true,
+    "modules": [],
+    "inputs": [
+        {
+            "id": "marksDir",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": true,
+                "order": 1
+            },
+            "details": {
+                "label": "ChIP-seq Tag File",
+                "description": "HOMER tag directory of ChIP-seq against protein of interest"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTA"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        },
+
+        {
+            "id": "ctrlDir",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": false,
+                "order": 2
+            },
+            "details": {
+                "label": "ChIP-seq Control File",
+                "description": "Directory of Control (INPUT, IgG, MOCK, etc.)"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTA"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        }
+
+                ],
+    "parameters": [
+
+                    {
+            "id": "style",
+            "value": {
+                "default": "factor",
+                "type": "enumeration",
+                "enum_values": [
+                    { "factor": "factor"},
+                    { "histone": "histone"},
+                    {"groseq": "groseq"},
+                    {"tss": "tss"},
+                    {"dnase": "dnase"},
+                    {"super": "super"},
+                    {"mC": "mC"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 1
+            },
+            "details": {
+                "label": "STYLE",
+                "description": "Specialized options for specific analysis strategies",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+                    {
+            "id": "size",
+            "value": {
+                "type": "number",
+                "required": false,
+                "visible": true,
+                "order": 2
+            },
+            "details": {
+                "label": "Peak Size",
+                "description": "Specifies the width of peaks",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:interger"
+                ]
+            }
+        },
+
+                            {
+            "id": "minDist",
+            "value": {
+                "type": "number",
+                "required": false,
+                "visible": true,
+                "order": 3
+            },
+            "details": {
+                "label": "minDist",
+                "description": "Maximum distance used to stitch peaks togethe",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:interger"
+                ]
+            }
+        },
+
+        {
+            "id": "gsize",
+            "value": {
+                "type": "number",
+                "required": false,
+                "visible": true,
+                "order": 4
+            },
+            "details": {
+                "label": "gsize",
+                "description": "Effective mappable genome size",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:interger"
+                ]
+            }
+        },
+
+
+                            {
+           "id": "region",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 5
+            },
+            "details": {
+                "label": "region",
+                "description": "Stitch adjacent enriched peaks into regions",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        }
+    ],
+
+    "outputs": [
+        {
+            "id": "homerPeaksOut",
+            "details": {
+                "label": "homerPeaksOut",
+                "description": "homer peaks output"
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "homerPeaksOut",
+                "required": true,
+                "type": "string",
+                "visible": true
+            }
+        }
+
+    ]
+}

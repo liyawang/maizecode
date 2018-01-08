@@ -1,0 +1,201 @@
+{
+    "name": "Sickle",
+    "parallelism": "PARALLEL",
+    "version": "1.33",
+    "helpURI": "https://github.com/najoshi/sickle",
+    "label": "Sickle",
+    "shortDescription": "A windowed adaptive trimming tool",
+    "longDescription": "Sickle is a tool that uses sliding windows along with quality and length thresholds to trim FASTQ files",
+    "author": "Xiaofei Wang",
+    "datePublished": "05/09/17",
+    "tags": [
+        "Beta"
+    ],
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices"
+    ],
+    "defaultMaxRunTime": "35:56:00",
+    "defaultQueue": "debug",
+    "defaultNodeCount": 1,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 1,
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "deploymentPath": "xiaofei_iplant/application/Sickle_singularity_1.33",
+    "templatePath": "sickle_wrapper.sh",
+    "testPath": "sickle_test.sh",
+    "checkpointable": true,
+    "modules": [],
+    "inputs": [
+        {
+            "id": "seqDir1",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": true,
+                "order": 1
+            },
+            "details": {
+                "label": "Read1 input",
+                "description": "Input fastq file OR input paired-end forward fastq file"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        },
+
+                {
+            "id": "seqDir2",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": false,
+                "order": 2
+            },
+            "details": {
+                "label": "Read2 input (PE)",
+                "description": "Input paired-end reverse fastq file"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        }
+
+                ],
+
+    "parameters": [
+                    
+       {
+            "id": "type",
+            "value": {
+                "default": "sanger",
+                "type": "enumeration",
+                "enum_values": [
+                    { "illumina": "illumina"},
+                    { "solexa": "solexa"},
+                    { "sanger": "sanger"}
+                ],
+                "required": true,
+                "visible": true,
+                "order": 1
+            },
+            "details": {
+                "label": "Quality Type",
+                "description": "Quality type, either illumina, solexa, or sanger",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+        {
+            "id": "length",
+            "value": {
+                "default": 20,
+                "validator": "",
+                "required": false,
+                "visible": true,
+                "type": "number"
+            },
+            "details": {
+                "label": "Minimum Length",
+                "description": "Length threshold to keep a read trimmed",
+                "visible": true,
+                "order": 2
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:interger"
+                ]
+            }
+        }, 
+
+        {
+            "id": "quality",
+            "value": {
+                "default": 20,
+                "required": false,
+                "visible": true,
+                "type": "number"
+            },
+            "details": {
+                "label": "Quality Threshold",
+                "description": "Threshold for trimming based on average quality in a window",
+                "visible": true,
+                "order": 3
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:interger"
+                ]
+            }
+        }
+
+    ],
+
+    "outputs": [
+        {
+            "id": "sickleOutR1",
+            "details": {
+                "label": "Output Directory1",
+                "description": "Sickle trimmed FASTQ output directory1"
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "sickleOutR1",
+                "required": true,
+                "type": "string",
+                "visible": true,
+                "order": 1
+            }
+        },
+
+        {
+            "id": "sickleOutR2",
+            "details": {
+                "label": "Output Directory2",
+                "description": "Sickle trimmed FASTQ output directory2"
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "sickleOutR2",
+                "required": true,
+                "type": "string",
+                "visible": true,
+                "order": 2
+            }
+        }
+
+    ]
+}

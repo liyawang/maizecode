@@ -1,0 +1,273 @@
+{
+    "name": "BWA_mem",
+    "parallelism": "PARALLEL",
+    "version": "0.7.13",
+    "helpURI": "http://bio-bwa.sourceforge.net/bwa.shtml",
+    "label": "BWA-mem",
+    "shortDescription": "BWA-mem mapper",
+    "longDescription": "Maps reads including longer reads to a reference sequence",
+    "author": "Xiaofei Wang",
+    "datePublished": "01/18/17",
+    "tags": [
+        "Beta"
+    ],
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "defaultMaxRunTime": "35:56:00",
+    "defaultQueue": "debug",
+    "defaultNodeCount": 1,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 8,
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "deploymentPath": "xiaofei_iplant/application/BWA-0.7.13",
+    "templatePath": "bwa_mem_wrapper.sh",
+    "testPath": "bwa_mem_test.sh",
+    "checkpointable": true,
+    "modules": [],
+    "inputs": [
+
+        {
+            "id": "read1",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": true,
+                "order": 1
+            },
+            "details": {
+                "label": "Select Read1 in Fastq",
+                "description": "Query file 1 in fastq format (can take *.gz)"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTQ"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        },
+
+        {
+            "id": "read2",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": false,
+                "order": 2
+            },
+            "details": {
+                "label": "Select Read2 in Fastq (for paired-end data)",
+                "description": "Query file 2 in fastq format (can take *.gz)"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTQ"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        },
+
+        {
+            "id": "tarIdxRefBundle",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": true,
+                "order": 3
+            },
+            "details": {
+                "label": "Indexed Reference",
+                "description": "Indexed reference genome folder"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTA"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        }
+
+                ],
+    "parameters": [
+        
+
+        {
+            "id": "min_score",
+            "value": {
+                "default": 30,
+                "validator": "",
+                "required": false,
+                "visible": true,
+                "type": "number"
+            },
+            "details": {
+                "label": "Minimum Score",
+                "description": "Minimum score to output",
+                "visible": true,
+                "order": 1
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:integer"
+                ]
+            }
+        },        
+                    {
+            "id": "read_type",
+            "value": {
+                "default": "",
+                "type": "enumeration",
+                "enum_values": [
+                    { "": "Illumina, default"},
+                    { "pacbio": "PacBio"},
+                    { "ont2d": "Oxford Nanopore"},
+                    { "intractg": "Intra-species contigs to ref"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 2
+            },
+            "details": {
+                "label": "Read Type",
+                "description": "Type of sequencing reads",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+                {
+           "id": "M",
+            "value": {
+                "default": true,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 3
+            },
+            "details": {
+                "label": "M",
+                "description": "Mark shorter split hits as secondary (for Picard compatibility)",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },
+
+        {
+            "id": "miniMapQual",
+            "value": {
+                "default": 0,
+                "validator": "",
+                "required": false,
+                "visible": true,
+                "type": "number"
+            },
+            "details": {
+                "label": "Minimum mapping quality",
+                "description": "Skip alignments with MAPQ smaller than INT",
+                "visible": true,
+                "order": 4
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:integer"
+                ]
+            }
+        }, 
+
+        {
+            "id": "requiredAlignment",
+            "value": {
+                "default": 0,
+                "validator": "",
+                "required": false,
+                "visible": true,
+                "type": "number"
+            },
+            "details": {
+                "label": "Required Flag",
+                "description": "Only output alignments with all bits set in INT present in the FLAG field",
+                "visible": true,
+                "order": 5
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:integer"
+                ]
+            }
+        }, 
+
+        {
+            "id": "sort_type",
+            "value": {
+                "default": "",
+                "type": "enumeration",
+                "enum_values": [
+                    { "": "by coordinates"},
+                    { "-n": "by name"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 6
+            },
+            "details": {
+                "label": "Sorting Method for BAMs",
+                "description": "Coordinate or name sorting",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        }
+
+    ],
+
+
+    "outputs": [
+
+        {
+            "id": "bwa_mem_out",
+            "details": {
+                "label": "Output File",
+                "description": "BWA-mem output folder"
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "bwa_mem_out",
+                "required": true,
+                "type": "string",
+                "visible": false
+            }
+        }
+
+    ]
+}

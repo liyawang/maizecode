@@ -112,10 +112,15 @@ fi
 
 gzip ss_*
 
-#
-mkdir sickleOut
-#
-mv ss_* sickleOut
+mkdir sickleOutR1
+mv "ss_"$seqDir1.gz sickleOutR1
+
+mkdir sickleOutR2
+
+if [ -n "$seqDir2" ]; then
+    rm -rf ss_single.fq.gz
+    mv "ss_"$seqDir2.gz sickleOutR2
+fi
 
 
 

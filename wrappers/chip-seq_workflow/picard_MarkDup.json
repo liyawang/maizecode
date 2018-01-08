@@ -1,0 +1,126 @@
+{
+    "name": "Picard_MarkDupcates",
+    "parallelism": "PARALLEL",
+    "version": "2.11.0",
+    "helpURI": "https://broadinstitute.github.io/picard/command-line-overview.html",
+    "label": "Picard_MarkDup",
+    "shortDescription": "Identifies duplicate reads",
+    "longDescription": "This tool locates and tags duplicate reads in a BAM or SAM file, where duplicate reads are defined as originating from a single fragment of DNA. Duplicates can arise during sample preparation e.g. library construction using PCR.",
+    "author": "Xiaofei Wang",
+    "datePublished": "01/27/17",
+    "tags": [
+        "Beta"
+    ],
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "defaultMaxRunTime": "35:56:00",
+    "defaultQueue": "debug",
+    "defaultNodeCount": 1,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 1,
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "deploymentPath": "xiaofei_iplant/application/Picard-MarkDuplicates-2.11.0",
+    "templatePath": "picard_MarkDup_wrapper.sh",
+    "testPath": "picard_MarkDup_test.sh",
+    "checkpointable": true,
+    "modules": [],
+    "inputs": [
+        {
+            "id": "bamInput",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": true,
+                "order": 1
+            },
+            "details": {
+                "label": "Input SAM/BAM",
+                "description": "Input SAM/BAM to be processed"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        }
+                ],
+    "parameters": [
+                    {
+            "id": "VALIDATION_STRINGENCY",
+            "value": {
+                "default": "LENIENT",
+                "type": "enumeration",
+                "enum_values": [
+                    { "STRICT": "STRICT"},
+                    { "SILENT": "SILENT"},
+                    { "LENIENT": "LENIENT"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 1
+            },
+            "details": {
+                "label": "VALIDATION_STRINGENCY",
+                "description": "Validation stringency for all SAM files",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+       
+                    {
+            "id": "REMOVE_DUPLICATES",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 2
+            },
+            "details": {
+                "label": "REMOVE_DUPLICATES",
+                "description": "Locate and tag duplicate reads",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        }
+    ],
+    "outputs": [
+        {
+            "id": "picardOut",
+            "details": {
+                "label": "Output Directory",
+                "description": "Output directory"
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "picardOut",
+                "required": true,
+                "type": "string",
+                "visible": true
+            }
+        }
+
+    ]
+}

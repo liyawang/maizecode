@@ -1,0 +1,170 @@
+{
+    "name": "HOMER_makeTagDir",
+    "parallelism": "PARALLEL",
+    "version": "2015.11.10",
+    "helpURI": "http://homer.salk.edu",
+    "label": "HOMER_makeTagDir",
+    "shortDescription": "Transform alignments to platform independent data structure",
+    "longDescription": "Transform the sequence alignment into platform independent data structure representing the experiment, analogous to loading the data into a database",
+    "author": "Xiaofei Wang",
+    "datePublished": "02/16/17",
+    "tags": [
+        "Beta"
+    ],
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "defaultMaxRunTime": "35:56:00",
+    "defaultQueue": "debug2",
+    "defaultNodeCount": 1,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 1,
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "deploymentPath": "xiaofei_iplant/application/HOMER_singularity_makeTagDir",
+    "templatePath": "homer_mkTagDir_wrapper.sh",
+    "testPath": "homer_mkTagDir_test.sh",
+    "checkpointable": true,
+    "modules": [],
+    "inputs": [
+        {
+            "id": "bamInput",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": true,
+                "order": 1
+            },
+            "details": {
+                "label": "Select SAM/BAM/BED input file",
+                "description": "Alignment input file"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        }
+                ],
+    "parameters": [
+                    {
+            "id": "tbp",
+            "value": {
+                "type": "number",
+                "required": false,
+                "visible": true,
+                "order": 1
+            },
+            "details": {
+                "label": "tbp",
+                "description": "Maximum tags per bp",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:interger"
+                ]
+            }
+        },
+       
+                    {
+            "id": "format",
+            "value": {
+                "default": "sam",
+                "type": "enumeration",
+                "enum_values": [
+                    { "sam": "sam"},
+                    { "bed": "bed"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 2
+            },
+            "details": {
+                "label": "FORMAT",
+                "description": "Format of alignment files",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+            {
+           "id": "single",
+            "value": {
+                "default": true,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 3
+            },
+            "details": {
+                "label": "SINGLE",
+                "description": "Create a single tags.tsv file for all chromosomes",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },
+
+        {
+           "id": "ctrlIndicator",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 4
+            },
+            "details": {
+                "label": "ctrlIndicator",
+                "description": "Indicate if the sample is backgroud control which is useful for downstream peak calling app",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        }
+
+    ],
+
+ 
+
+    "outputs": [
+        {
+            "id": "homerTagDir",
+            "details": {
+                "label": "homerTagDir",
+                "description": "HOMER tag directory output"
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "homerTagDir",
+                "required": true,
+                "type": "string",
+                "visible": true,
+                "order": 1
+            }
+        }
+    ]
+}

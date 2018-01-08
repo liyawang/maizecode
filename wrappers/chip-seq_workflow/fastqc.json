@@ -1,0 +1,104 @@
+{
+    "name": "FastQC",
+    "parallelism": "PARALLEL",
+    "version": "0.11.5",
+    "helpURI": "http://www.bioinformatics.babraham.ac.uk/projects/fastqc/",
+    "label": "FastQC",
+    "shortDescription": "Quality control",
+    "longDescription": "A quality control tool for high throughput sequence data",
+    "author": "Xiaofei Wang",
+    "datePublished": "04/05/17",
+    "tags": [
+        "Beta"
+    ],
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices"
+    ],
+    "defaultMaxRunTime": "35:56:00",
+    "defaultQueue": "debug",
+    "defaultNodeCount": 1,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 4,
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "deploymentPath": "xiaofei_iplant/application/FastQC_0.11.5",
+    "templatePath": "fastqc_wrapper.sh",
+    "testPath": "fastqc_test.sh",
+    "checkpointable": true,
+    "modules": [],
+    "inputs": [
+        {
+            "id": "seqFile",
+            "value": {
+                "default": "",
+                "validator": "",
+                "visible": true,
+                "required": true,
+                "order": 1
+            },
+            "details": {
+                "label": "FASTQ File",
+                "description": "Input fastq file (can take *.gz)"
+            },
+            "semantics": {
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence"
+                ],
+                "minCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            }
+        }
+
+                ],
+
+    "parameters": [
+               
+         {
+            "id": "extract",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 1
+            },
+            "details": {
+                "label": "Extract",
+                "description": "Uncompressed the zipped outputs",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        }
+
+    ],
+
+    "outputs": [
+        {
+            "id": "fastqcOut",
+            "details": {
+                "label": "Output Directory",
+                "description": "Output directory."
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "fastqcOut",
+                "required": true,
+                "type": "string",
+                "visible": false
+            }
+        }
+    ]
+}
