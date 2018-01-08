@@ -8,5 +8,5 @@
   * [test-bwa-index-job.json](test-bwa-index-job.json)
   * [test-bwa-mem-job.json](test-bwa-mem-job.json)
   * [test-platypus-job.json](test-platypus-job.json)
-* Workflow json file that can be saved and loaded at https://de.sciapps.org (local)
+* Workflow json file that can be saved and loaded at https://de2.sciapps.org (local)
   * [my_platypus_workflow.json](my_platypus_workflow.json)
