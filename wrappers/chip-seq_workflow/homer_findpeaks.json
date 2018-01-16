@@ -37,7 +37,7 @@
                 "order": 1
             },
             "details": {
-                "label": "ChIP-seq Tag File",
+                "label": "ChIP-seq Tag Directory",
                 "description": "HOMER tag directory of ChIP-seq against protein of interest"
             },
             "semantics": {
@@ -61,7 +61,7 @@
                 "order": 2
             },
             "details": {
-                "label": "ChIP-seq Control File",
+                "label": "Input Tag Directory (-i)",
                 "description": "Directory of Control (INPUT, IgG, MOCK, etc.)"
             },
             "semantics": {
@@ -97,7 +97,7 @@
                 "order": 1
             },
             "details": {
-                "label": "STYLE",
+                "label": "STYLE (-style)",
                 "description": "Specialized options for specific analysis strategies",
                 "visible": true
             },
@@ -117,7 +117,7 @@
                 "order": 2
             },
             "details": {
-                "label": "Peak Size",
+                "label": "Peak Size (-size)",
                 "description": "Specifies the width of peaks",
                 "visible": true
             },
@@ -137,8 +137,8 @@
                 "order": 3
             },
             "details": {
-                "label": "minDist",
-                "description": "Maximum distance used to stitch peaks togethe",
+                "label": "Minimum Distance (-minDist)",
+                "description": "Minimum distance between peaks",
                 "visible": true
             },
             "semantics": {
@@ -157,7 +157,7 @@
                 "order": 4
             },
             "details": {
-                "label": "gsize",
+                "label": "Genome Size (-gsize)",
                 "description": "Effective mappable genome size",
                 "visible": true
             },
@@ -179,7 +179,7 @@
                 "order": 5
             },
             "details": {
-                "label": "region",
+                "label": "Extends coordinates to cover full region (-region)",
                 "description": "Stitch adjacent enriched peaks into regions",
                 "visible": true
             },
@@ -195,7 +195,7 @@
         {
             "id": "homerPeaksOut",
             "details": {
-                "label": "homerPeaksOut",
+                "label": "homerPeaksOut (-o)",
                 "description": "homer peaks output"
             },
             "semantics": {

@@ -85,7 +85,7 @@
                 "order": 3
             },
             "details": {
-                "label": "Genome Anno File",
+                "label": "Genome Anno File (-gtf/-gff/-gff3)",
                 "description": "Using Custom Annotations"
             },
             "semantics": {
@@ -111,7 +111,7 @@
                 "order": 1
             },
             "details": {
-                "label": "GENOME (e.g. hg18)",
+                "label": "Genome Version (e.g. hg18)",
                 "description": "Pre-configured genome",
                 "visible": true
             },

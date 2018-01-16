@@ -37,7 +37,7 @@
                 "order": 1
             },
             "details": {
-                "label": "Input SAM/BAM",
+                "label": "Input SAM/BAM (INPUT)",
                 "description": "Input SAM/BAM to be processed"
             },
             "semantics": {
@@ -67,7 +67,7 @@
                 "order": 1
             },
             "details": {
-                "label": "VALIDATION_STRINGENCY",
+                "label": "Validation Stringency (VALIDATION_STRINGENCY)",
                 "description": "Validation stringency for all SAM files",
                 "visible": true
             },
@@ -88,7 +88,7 @@
                 "order": 2
             },
             "details": {
-                "label": "REMOVE_DUPLICATES",
+                "label": "Remove Duplicates (REMOVE_DUPLICATES)",
                 "description": "Locate and tag duplicate reads",
                 "visible": true
             },
@@ -103,7 +103,7 @@
         {
             "id": "picardOut",
             "details": {
-                "label": "Output Directory",
+                "label": "Output Directory (OUTPUT)",
                 "description": "Output directory"
             },
             "semantics": {

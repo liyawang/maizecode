@@ -1,5 +1,5 @@
 {
-    "name": "BWA_mem",
+    "name": "BWA_mem_samtools",
     "parallelism": "PARALLEL",
     "version": "0.7.13",
     "helpURI": "http://bio-bwa.sourceforge.net/bwa.shtml",
@@ -114,7 +114,7 @@
                 "type": "number"
             },
             "details": {
-                "label": "Minimum Score",
+                "label": "Minimum Score (-T)",
                 "description": "Minimum score to output",
                 "visible": true,
                 "order": 1
@@ -141,7 +141,7 @@
                 "order": 2
             },
             "details": {
-                "label": "Read Type",
+                "label": "Read Type (-x)",
                 "description": "Type of sequencing reads",
                 "visible": true
             },
@@ -162,7 +162,7 @@
                 "order": 3
             },
             "details": {
-                "label": "M",
+                "label": "Mark (-M)",
                 "description": "Mark shorter split hits as secondary (for Picard compatibility)",
                 "visible": true
             },
@@ -183,7 +183,7 @@
                 "type": "number"
             },
             "details": {
-                "label": "Minimum mapping quality",
+                "label": "Minimum mapping quality (-q)",
                 "description": "Skip alignments with MAPQ smaller than INT",
                 "visible": true,
                 "order": 4
@@ -205,7 +205,7 @@
                 "type": "number"
             },
             "details": {
-                "label": "Required Flag",
+                "label": "Required Flag (-f)",
                 "description": "Only output alignments with all bits set in INT present in the FLAG field",
                 "visible": true,
                 "order": 5
@@ -231,7 +231,7 @@
                 "order": 6
             },
             "details": {
-                "label": "Sorting Method for BAMs",
+                "label": "Sorting Method for BAMs (-n)",
                 "description": "Coordinate or name sorting",
                 "visible": true
             },

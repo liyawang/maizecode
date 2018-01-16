@@ -94,7 +94,7 @@
                 "order": 1
             },
             "details": {
-                "label": "Quality Type",
+                "label": "Quality Type (--qual-type)",
                 "description": "Quality type, either illumina, solexa, or sanger",
                 "visible": true
             },
@@ -115,7 +115,7 @@
                 "type": "number"
             },
             "details": {
-                "label": "Minimum Length",
+                "label": "Minimum Length (--length-threshold)",
                 "description": "Length threshold to keep a read trimmed",
                 "visible": true,
                 "order": 2
@@ -136,7 +136,7 @@
                 "type": "number"
             },
             "details": {
-                "label": "Quality Threshold",
+                "label": "Quality Threshold (--qual-threshold)",
                 "description": "Threshold for trimming based on average quality in a window",
                 "visible": true,
                 "order": 3

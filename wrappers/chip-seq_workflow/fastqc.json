@@ -65,7 +65,7 @@
                 "order": 1
             },
             "details": {
-                "label": "Extract",
+                "label": "Extract (--extract)",
                 "description": "Uncompressed the zipped outputs",
                 "visible": true
             },

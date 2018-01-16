@@ -61,8 +61,8 @@
                 "order": 1
             },
             "details": {
-                "label": "tbp",
-                "description": "Maximum tags per bp",
+                "label": "Maximum tags per bp (-tbp)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -86,8 +86,8 @@
                 "order": 2
             },
             "details": {
-                "label": "FORMAT",
-                "description": "Format of alignment files",
+                "label": "Format of alignment files (-format)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -107,8 +107,8 @@
                 "order": 3
             },
             "details": {
-                "label": "SINGLE",
-                "description": "Create a single tags.tsv file for all chromosomes",
+                "label": "Create a single tags.tsv file for all chromosomes (-single)",
+                "description": "",
                 "visible": true
             },
             "semantics": {

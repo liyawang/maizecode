@@ -85,7 +85,7 @@
                 "order": 3
             },
             "details": {
-                "label": "Adapters File",
+                "label": "Adapters File (-a)",
                 "description": "Adapter contaminants file"
             },
             "semantics": {
@@ -117,7 +117,7 @@
                 "order": 1
             },
             "details": {
-                "label": "Quality Type",
+                "label": "Quality Type (--quality-type)",
                 "description": "Quality type, either illumina, solexa, or sanger",
                 "visible": true
             },

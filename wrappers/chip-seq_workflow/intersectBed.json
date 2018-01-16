@@ -37,8 +37,8 @@
                 "order": 1
             },
             "details": {
-                "label": "Select a bed/gff/vcf file(A)",
-                "description": "Each feature in A is compared to B in search of overlaps."
+                "label": "Select a bed/gff/vcf file(-a)",
+                "description": "Each feature in A is compared to B in search of overlaps"
             },
             "semantics": {
                 "ontology": [
@@ -61,8 +61,8 @@
                 "order": 2
             },
             "details": {
-                "label": "Or select a bam file (A)",
-                "description": "BEDTools intersectBed works with both BED/GFF/VCF and BAM files as input."
+                "label": "Or select a bam file (-abam)",
+                "description": "BEDTools intersectBed works with both BED/GFF/VCF and BAM files as input"
             },
             "semantics": {
                 "ontology": [
@@ -86,8 +86,8 @@
                 "order": 3
             },
             "details": {
-                "label": "Select a bed/gff/vcf file (B)",
-                "description": "B file is to search of overlaps."
+                "label": "Select a bed/gff/vcf file (-b)",
+                "description": "B file is to search of overlaps"
             },
             "semantics": {
                 "ontology": [
@@ -117,8 +117,8 @@
                 "order": 1
             },
             "details": {
-                "label": "When using BAM as input, write as",
-                "description": "Output format for BAM input (A).",
+                "label": "When using BAM as input, write as uncompressed BAM/BED output (-ubam/-bed)",
+                "description": "Output format for BAM input",
                 "visible": true
             },
             "semantics": {
@@ -139,8 +139,8 @@
                 "order": 2
             },
             "details": {
-                "label": "wa",
-                "description": "Write the original entry in A for each overlap.",
+                "label": "Write the original entry in A for each overlap (-wa)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -160,8 +160,8 @@
                 "order": 3
             },
             "details": {
-                "label": "wb",
-                "description": "Write the original entry in B for each overlap.",
+                "label": "Write the original entry in B for each overlap (-wb)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -181,8 +181,8 @@
                 "order": 4
             },
             "details": {
-                "label": "wo",
-                "description": "Write the original A and B entries plus the number of base pairs of overlap between the two features.",
+                "label": "Write the original A and B entries plus the number of base pairs of overlap(-wo)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -203,8 +203,8 @@
                 "order": 5
             },
             "details": {
-                "label": "wao",
-                "description": "Write the original A and B entries plus the number of base pairs of overlap between the two features. However, A features w/o overlap are also reported.",
+                "label": "Write the original A and B entries plus the number of base pairs of overlap. Features w/o overlap are also reported (-wao)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -224,8 +224,8 @@
                 "order": 6
             },
             "details": {
-                "label": "u",
-                "description": "Write the original A entry once if any overlaps found in B.",
+                "label": "Write the original A entry once if any overlaps found in B (-u)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -245,8 +245,8 @@
                 "order": 7
             },
             "details": {
-                "label": "c",
-                "description": "For each entry in A, report the number of overlaps with B.",
+                "label": "For each entry in A, report the number of overlaps with B (-c)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -266,8 +266,8 @@
                 "order": 8
             },
             "details": {
-                "label": "v",
-                "description": "Only report those entries in A that have no overlaps with B.",
+                "label": "Only report those entries in A that have no overlaps with B (-v)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -286,8 +286,8 @@
                 "type": "string"
             },
             "details": {
-                "label": "F",
-                "description": "Minimum overlap required as a fraction of B.",
+                "label": "Minimum overlap required as a fraction of B (-F)",
+                "description": "",
                 "visible": true,
                 "order": 10
             },
@@ -309,8 +309,8 @@
                 "type": "string"
             },
             "details": {
-                "label": "f",
-                "description": "Minimum overlap required as a fraction of A.",
+                "label": "Minimum overlap required as a fraction of A (-f)",
+                "description": "",
                 "visible": true,
                 "order": 9
             },
@@ -331,8 +331,8 @@
                 "order": 11
             },
             "details": {
-                "label": "r",
-                "description": "Require that the fraction overlap be reciprocal for A and B.",
+                "label": "Require that the fraction overlap be reciprocal for A and B (-r)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -357,7 +357,7 @@
             },
             "details": {
                 "label": "Strandedness",
-                "description": "Type of sequencing reads",
+                "description": "Only report hits in B that overlap A on the same/opposite/without respect to strand",
                 "visible": true
             },
             "semantics": {

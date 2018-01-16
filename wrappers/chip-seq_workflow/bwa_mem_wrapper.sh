@@ -90,9 +90,9 @@ if [[ "$tarIdxRefBundle" =~ .*\.tar\.gz$ ]]; then
 	# idxDic="$(ls $IdxRefFolderNm/*.dict)"
 	mv ${IdxRefFolderNm}/* ./
 else
-	if [[ "$tarIdxRefBundle" =~ .*\.tar$ ]]; then
-		tar -xvf $tarIdxRefBundle
-		IdxRefFolderNm=$(basename $tarIdxRefBundle .tar)
+	if [[ "$tarIdxRefBundle" =~ .*\.tgz$ ]]; then
+		tar -xzvf $tarIdxRefBundle
+		IdxRefFolderNm=$(basename $tarIdxRefBundle .tgz)
 		if [ -d "$IdxRefFolderNm" ]; then
 			idxbase="$(ls $IdxRefFolderNm/*.fa)"
 			# idxDic="$(ls $IdxRefFolderNm/*.dict)"
