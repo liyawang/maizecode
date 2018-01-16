@@ -40,8 +40,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Each feature in A is compared to B in search of overlaps.",
-                "label": "Select a bed/gff/vcf file(A)",
+                "description": "Each feature in A is compared to B in search of overlaps",
+                "label": "Select a bed/gff/vcf file(-a)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -68,8 +68,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "BEDTools intersectBed works with both BED/GFF/VCF and BAM files as input.",
-                "label": "Or select a bam file (A)",
+                "description": "BEDTools intersectBed works with both BED/GFF/VCF and BAM files as input",
+                "label": "Or select a bam file (-abam)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -96,8 +96,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "B file is to search of overlaps.",
-                "label": "Select a bed/gff/vcf file (B)",
+                "description": "B file is to search of overlaps",
+                "label": "Select a bed/gff/vcf file (-b)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "intersectBed",
-    "lastModified": "2017-12-22T09:18:02.000-06:00",
+    "lastModified": "2018-01-16T13:39:00.000-06:00",
     "longDescription": "BEDTools intersect is to screen overlaps between two sets of genomic features.",
     "modules": [],
     "name": "intersectBed",
@@ -159,8 +159,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Minimum overlap required as a fraction of B.",
-                "label": "F",
+                "description": "",
+                "label": "Minimum overlap required as a fraction of B (-F)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -185,8 +185,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Minimum overlap required as a fraction of A.",
-                "label": "f",
+                "description": "",
+                "label": "Minimum overlap required as a fraction of A (-f)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -211,8 +211,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Output format for BAM input (A).",
-                "label": "When using BAM as input, write as",
+                "description": "Output format for BAM input",
+                "label": "When using BAM as input, write as uncompressed BAM/BED output (-ubam/-bed)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -247,8 +247,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Write the original entry in A for each overlap.",
-                "label": "wa",
+                "description": "",
+                "label": "Write the original entry in A for each overlap (-wa)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -273,8 +273,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Write the original entry in B for each overlap.",
-                "label": "wb",
+                "description": "",
+                "label": "Write the original entry in B for each overlap (-wb)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -299,8 +299,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Write the original A and B entries plus the number of base pairs of overlap between the two features.",
-                "label": "wo",
+                "description": "",
+                "label": "Write the original A and B entries plus the number of base pairs of overlap(-wo)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -325,8 +325,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Write the original A and B entries plus the number of base pairs of overlap between the two features. However, A features w/o overlap are also reported.",
-                "label": "wao",
+                "description": "",
+                "label": "Write the original A and B entries plus the number of base pairs of overlap. Features w/o overlap are also reported (-wao)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -351,8 +351,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Write the original A entry once if any overlaps found in B.",
-                "label": "u",
+                "description": "",
+                "label": "Write the original A entry once if any overlaps found in B (-u)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -377,8 +377,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "For each entry in A, report the number of overlaps with B.",
-                "label": "c",
+                "description": "",
+                "label": "For each entry in A, report the number of overlaps with B (-c)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -403,8 +403,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Only report those entries in A that have no overlaps with B.",
-                "label": "v",
+                "description": "",
+                "label": "Only report those entries in A that have no overlaps with B (-v)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -429,8 +429,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Require that the fraction overlap be reciprocal for A and B.",
-                "label": "r",
+                "description": "",
+                "label": "Require that the fraction overlap be reciprocal for A and B (-r)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -455,7 +455,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Type of sequencing reads",
+                "description": "Only report hits in B that overlap A on the same/opposite/without respect to strand",
                 "label": "Strandedness",
                 "repeatArgument": false,
                 "showArgument": false
@@ -489,7 +489,7 @@
             }
         }
     ],
-    "revision": 2,
+    "revision": 3,
     "shortDescription": "Overlapped genomic features.",
     "tags": [
         "Beta"

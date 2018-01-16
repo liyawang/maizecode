@@ -4,19 +4,19 @@
             "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
         },
         "history": {
-            "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-2015.11.10/history"
+            "href": "https://agave.iplantc.org/apps/v2/BWA_mem_samtools-0.7.13/history"
         },
         "metadata": {
-            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%222080777036639310311-242ac117-0001-005%22%7D"
+            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%2233231781086695911-242ac117-0001-005%22%7D"
         },
         "owner": {
             "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
         },
         "permissions": {
-            "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-2015.11.10/pems"
+            "href": "https://agave.iplantc.org/apps/v2/BWA_mem_samtools-0.7.13/pems"
         },
         "self": {
-            "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-2015.11.10"
+            "href": "https://agave.iplantc.org/apps/v2/BWA_mem_samtools-0.7.13"
         },
         "storageSystem": {
             "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
@@ -27,25 +27,25 @@
     "defaultMaxRunTime": "35:56:00",
     "defaultMemoryPerNode": 32,
     "defaultNodeCount": 1,
-    "defaultProcessorsPerNode": 1,
-    "defaultQueue": "debug2",
-    "deploymentPath": "xiaofei_iplant/application/HOMER_singularity_findPeaks",
+    "defaultProcessorsPerNode": 8,
+    "defaultQueue": "debug",
+    "deploymentPath": "xiaofei_iplant/application/BWA-0.7.13",
     "deploymentSystem": "data.iplantcollaborative.org",
     "executionSystem": "sciapps.org",
     "executionType": "HPC",
-    "helpURI": "http://homer.salk.edu",
+    "helpURI": "http://bio-bwa.sourceforge.net/bwa.shtml",
     "icon": null,
-    "id": "HOMER_findPeaks-2015.11.10",
+    "id": "BWA_mem_samtools-0.7.13",
     "inputs": [
         {
             "details": {
                 "argument": null,
-                "description": "HOMER tag directory of ChIP-seq against protein of interest",
-                "label": "ChIP-seq Tag Directory",
+                "description": "Query file 1 in fastq format (can take *.gz)",
+                "label": "Select Read1 in Fastq",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "marksDir",
+            "id": "read1",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -53,7 +53,7 @@
                 "maxCardinality": 1,
                 "minCardinality": 1,
                 "ontology": [
-                    "http://sswapmeet.sswap.info/sequence/FASTA"
+                    "http://sswapmeet.sswap.info/sequence/FASTQ"
                 ]
             },
             "value": {
@@ -68,12 +68,40 @@
         {
             "details": {
                 "argument": null,
-                "description": "Directory of Control (INPUT, IgG, MOCK, etc.)",
-                "label": "Input Tag Directory (-i)",
+                "description": "Query file 2 in fastq format (can take *.gz)",
+                "label": "Select Read2 in Fastq (for paired-end data)",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "ctrlDir",
+            "id": "read2",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTQ"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Indexed reference genome folder",
+                "label": "Indexed Reference",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "tarIdxRefBundle",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -87,29 +115,29 @@
             "value": {
                 "default": "",
                 "enquote": false,
-                "order": 2,
-                "required": false,
+                "order": 3,
+                "required": true,
                 "validator": "",
                 "visible": true
             }
         }
     ],
     "isPublic": false,
-    "label": "HOMER_findPeaks",
-    "lastModified": "2018-01-16T13:25:13.000-06:00",
-    "longDescription": "HOMER contains a program called findPeaks that performs all of the peak calling and transcript identification analysis",
+    "label": "BWA-mem",
+    "lastModified": "2018-01-16T12:42:28.000-06:00",
+    "longDescription": "Maps reads including longer reads to a reference sequence",
     "modules": [],
-    "name": "HOMER_findPeaks",
+    "name": "BWA_mem_samtools",
     "ontology": [
         "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
     ],
     "outputs": [
         {
             "details": {
-                "description": "homer peaks output",
-                "label": "homerPeaksOut (-o)"
+                "description": "BWA-mem output folder",
+                "label": "Output File"
             },
-            "id": "homerPeaksOut",
+            "id": "bwa_mem_out",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -119,7 +147,7 @@
                 "ontology": []
             },
             "value": {
-                "default": "homerPeaksOut",
+                "default": "bwa_mem_out",
                 "order": 0,
                 "validator": null
             }
@@ -131,12 +159,90 @@
         {
             "details": {
                 "argument": null,
-                "description": "Specialized options for specific analysis strategies",
-                "label": "STYLE (-style)",
+                "description": "Minimum score to output",
+                "label": "Minimum Score (-T)",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "style",
+            "id": "min_score",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 30,
+                "enquote": false,
+                "order": 0,
+                "required": false,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Skip alignments with MAPQ smaller than INT",
+                "label": "Minimum mapping quality (-q)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "miniMapQual",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 0,
+                "enquote": false,
+                "order": 0,
+                "required": false,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Only output alignments with all bits set in INT present in the FLAG field",
+                "label": "Required Flag (-f)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "requiredAlignment",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 0,
+                "enquote": false,
+                "order": 0,
+                "required": false,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Type of sequencing reads",
+                "label": "Read Type (-x)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "read_type",
             "semantics": {
                 "maxCardinality": 1,
                 "minCardinality": 0,
@@ -145,32 +251,23 @@
                 ]
             },
             "value": {
-                "default": "factor",
+                "default": "",
                 "enquote": false,
                 "enum_values": [
                     {
-                        "factor": "factor"
+                        "": "Illumina, default"
                     },
                     {
-                        "histone": "histone"
+                        "pacbio": "PacBio"
                     },
                     {
-                        "groseq": "groseq"
+                        "ont2d": "Oxford Nanopore"
                     },
                     {
-                        "tss": "tss"
-                    },
-                    {
-                        "dnase": "dnase"
-                    },
-                    {
-                        "super": "super"
-                    },
-                    {
-                        "mC": "mC"
+                        "intractg": "Intra-species contigs to ref"
                     }
                 ],
-                "order": 1,
+                "order": 2,
                 "required": false,
                 "type": "enumeration",
                 "visible": true
@@ -179,90 +276,12 @@
         {
             "details": {
                 "argument": null,
-                "description": "Specifies the width of peaks",
-                "label": "Peak Size (-size)",
+                "description": "Mark shorter split hits as secondary (for Picard compatibility)",
+                "label": "Mark (-M)",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "size",
-            "semantics": {
-                "maxCardinality": 1,
-                "minCardinality": 0,
-                "ontology": [
-                    "xs:interger"
-                ]
-            },
-            "value": {
-                "default": 0,
-                "enquote": false,
-                "order": 2,
-                "required": false,
-                "type": "number",
-                "validator": null,
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "Minimum distance between peaks",
-                "label": "Minimum Distance (-minDist)",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "minDist",
-            "semantics": {
-                "maxCardinality": 1,
-                "minCardinality": 0,
-                "ontology": [
-                    "xs:interger"
-                ]
-            },
-            "value": {
-                "default": 0,
-                "enquote": false,
-                "order": 3,
-                "required": false,
-                "type": "number",
-                "validator": null,
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "Effective mappable genome size",
-                "label": "Genome Size (-gsize)",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "gsize",
-            "semantics": {
-                "maxCardinality": 1,
-                "minCardinality": 0,
-                "ontology": [
-                    "xs:interger"
-                ]
-            },
-            "value": {
-                "default": 0,
-                "enquote": false,
-                "order": 4,
-                "required": false,
-                "type": "number",
-                "validator": null,
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "Stitch adjacent enriched peaks into regions",
-                "label": "Extends coordinates to cover full region (-region)",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "region",
+            "id": "M",
             "semantics": {
                 "maxCardinality": 1,
                 "minCardinality": 0,
@@ -271,23 +290,56 @@
                 ]
             },
             "value": {
-                "default": false,
+                "default": true,
                 "enquote": false,
-                "order": 5,
+                "order": 3,
                 "required": false,
                 "type": "bool",
                 "validator": null,
                 "visible": true
             }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Coordinate or name sorting",
+                "label": "Sorting Method for BAMs (-n)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "sort_type",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "": "by coordinates"
+                    },
+                    {
+                        "-n": "by name"
+                    }
+                ],
+                "order": 6,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
         }
     ],
-    "revision": 3,
-    "shortDescription": "Finding Enriched Peaks, Regions, and Transcripts",
+    "revision": 1,
+    "shortDescription": "BWA-mem mapper",
     "tags": [
         "Beta"
     ],
-    "templatePath": "homer_findpeaks_wrapper.sh",
-    "testPath": "homer_findpeaks_test.sh",
-    "uuid": "2080777036639310311-242ac117-0001-005",
-    "version": "2015.11.10"
+    "templatePath": "bwa_mem_wrapper.sh",
+    "testPath": "bwa_mem_test.sh",
+    "uuid": "33231781086695911-242ac117-0001-005",
+    "version": "0.7.13"
 }

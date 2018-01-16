@@ -27,7 +27,7 @@
     "defaultMaxRunTime": "35:56:00",
     "defaultMemoryPerNode": 32,
     "defaultNodeCount": 1,
-    "defaultProcessorsPerNode": 4,
+    "defaultProcessorsPerNode": 16,
     "defaultQueue": "debug",
     "deploymentPath": "xiaofei_iplant/application/FastQC_0.11.5",
     "deploymentSystem": "data.iplantcollaborative.org",
@@ -40,15 +40,15 @@
         {
             "details": {
                 "argument": null,
-                "description": "Input fastq file (can take *.gz)",
-                "label": "FASTQ File",
+                "description": "Input directory",
+                "label": "Directory of NGS files",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "seqFile",
+            "id": "seqFolder",
             "semantics": {
                 "fileTypes": [
-                    "raw-0"
+                    "directory"
                 ],
                 "maxCardinality": 1,
                 "minCardinality": 1,
@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "FastQC",
-    "lastModified": "2017-12-08T13:14:14.000-06:00",
+    "lastModified": "2018-01-16T12:33:10.000-06:00",
     "longDescription": "A quality control tool for high throughput sequence data",
     "modules": [],
     "name": "FastQC",
@@ -81,17 +81,17 @@
                 "description": "Output directory.",
                 "label": "Output Directory"
             },
-            "id": "fastqcOut",
+            "id": "$outdirName",
             "semantics": {
                 "fileTypes": [
-                    "raw-0"
+                    "directory"
                 ],
                 "maxCardinality": 1,
                 "minCardinality": 1,
                 "ontology": []
             },
             "value": {
-                "default": "fastqcOut",
+                "default": "fastqc_out",
                 "order": 0,
                 "validator": null
             }
@@ -100,6 +100,58 @@
     "owner": "xiaofei_iplant",
     "parallelism": "PARALLEL",
     "parameters": [
+        {
+            "details": {
+                "argument": null,
+                "description": "Output directory",
+                "label": "outFolder",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "outdirName",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "fastqc_out",
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "type": "string",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "A non-default file containing the list of adapter sequences",
+                "label": "Adapters",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "adapters",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "type": "string",
+                "validator": "",
+                "visible": true
+            }
+        },
         {
             "details": {
                 "argument": null,
@@ -117,9 +169,9 @@
                 ]
             },
             "value": {
-                "default": false,
+                "default": true,
                 "enquote": false,
-                "order": 1,
+                "order": 3,
                 "required": false,
                 "type": "bool",
                 "validator": null,
@@ -127,7 +179,7 @@
             }
         }
     ],
-    "revision": 8,
+    "revision": 9,
     "shortDescription": "Quality control",
     "tags": [
         "Beta"

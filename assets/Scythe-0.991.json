@@ -97,7 +97,7 @@
             "details": {
                 "argument": null,
                 "description": "Adapter contaminants file",
-                "label": "Adapters File",
+                "label": "Adapters File (-a)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "Scythe",
-    "lastModified": "2017-12-08T09:23:35.000-06:00",
+    "lastModified": "2018-01-16T12:36:50.000-06:00",
     "longDescription": "A Bayesian adapter trimmer for high throughput sequence data",
     "modules": [],
     "name": "Scythe",
@@ -180,7 +180,7 @@
             "details": {
                 "argument": null,
                 "description": "Quality type, either illumina, solexa, or sanger",
-                "label": "Quality Type",
+                "label": "Quality Type (--quality-type)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -213,7 +213,7 @@
             }
         }
     ],
-    "revision": 8,
+    "revision": 9,
     "shortDescription": "3'-end adapter trimmer",
     "tags": [
         "Beta"

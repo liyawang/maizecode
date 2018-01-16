@@ -41,7 +41,7 @@
             "details": {
                 "argument": null,
                 "description": "Input SAM/BAM to be processed",
-                "label": "Input SAM/BAM",
+                "label": "Input SAM/BAM (INPUT)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "Picard_MarkDup",
-    "lastModified": "2017-12-13T09:38:14.000-06:00",
+    "lastModified": "2018-01-16T13:21:11.000-06:00",
     "longDescription": "This tool locates and tags duplicate reads in a BAM or SAM file, where duplicate reads are defined as originating from a single fragment of DNA. Duplicates can arise during sample preparation e.g. library construction using PCR.",
     "modules": [],
     "name": "Picard_MarkDupcates",
@@ -79,7 +79,7 @@
         {
             "details": {
                 "description": "Output directory",
-                "label": "Output Directory"
+                "label": "Output Directory (OUTPUT)"
             },
             "id": "picardOut",
             "semantics": {
@@ -104,7 +104,7 @@
             "details": {
                 "argument": null,
                 "description": "Validation stringency for all SAM files",
-                "label": "VALIDATION_STRINGENCY",
+                "label": "Validation Stringency (VALIDATION_STRINGENCY)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -140,7 +140,7 @@
             "details": {
                 "argument": null,
                 "description": "Locate and tag duplicate reads",
-                "label": "REMOVE_DUPLICATES",
+                "label": "Remove Duplicates (REMOVE_DUPLICATES)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -163,7 +163,7 @@
             }
         }
     ],
-    "revision": 5,
+    "revision": 6,
     "shortDescription": "Identifies duplicate reads",
     "tags": [
         "Beta"

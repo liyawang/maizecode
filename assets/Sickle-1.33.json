@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "Sickle",
-    "lastModified": "2017-12-08T09:24:38.000-06:00",
+    "lastModified": "2018-01-16T12:40:31.000-06:00",
     "longDescription": "Sickle is a tool that uses sliding windows along with quality and length thresholds to trim FASTQ files",
     "modules": [],
     "name": "Sickle",
@@ -152,7 +152,7 @@
             "details": {
                 "argument": null,
                 "description": "Length threshold to keep a read trimmed",
-                "label": "Minimum Length",
+                "label": "Minimum Length (--length-threshold)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -178,7 +178,7 @@
             "details": {
                 "argument": null,
                 "description": "Threshold for trimming based on average quality in a window",
-                "label": "Quality Threshold",
+                "label": "Quality Threshold (--qual-threshold)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -204,7 +204,7 @@
             "details": {
                 "argument": null,
                 "description": "Quality type, either illumina, solexa, or sanger",
-                "label": "Quality Type",
+                "label": "Quality Type (--qual-type)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -237,7 +237,7 @@
             }
         }
     ],
-    "revision": 11,
+    "revision": 12,
     "shortDescription": "A windowed adaptive trimming tool",
     "tags": [
         "Beta"

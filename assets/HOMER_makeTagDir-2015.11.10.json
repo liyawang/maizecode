@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "HOMER_makeTagDir",
-    "lastModified": "2017-12-13T10:02:30.000-06:00",
+    "lastModified": "2018-01-16T13:22:43.000-06:00",
     "longDescription": "Transform the sequence alignment into platform independent data structure representing the experiment, analogous to loading the data into a database",
     "modules": [],
     "name": "HOMER_makeTagDir",
@@ -84,7 +84,7 @@
             "id": "homerTagDir",
             "semantics": {
                 "fileTypes": [
-                    "directory"
+                    "raw-0"
                 ],
                 "maxCardinality": 1,
                 "minCardinality": 1,
@@ -103,8 +103,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Maximum tags per bp",
-                "label": "tbp",
+                "description": "",
+                "label": "Maximum tags per bp (-tbp)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -129,8 +129,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Format of alignment files",
-                "label": "FORMAT",
+                "description": "",
+                "label": "Format of alignment files (-format)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -162,8 +162,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Create a single tags.tsv file for all chromosomes",
-                "label": "SINGLE",
+                "description": "",
+                "label": "Create a single tags.tsv file for all chromosomes (-single)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -212,7 +212,7 @@
             }
         }
     ],
-    "revision": 4,
+    "revision": 5,
     "shortDescription": "Transform alignments to platform independent data structure",
     "tags": [
         "Beta"

@@ -97,7 +97,7 @@
             "details": {
                 "argument": null,
                 "description": "Using Custom Annotations",
-                "label": "Genome Anno File",
+                "label": "Genome Anno File (-gtf/-gff/-gff3)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "HOMER_annoPeaks",
-    "lastModified": "2017-12-22T09:16:14.000-06:00",
+    "lastModified": "2018-01-16T13:27:46.000-06:00",
     "longDescription": "Homer contains a useful, all-in-one program to associate peaks with nearby genes. In addition, it can perform Gene Ontology Analysis, genomic feature association analysis (Genome Ontology), associate peaks with gene expression data, calculate ChIP-Seq Tag densities from different experiments, and find motif occurrences in peaks, as well.",
     "modules": [],
     "name": "HOMER_annoPeaks",
@@ -160,7 +160,7 @@
             "details": {
                 "argument": null,
                 "description": "Pre-configured genome",
-                "label": "GENOME (e.g. hg18)",
+                "label": "Genome Version (e.g. hg18)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -183,7 +183,7 @@
             }
         }
     ],
-    "revision": 1,
+    "revision": 2,
     "shortDescription": "Performing peak annotation",
     "tags": [
         "Beta"
