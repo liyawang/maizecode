@@ -181,7 +181,7 @@
                 "order": 4
             },
             "details": {
-                "label": "Write the original A and B entries plus the number of base pairs of overlap(-wo)",
+                "label": "Write the original A and B entries plus the number of base pairs of overlap (-wo)",
                 "description": "",
                 "visible": true
             },
