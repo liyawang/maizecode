@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "intersectBed",
-    "lastModified": "2018-01-16T13:39:00.000-06:00",
+    "lastModified": "2018-01-17T12:56:48.000-06:00",
     "longDescription": "BEDTools intersect is to screen overlaps between two sets of genomic features.",
     "modules": [],
     "name": "intersectBed",
@@ -300,7 +300,7 @@
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "Write the original A and B entries plus the number of base pairs of overlap(-wo)",
+                "label": "Write the original A and B entries plus the number of base pairs of overlap (-wo)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -489,7 +489,7 @@
             }
         }
     ],
-    "revision": 3,
+    "revision": 4,
     "shortDescription": "Overlapped genomic features.",
     "tags": [
         "Beta"
