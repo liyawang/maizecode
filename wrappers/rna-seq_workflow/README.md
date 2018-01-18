@@ -7,7 +7,7 @@
   * [rsem-quant.sh](rsem-quant.sh) with corresponding app json: [RSEM_quant-1.3.0.json](../../assets/RSEM_quant-1.3.0.json)
 * Job submission json files for testing
   * [test-STAR-index-job.json](test-STAR-index-job.json)
-  * [test-STAR_align-job.json](test-STAR-align-job.json)
+  * [test-STAR_align-job.json](test-STAR_align-job.json)
 * Workflow json file that can be loaded at https://de2.sciapps.org (local)
   * [encode_rnaseq_workflow.json](https://cdn.rawgit.com/warelab/maizecode/1e3c16c1/wrappers/rna-seq_workflow/encode_rnaseq_workflow.json)
 * Screenshot of the workflow
