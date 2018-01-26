@@ -1,0 +1,323 @@
+{
+    "_links": {
+        "executionSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
+        },
+        "history": {
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_findMotifs-2015.11.10/history"
+        },
+        "metadata": {
+            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%227684106198016257560-242ac117-0001-005%22%7D"
+        },
+        "owner": {
+            "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
+        },
+        "permissions": {
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_findMotifs-2015.11.10/pems"
+        },
+        "self": {
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_findMotifs-2015.11.10"
+        },
+        "storageSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
+        }
+    },
+    "available": true,
+    "checkpointable": true,
+    "defaultMaxRunTime": "35:56:00",
+    "defaultMemoryPerNode": 32,
+    "defaultNodeCount": 1,
+    "defaultProcessorsPerNode": 1,
+    "defaultQueue": "debug2",
+    "deploymentPath": "xiaofei_iplant/application/HOMER_singularity_findMotifs",
+    "deploymentSystem": "data.iplantcollaborative.org",
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "helpURI": "http://homer.salk.edu",
+    "icon": null,
+    "id": "HOMER_findMotifs-2015.11.10",
+    "inputs": [
+        {
+            "details": {
+                "argument": null,
+                "description": "Peak files (in HOMER peak or BED format)",
+                "label": "ChIP-seq Peak File",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "peakFile",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 1,
+                "required": true,
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Using Custom Genomes",
+                "label": "Reference Fasta",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "genome",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/sequence/FASTA"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "validator": "",
+                "visible": true
+            }
+        }
+    ],
+    "isPublic": false,
+    "label": "HOMER_annoPeaks",
+    "lastModified": "2018-01-26T15:12:15.000-06:00",
+    "longDescription": "Homer contains a useful, all-in-one program to associate peaks with nearby genes. In addition, it can perform Gene Ontology Analysis, genomic feature association analysis (Genome Ontology), associate peaks with gene expression data, calculate ChIP-Seq Tag densities from different experiments, and find motif occurrences in peaks, as well.",
+    "modules": [],
+    "name": "HOMER_findMotifs",
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "outputs": [
+        {
+            "details": {
+                "description": "Peaks motifs output",
+                "label": "homerMotifsOut"
+            },
+            "id": "homerMotifsOut",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "homerMotifsOut",
+                "order": 0,
+                "validator": null
+            }
+        }
+    ],
+    "owner": "xiaofei_iplant",
+    "parallelism": "PARALLEL",
+    "parameters": [
+        {
+            "details": {
+                "argument": null,
+                "description": "Pre-configured genome",
+                "label": "Genome Version (e.g. AGPv3)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "genomeVer",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": null,
+                "enquote": false,
+                "order": 1,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Can also add 'r' to genome, i.e. mm9r",
+                "label": "Mask repeats/lower case sequence (-mask)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "mask",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Default=8,10,12",
+                "label": "Motif Length (-len)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "len",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "8,10,12",
+                "enquote": false,
+                "order": 3,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Fragment size to use for motif finding, default=200",
+                "label": "Fragment Size (-size)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "size",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "200",
+                "enquote": false,
+                "order": 4,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Don't search reverse strand for motifs",
+                "label": "Reverse Strand (-norevopp)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "norevopp",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 5,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Don't search for de novo motif enrichment",
+                "label": "De novo Motif Enrichment (-nomotif)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "nomotif",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 6,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Dump fasta files for target and background sequences for use with other programs",
+                "label": "Target Fasta (-dumpFasta)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "dumpFasta",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 7,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        }
+    ],
+    "revision": 1,
+    "shortDescription": "Performing peak annotation",
+    "tags": [
+        "Beta"
+    ],
+    "templatePath": "homer_findMotifs_wrapper.sh",
+    "testPath": "homer_findMotifs_test.sh",
+    "uuid": "7684106198016257560-242ac117-0001-005",
+    "version": "2015.11.10"
+}
