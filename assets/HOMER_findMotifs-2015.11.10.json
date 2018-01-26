@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "HOMER_annoPeaks",
-    "lastModified": "2018-01-26T15:12:15.000-06:00",
+    "lastModified": "2018-01-26T15:19:29.000-06:00",
     "longDescription": "Homer contains a useful, all-in-one program to associate peaks with nearby genes. In addition, it can perform Gene Ontology Analysis, genomic feature association analysis (Genome Ontology), associate peaks with gene expression data, calculate ChIP-Seq Tag densities from different experiments, and find motif occurrences in peaks, as well.",
     "modules": [],
     "name": "HOMER_findMotifs",
@@ -311,8 +311,8 @@
             }
         }
     ],
-    "revision": 1,
-    "shortDescription": "Performing peak annotation",
+    "revision": 2,
+    "shortDescription": "Finding Enriched Motifs in Genomic Regions",
     "tags": [
         "Beta"
     ],
