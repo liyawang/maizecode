@@ -179,8 +179,8 @@
         {
             "details": {
                 "argument": null,
-                "description": "Specifies the width of peaks",
-                "label": "Peak Size (-size)",
+                "description": "Histone marks have broader peaks than TF",
+                "label": "Specifies the width of peaks (-size)",
                 "repeatArgument": false,
                 "showArgument": false
             },
