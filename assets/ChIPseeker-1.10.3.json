@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "ChIPseeker",
-    "lastModified": "2018-03-30T10:18:39.000-05:00",
+    "lastModified": "2018-03-30T13:24:06.000-05:00",
     "longDescription": "R package for ChIP peak Annotation, Comparison, and Visualization",
     "modules": [],
     "name": "ChIPseeker",
@@ -564,42 +564,9 @@
                 "validator": null,
                 "visible": true
             }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "Coordinate or name sorting",
-                "label": "Sorting Method for BAMs (-n)",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "sort_type",
-            "semantics": {
-                "maxCardinality": 1,
-                "minCardinality": 0,
-                "ontology": [
-                    "xs:string"
-                ]
-            },
-            "value": {
-                "default": "",
-                "enquote": false,
-                "enum_values": [
-                    {
-                        "": "by coordinates"
-                    },
-                    {
-                        "-n": "by name"
-                    }
-                ],
-                "order": 17,
-                "required": false,
-                "type": "enumeration",
-                "visible": true
-            }
         }
     ],
-    "revision": 1,
+    "revision": 2,
     "shortDescription": "Annotating ChIP-seq data",
     "tags": [
         "Beta"
