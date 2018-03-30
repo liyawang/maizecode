@@ -1,0 +1,611 @@
+{
+    "_links": {
+        "executionSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
+        },
+        "history": {
+            "href": "https://agave.iplantc.org/apps/v2/ChIPseeker-1.10.3/history"
+        },
+        "metadata": {
+            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%226948742100293971480-242ac117-0001-005%22%7D"
+        },
+        "owner": {
+            "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
+        },
+        "permissions": {
+            "href": "https://agave.iplantc.org/apps/v2/ChIPseeker-1.10.3/pems"
+        },
+        "self": {
+            "href": "https://agave.iplantc.org/apps/v2/ChIPseeker-1.10.3"
+        },
+        "storageSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
+        }
+    },
+    "available": true,
+    "checkpointable": true,
+    "defaultMaxRunTime": "35:56:00",
+    "defaultMemoryPerNode": 32,
+    "defaultNodeCount": 1,
+    "defaultProcessorsPerNode": 1,
+    "defaultQueue": "debug",
+    "deploymentPath": "xiaofei_iplant/application/ChIPseeker",
+    "deploymentSystem": "data.iplantcollaborative.org",
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "helpURI": "https://bioconductor.org/packages/release/bioc/manuals/ChIPseeker/man/ChIPseeker.pdf",
+    "icon": null,
+    "id": "ChIPseeker-1.10.3",
+    "inputs": [
+        {
+            "details": {
+                "argument": null,
+                "description": "Peak file (e.g. BED format)",
+                "label": "Peak File",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "INPUT_I",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "https://genome.ucsc.edu/FAQ/FAQformat.html#format1"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 1,
+                "required": true,
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Annotation File (GFF3 or GTF)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "gffDir",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "https://useast.ensembl.org/info/website/upload/gff.html"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 2,
+                "required": true,
+                "validator": "",
+                "visible": true
+            }
+        }
+    ],
+    "isPublic": false,
+    "label": "ChIPseeker",
+    "lastModified": "2018-03-30T10:18:39.000-05:00",
+    "longDescription": "R package for ChIP peak Annotation, Comparison, and Visualization",
+    "modules": [],
+    "name": "ChIPseeker",
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "outputs": [
+        {
+            "details": {
+                "description": "ChIPseeker Output Folder",
+                "label": "Output File"
+            },
+            "id": "ChIPseekerOut",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "ChIPseekerOut",
+                "order": 0,
+                "validator": null
+            }
+        }
+    ],
+    "owner": "xiaofei_iplant",
+    "parallelism": "PARALLEL",
+    "parameters": [
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Upstream from TSS",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "tssUp",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 1000,
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Downstream from TSS",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "tssDown",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 1000,
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Region Range of TSS for Annotating Peaks (Up)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "tssRegionUp",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 3000,
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Region Range of TSS for Annotating Peaks (Down)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "tssRegionDown",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 3000,
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Distance of Flanking Sequence",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "annoFlankD",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 5000,
+                "enquote": false,
+                "order": 0,
+                "required": false,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Heatmap X-lim Up",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "heatmapXlimUp",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 1000,
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Heatmap X-lim Down",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "heatmapXlimDown",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 1000,
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Profile Plot X-lim Up",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "plotAvgXlimUp",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 1000,
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Profile Plot X-lim Down",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "plotAvgXlimDown",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 1000,
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "type": "number",
+                "validator": "",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Peak Format",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "asOutput",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "GRanges",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "GRanges": "GRanges, default"
+                    },
+                    {
+                        "data.frame": "DataFrame"
+                    }
+                ],
+                "order": 1,
+                "required": true,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "WeightCol: weight column of peak",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "weightColumn",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": null,
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Annotation Level",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "annoLevel",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "transcript",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "transcript": "transcript, default"
+                    },
+                    {
+                        "gene": "gene"
+                    }
+                ],
+                "order": 7,
+                "required": true,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Add Flanking Gene Info from the Peaks",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "annoAddFlank",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 8,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Find Nearest/Overlap Gene in the Same Strand",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "annoSameStr",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 10,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Annotation Level",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "annoOL",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "TSS",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "TSS": "TSS, default"
+                    },
+                    {
+                        "all": "all"
+                    }
+                ],
+                "order": 11,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Ignore Overlap of TSS with Peak",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "annoIgOL",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 12,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Coordinate or name sorting",
+                "label": "Sorting Method for BAMs (-n)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "sort_type",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "": "by coordinates"
+                    },
+                    {
+                        "-n": "by name"
+                    }
+                ],
+                "order": 17,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        }
+    ],
+    "revision": 1,
+    "shortDescription": "Annotating ChIP-seq data",
+    "tags": [
+        "Beta"
+    ],
+    "templatePath": "chipseeker_wrapper.sh",
+    "testPath": "chipseeker_wrapper_test.sh",
+    "uuid": "6948742100293971480-242ac117-0001-005",
+    "version": "1.10.3"
+}
