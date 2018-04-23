@@ -41,7 +41,7 @@
             "details": {
                 "argument": null,
                 "description": "Input fastq file R1 (can take *.gz)",
-                "label": "Read1 input",
+                "label": "Read1 Input",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -69,7 +69,7 @@
             "details": {
                 "argument": null,
                 "description": "Input fastq file R2 (can take *.gz)",
-                "label": "Read2 input (PE)",
+                "label": "Read2 Input (PE)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -96,7 +96,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Adapter contaminants file",
+                "description": "",
                 "label": "Adapters File (-a)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "Scythe",
-    "lastModified": "2018-01-16T12:36:50.000-06:00",
+    "lastModified": "2018-04-23T10:31:33.000-05:00",
     "longDescription": "A Bayesian adapter trimmer for high throughput sequence data",
     "modules": [],
     "name": "Scythe",
@@ -134,10 +134,10 @@
     "outputs": [
         {
             "details": {
-                "description": "Output directory1",
-                "label": "Output Directory1"
+                "description": "Output",
+                "label": "Output"
             },
-            "id": "scytheOutR1",
+            "id": "output_id1",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -147,28 +147,8 @@
                 "ontology": []
             },
             "value": {
-                "default": "scytheOutR1",
+                "default": "",
                 "order": 1,
-                "validator": null
-            }
-        },
-        {
-            "details": {
-                "description": "Output directory2",
-                "label": "Output Directory2"
-            },
-            "id": "scytheOutR2",
-            "semantics": {
-                "fileTypes": [
-                    "raw-0"
-                ],
-                "maxCardinality": 1,
-                "minCardinality": 1,
-                "ontology": []
-            },
-            "value": {
-                "default": "scytheOutR2",
-                "order": 2,
                 "validator": null
             }
         }
@@ -179,7 +159,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Quality type, either illumina, solexa, or sanger",
+                "description": "",
                 "label": "Quality Type (--quality-type)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -213,7 +193,7 @@
             }
         }
     ],
-    "revision": 9,
+    "revision": 10,
     "shortDescription": "3'-end adapter trimmer",
     "tags": [
         "Beta"

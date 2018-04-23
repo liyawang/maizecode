@@ -40,12 +40,12 @@
         {
             "details": {
                 "argument": null,
-                "description": "Input fastq file OR input paired-end forward fastq file",
-                "label": "Read1 input",
+                "description": "",
+                "label": "Read1 Input",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "seqDir1",
+            "id": "seq1",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -68,12 +68,12 @@
         {
             "details": {
                 "argument": null,
-                "description": "Input paired-end reverse fastq file",
-                "label": "Read2 input (PE)",
+                "description": "",
+                "label": "Read2 Input (PE)",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "seqDir2",
+            "id": "seq2",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "Sickle",
-    "lastModified": "2018-01-16T12:40:31.000-06:00",
+    "lastModified": "2018-04-23T10:33:43.000-05:00",
     "longDescription": "Sickle is a tool that uses sliding windows along with quality and length thresholds to trim FASTQ files",
     "modules": [],
     "name": "Sickle",
@@ -106,10 +106,10 @@
     "outputs": [
         {
             "details": {
-                "description": "Sickle trimmed FASTQ output directory1",
-                "label": "Output Directory1"
+                "description": "Sickle trimmed FASTQ output",
+                "label": "Output"
             },
-            "id": "sickleOutR1",
+            "id": "output_id1",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -119,28 +119,8 @@
                 "ontology": []
             },
             "value": {
-                "default": "sickleOutR1",
+                "default": "",
                 "order": 1,
-                "validator": null
-            }
-        },
-        {
-            "details": {
-                "description": "Sickle trimmed FASTQ output directory2",
-                "label": "Output Directory2"
-            },
-            "id": "sickleOutR2",
-            "semantics": {
-                "fileTypes": [
-                    "raw-0"
-                ],
-                "maxCardinality": 1,
-                "minCardinality": 1,
-                "ontology": []
-            },
-            "value": {
-                "default": "sickleOutR2",
-                "order": 2,
                 "validator": null
             }
         }
@@ -151,7 +131,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Length threshold to keep a read trimmed",
+                "description": "",
                 "label": "Minimum Length (--length-threshold)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -177,7 +157,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Threshold for trimming based on average quality in a window",
+                "description": "",
                 "label": "Quality Threshold (--qual-threshold)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -203,7 +183,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Quality type, either illumina, solexa, or sanger",
+                "description": "",
                 "label": "Quality Type (--qual-type)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -237,7 +217,7 @@
             }
         }
     ],
-    "revision": 12,
+    "revision": 13,
     "shortDescription": "A windowed adaptive trimming tool",
     "tags": [
         "Beta"
