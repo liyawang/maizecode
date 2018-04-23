@@ -41,16 +41,16 @@
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "Select FastQC output folder 1",
+                "label": "Select FastQC output folders",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "input_folder1",
+            "id": "input_folder",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
                 ],
-                "maxCardinality": 1,
+                "maxCardinality": 100,
                 "minCardinality": 1,
                 "ontology": [
                     "xs:string"
@@ -61,90 +61,6 @@
                 "enquote": false,
                 "order": 1,
                 "required": true,
-                "validator": null,
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "",
-                "label": "Select FastQC output folder 2",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "input_folder2",
-            "semantics": {
-                "fileTypes": [
-                    "raw-0"
-                ],
-                "maxCardinality": 1,
-                "minCardinality": 1,
-                "ontology": [
-                    "xs:string"
-                ]
-            },
-            "value": {
-                "default": "",
-                "enquote": false,
-                "order": 2,
-                "required": false,
-                "validator": null,
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "",
-                "label": "Select FastQC output folder 3",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "input_folder3",
-            "semantics": {
-                "fileTypes": [
-                    "raw-0"
-                ],
-                "maxCardinality": 1,
-                "minCardinality": 1,
-                "ontology": [
-                    "xs:string"
-                ]
-            },
-            "value": {
-                "default": "",
-                "enquote": false,
-                "order": 3,
-                "required": false,
-                "validator": null,
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "",
-                "label": "Select FastQC output folder 4",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "input_folder4",
-            "semantics": {
-                "fileTypes": [
-                    "raw-0"
-                ],
-                "maxCardinality": 1,
-                "minCardinality": 1,
-                "ontology": [
-                    "xs:string"
-                ]
-            },
-            "value": {
-                "default": "",
-                "enquote": false,
-                "order": 4,
-                "required": false,
                 "validator": null,
                 "visible": true
             }

@@ -1,3 +1,4 @@
+
 #----
 # Script for creating tar bundle of reference fasta and its index files for savp pipeline
 # Creates index files
@@ -13,6 +14,8 @@ if [ ${ref_ext} = "gz" ]; then gunzip ${ref}; ref=${ref%.*}; fi
 
 # standardize extension to .fa
 rb="${ref%%.*}"   # reference basename
+output_id1="bwaIndex"
+rb=${output_id1}_${rb}
 mv ${ref} ${rb}.fa
 ref=${rb}.fa
 
@@ -20,11 +23,8 @@ singularity exec -B /scratch:/scratch /scratch/tacc/images/samtools_1.5--2.img s
 singularity exec -B /scratch:/scratch /scratch/tacc/images/bwa_0.7.13--1.img bwa index ${ref}
 singularity exec -B /scratch:/scratch /scratch/tacc/images/picard_2.11.0--py27_0.img picard CreateSequenceDictionary  R= ${ref} O= ${rb}.dict
 
-# Compress and move into the output_id folder
+# Compress and add output id as prefix
 tar -czf ${rb}.tgz ${ref} ${ref}.fai ${rb}.dict ${ref}.amb ${ref}.ann ${ref}.bwt ${ref}.pac ${ref}.sa
-output_id1="bwa_index"
-mkdir ${output_id1}
-mv ${rb}.tgz ${output_id1}/.
 
 # Remove temporary and input files upon exit
-trap "rm -rf ${ref} ${ref}.* ${rb}.* *.template *.sh" exit
+trap "ls | grep -v "\.tgz" | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf" exit
