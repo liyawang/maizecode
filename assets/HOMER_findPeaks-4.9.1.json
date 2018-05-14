@@ -4,19 +4,19 @@
             "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
         },
         "history": {
-            "href": "https://agave.iplantc.org/apps/v2/BWA_mem_samtools-0.7.13/history"
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-4.9.1/history"
         },
         "metadata": {
-            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%2233231781086695911-242ac117-0001-005%22%7D"
+            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%228788026453681696280-242ac117-0001-005%22%7D"
         },
         "owner": {
             "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
         },
         "permissions": {
-            "href": "https://agave.iplantc.org/apps/v2/BWA_mem_samtools-0.7.13/pems"
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-4.9.1/pems"
         },
         "self": {
-            "href": "https://agave.iplantc.org/apps/v2/BWA_mem_samtools-0.7.13"
+            "href": "https://agave.iplantc.org/apps/v2/HOMER_findPeaks-4.9.1"
         },
         "storageSystem": {
             "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
@@ -27,25 +27,25 @@
     "defaultMaxRunTime": "35:56:00",
     "defaultMemoryPerNode": 32,
     "defaultNodeCount": 1,
-    "defaultProcessorsPerNode": 8,
-    "defaultQueue": "debug",
-    "deploymentPath": "xiaofei_iplant/application/BWA-0.7.13",
+    "defaultProcessorsPerNode": 1,
+    "defaultQueue": "debug2",
+    "deploymentPath": "xiaofei_iplant/application/HOMER_singularity_findPeaks",
     "deploymentSystem": "data.iplantcollaborative.org",
     "executionSystem": "sciapps.org",
     "executionType": "HPC",
-    "helpURI": "http://bio-bwa.sourceforge.net/bwa.shtml",
+    "helpURI": "http://homer.salk.edu",
     "icon": null,
-    "id": "BWA_mem_samtools-0.7.13",
+    "id": "HOMER_findPeaks-4.9.1",
     "inputs": [
         {
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "Select Read1 in Fastq",
+                "label": "ChIP-seq Tag Directory",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "read1",
+            "id": "marksDir",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -53,7 +53,7 @@
                 "maxCardinality": 1,
                 "minCardinality": 1,
                 "ontology": [
-                    "http://sswapmeet.sswap.info/sequence/FASTQ"
+                    "http://sswapmeet.sswap.info/sequence/FASTA"
                 ]
             },
             "value": {
@@ -69,39 +69,11 @@
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "Select Read2 in Fastq (PE)",
+                "label": "Input Tag Directory (-i)",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "read2",
-            "semantics": {
-                "fileTypes": [
-                    "raw-0"
-                ],
-                "maxCardinality": 1,
-                "minCardinality": 1,
-                "ontology": [
-                    "http://sswapmeet.sswap.info/sequence/FASTQ"
-                ]
-            },
-            "value": {
-                "default": "",
-                "enquote": false,
-                "order": 2,
-                "required": false,
-                "validator": "",
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "",
-                "label": "Indexed Reference",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "tarIdxRefBundle",
+            "id": "ctrlDir",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -115,19 +87,19 @@
             "value": {
                 "default": "",
                 "enquote": false,
-                "order": 3,
-                "required": true,
+                "order": 2,
+                "required": false,
                 "validator": "",
                 "visible": true
             }
         }
     ],
     "isPublic": false,
-    "label": "BWA-mem",
-    "lastModified": "2018-05-14T11:06:37.000-05:00",
-    "longDescription": "Maps reads including longer reads to a reference sequence",
+    "label": "HOMER_findPeaks",
+    "lastModified": "2018-05-14T11:11:57.000-05:00",
+    "longDescription": "HOMER contains a program called findPeaks that performs all of the peak calling and transcript identification analysis",
     "modules": [],
-    "name": "BWA_mem_samtools",
+    "name": "HOMER_findPeaks",
     "ontology": [
         "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
     ],
@@ -135,9 +107,9 @@
         {
             "details": {
                 "description": "",
-                "label": "Output File"
+                "label": "homerPeaksOut (-o)"
             },
-            "id": "bwa_mem",
+            "id": "homerPeaks",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -147,7 +119,7 @@
                 "ontology": []
             },
             "value": {
-                "default": "",
+                "default": "homerPeaks",
                 "order": 0,
                 "validator": null
             }
@@ -160,89 +132,11 @@
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "Minimum Score (-T)",
+                "label": "STYLE (-style)",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "min_score",
-            "semantics": {
-                "maxCardinality": 1,
-                "minCardinality": 0,
-                "ontology": [
-                    "xs:integer"
-                ]
-            },
-            "value": {
-                "default": 30,
-                "enquote": false,
-                "order": 0,
-                "required": false,
-                "type": "number",
-                "validator": "",
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "",
-                "label": "Minimum Mapping Quality (-q)",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "miniMapQual",
-            "semantics": {
-                "maxCardinality": 1,
-                "minCardinality": 0,
-                "ontology": [
-                    "xs:integer"
-                ]
-            },
-            "value": {
-                "default": 0,
-                "enquote": false,
-                "order": 0,
-                "required": false,
-                "type": "number",
-                "validator": "",
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "",
-                "label": "Only Output Alignments with all Bits Set in INT present in FLAG (-f)",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "requiredAlignment",
-            "semantics": {
-                "maxCardinality": 1,
-                "minCardinality": 0,
-                "ontology": [
-                    "xs:integer"
-                ]
-            },
-            "value": {
-                "default": 0,
-                "enquote": false,
-                "order": 0,
-                "required": false,
-                "type": "number",
-                "validator": "",
-                "visible": true
-            }
-        },
-        {
-            "details": {
-                "argument": null,
-                "description": "",
-                "label": "Read Type (-x)",
-                "repeatArgument": false,
-                "showArgument": false
-            },
-            "id": "read_type",
+            "id": "style",
             "semantics": {
                 "maxCardinality": 1,
                 "minCardinality": 0,
@@ -251,23 +145,32 @@
                 ]
             },
             "value": {
-                "default": "",
+                "default": "factor",
                 "enquote": false,
                 "enum_values": [
                     {
-                        "": "Illumina, default"
+                        "factor": "factor"
                     },
                     {
-                        "pacbio": "PacBio"
+                        "histone": "histone"
                     },
                     {
-                        "ont2d": "Oxford Nanopore"
+                        "groseq": "groseq"
                     },
                     {
-                        "intractg": "Intra-species contigs to ref"
+                        "tss": "tss"
+                    },
+                    {
+                        "dnase": "dnase"
+                    },
+                    {
+                        "super": "super"
+                    },
+                    {
+                        "mC": "mC"
                     }
                 ],
-                "order": 2,
+                "order": 1,
                 "required": false,
                 "type": "enumeration",
                 "visible": true
@@ -276,25 +179,51 @@
         {
             "details": {
                 "argument": null,
-                "description": "",
-                "label": "Mark Shorter Split Hits as Secondary (-M)",
+                "description": "Default: auto",
+                "label": "Peak Size (-size)",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "M",
+            "id": "size",
             "semantics": {
                 "maxCardinality": 1,
                 "minCardinality": 0,
                 "ontology": [
-                    "xs:boolean"
+                    "xs:string"
                 ]
             },
             "value": {
-                "default": true,
+                "default": "auto",
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Default: peak size x2",
+                "label": "Minimum Distance (-minDist)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "minDist",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": null,
                 "enquote": false,
                 "order": 3,
                 "required": false,
-                "type": "bool",
+                "type": "string",
                 "validator": null,
                 "visible": true
             }
@@ -303,11 +232,11 @@
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "Sorting Method for BAMs (-n)",
+                "label": "Genome Size (-gsize)",
                 "repeatArgument": false,
                 "showArgument": false
             },
-            "id": "sort_type",
+            "id": "gsize",
             "semantics": {
                 "maxCardinality": 1,
                 "minCardinality": 0,
@@ -316,30 +245,49 @@
                 ]
             },
             "value": {
-                "default": "",
+                "default": "2e9",
                 "enquote": false,
-                "enum_values": [
-                    {
-                        "": "by coordinates"
-                    },
-                    {
-                        "-n": "by name"
-                    }
-                ],
-                "order": 6,
+                "order": 4,
                 "required": false,
-                "type": "enumeration",
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "Stitch adjacent enriched peaks into regions",
+                "label": "Extends coordinates to cover full region (-region)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "region",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 5,
+                "required": false,
+                "type": "bool",
+                "validator": null,
                 "visible": true
             }
         }
     ],
-    "revision": 2,
-    "shortDescription": "BWA-mem mapper",
+    "revision": 1,
+    "shortDescription": "Finding Enriched Peaks, Regions, and Transcripts",
     "tags": [
         "Beta"
     ],
-    "templatePath": "bwa_mem_wrapper.sh",
-    "testPath": "bwa_mem_test.sh",
-    "uuid": "33231781086695911-242ac117-0001-005",
-    "version": "0.7.13"
+    "templatePath": "homer_findpeaks_wrapper.sh",
+    "testPath": "homer_findpeaks_test.sh",
+    "uuid": "8788026453681696280-242ac117-0001-005",
+    "version": "4.9.1"
 }

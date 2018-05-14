@@ -40,7 +40,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Input SAM/BAM to be processed",
+                "description": "",
                 "label": "Input SAM/BAM (INPUT)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "Picard_MarkDup",
-    "lastModified": "2018-01-16T13:21:11.000-06:00",
+    "lastModified": "2018-05-14T11:08:09.000-05:00",
     "longDescription": "This tool locates and tags duplicate reads in a BAM or SAM file, where duplicate reads are defined as originating from a single fragment of DNA. Duplicates can arise during sample preparation e.g. library construction using PCR.",
     "modules": [],
     "name": "Picard_MarkDupcates",
@@ -78,10 +78,10 @@
     "outputs": [
         {
             "details": {
-                "description": "Output directory",
-                "label": "Output Directory (OUTPUT)"
+                "description": "",
+                "label": "Output (OUTPUT)"
             },
-            "id": "picardOut",
+            "id": "picard",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -91,7 +91,7 @@
                 "ontology": []
             },
             "value": {
-                "default": "picardOut",
+                "default": "",
                 "order": 0,
                 "validator": null
             }
@@ -103,7 +103,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Validation stringency for all SAM files",
+                "description": "",
                 "label": "Validation Stringency (VALIDATION_STRINGENCY)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -139,7 +139,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Locate and tag duplicate reads",
+                "description": "",
                 "label": "Remove Duplicates (REMOVE_DUPLICATES)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -163,7 +163,7 @@
             }
         }
     ],
-    "revision": 6,
+    "revision": 7,
     "shortDescription": "Identifies duplicate reads",
     "tags": [
         "Beta"

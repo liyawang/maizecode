@@ -40,7 +40,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Each feature in A is compared to B in search of overlaps",
+                "description": "",
                 "label": "Select a bed/gff/vcf file(-a)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -68,7 +68,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "BEDTools intersectBed works with both BED/GFF/VCF and BAM files as input",
+                "description": "",
                 "label": "Or select a bam file (-abam)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -96,7 +96,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "B file is to search of overlaps",
+                "description": "",
                 "label": "Select a bed/gff/vcf file (-b)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "intersectBed",
-    "lastModified": "2018-01-17T12:56:48.000-06:00",
+    "lastModified": "2018-05-14T11:15:41.000-05:00",
     "longDescription": "BEDTools intersect is to screen overlaps between two sets of genomic features.",
     "modules": [],
     "name": "intersectBed",
@@ -135,9 +135,9 @@
         {
             "details": {
                 "description": "Intersected genomic features output folder",
-                "label": "commonPeaks"
+                "label": "intersectBed"
             },
-            "id": "commonPeaks",
+            "id": "intersectBed",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -147,7 +147,7 @@
                 "ontology": []
             },
             "value": {
-                "default": "commonPeaks",
+                "default": "",
                 "order": 1,
                 "validator": null
             }
@@ -211,7 +211,7 @@
         {
             "details": {
                 "argument": null,
-                "description": "Output format for BAM input",
+                "description": "",
                 "label": "When using BAM as input, write as uncompressed BAM/BED output (-ubam/-bed)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -489,7 +489,7 @@
             }
         }
     ],
-    "revision": 4,
+    "revision": 5,
     "shortDescription": "Overlapped genomic features.",
     "tags": [
         "Beta"
