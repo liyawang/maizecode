@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "HOMER_makeTagDir",
-    "lastModified": "2018-05-14T11:10:45.000-05:00",
+    "lastModified": "2018-05-18T10:04:19.000-05:00",
     "longDescription": "Transform the sequence alignment into platform independent data structure representing the experiment, analogous to loading the data into a database",
     "modules": [],
     "name": "HOMER_makeTagDir",
@@ -186,7 +186,7 @@
             }
         }
     ],
-    "revision": 6,
+    "revision": 7,
     "shortDescription": "Transform alignments to platform independent data structure",
     "tags": [
         "Beta"
