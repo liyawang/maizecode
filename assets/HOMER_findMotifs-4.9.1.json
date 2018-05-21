@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "HOMER_annoPeaks",
-    "lastModified": "2018-05-14T11:14:33.000-05:00",
+    "lastModified": "2018-05-21T15:08:20.000-05:00",
     "longDescription": "HOMER contains a novel motif discovery algorithm that was designed for regulatory element analysis in genomics applications (DNA only, no protein).  It is a differential motif discovery algorithm, which means that it takes two sets of sequences and tries to identify the regulatory elements that are specifically enriched in on set relative to the other.  It uses ZOOPS scoring (zero or one occurrence per sequence) coupled with the hypergeometric enrichment calculations (or binomial) to determine motif enrichment.",
     "modules": [],
     "name": "HOMER_findMotifs",
@@ -311,7 +311,7 @@
             }
         }
     ],
-    "revision": 1,
+    "revision": 2,
     "shortDescription": "Finding Enriched Motifs in Genomic Regions",
     "tags": [
         "Beta"

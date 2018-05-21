@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "HOMER_findPeaks",
-    "lastModified": "2018-05-14T11:11:57.000-05:00",
+    "lastModified": "2018-05-21T15:06:14.000-05:00",
     "longDescription": "HOMER contains a program called findPeaks that performs all of the peak calling and transcript identification analysis",
     "modules": [],
     "name": "HOMER_findPeaks",
@@ -281,7 +281,7 @@
             }
         }
     ],
-    "revision": 1,
+    "revision": 2,
     "shortDescription": "Finding Enriched Peaks, Regions, and Transcripts",
     "tags": [
         "Beta"
