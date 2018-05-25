@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "ChIPseeker",
-    "lastModified": "2018-03-30T13:24:06.000-05:00",
+    "lastModified": "2018-05-25T14:17:39.000-05:00",
     "longDescription": "R package for ChIP peak Annotation, Comparison, and Visualization",
     "modules": [],
     "name": "ChIPseeker",
@@ -566,7 +566,7 @@
             }
         }
     ],
-    "revision": 2,
+    "revision": 3,
     "shortDescription": "Annotating ChIP-seq data",
     "tags": [
         "Beta"
