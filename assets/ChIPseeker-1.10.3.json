@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "ChIPseeker",
-    "lastModified": "2018-06-13T10:31:31.000-05:00",
+    "lastModified": "2018-06-13T12:19:43.000-05:00",
     "longDescription": "R package for ChIP peak Annotation, Comparison, and Visualization",
     "modules": [],
     "name": "ChIPseeker",
@@ -412,7 +412,7 @@
                 ]
             },
             "value": {
-                "default": null,
+                "default": "V5",
                 "enquote": false,
                 "order": 2,
                 "required": false,
@@ -569,7 +569,7 @@
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "Assign peak genomic annotation or not",
+                "label": "Assign Peak Genomic Annotation or Not",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -592,7 +592,7 @@
             }
         }
     ],
-    "revision": 5,
+    "revision": 6,
     "shortDescription": "Annotating ChIP-seq data",
     "tags": [
         "Beta"
