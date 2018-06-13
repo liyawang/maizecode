@@ -88,7 +88,7 @@
                 "default": "",
                 "enquote": false,
                 "order": 2,
-                "required": true,
+                "required": false,
                 "validator": "",
                 "visible": true
             }
@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "ChIPseeker",
-    "lastModified": "2018-05-25T14:17:39.000-05:00",
+    "lastModified": "2018-06-13T10:31:31.000-05:00",
     "longDescription": "R package for ChIP peak Annotation, Comparison, and Visualization",
     "modules": [],
     "name": "ChIPseeker",
@@ -139,7 +139,7 @@
             "id": "tssUp",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:integer"
                 ]
@@ -148,7 +148,7 @@
                 "default": 1000,
                 "enquote": false,
                 "order": 0,
-                "required": true,
+                "required": false,
                 "type": "number",
                 "validator": "",
                 "visible": true
@@ -165,7 +165,7 @@
             "id": "tssDown",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:integer"
                 ]
@@ -174,7 +174,7 @@
                 "default": 1000,
                 "enquote": false,
                 "order": 0,
-                "required": true,
+                "required": false,
                 "type": "number",
                 "validator": "",
                 "visible": true
@@ -191,7 +191,7 @@
             "id": "tssRegionUp",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:integer"
                 ]
@@ -200,7 +200,7 @@
                 "default": 3000,
                 "enquote": false,
                 "order": 0,
-                "required": true,
+                "required": false,
                 "type": "number",
                 "validator": "",
                 "visible": true
@@ -217,7 +217,7 @@
             "id": "tssRegionDown",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:integer"
                 ]
@@ -226,7 +226,7 @@
                 "default": 3000,
                 "enquote": false,
                 "order": 0,
-                "required": true,
+                "required": false,
                 "type": "number",
                 "validator": "",
                 "visible": true
@@ -269,7 +269,7 @@
             "id": "heatmapXlimUp",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:integer"
                 ]
@@ -278,7 +278,7 @@
                 "default": 1000,
                 "enquote": false,
                 "order": 0,
-                "required": true,
+                "required": false,
                 "type": "number",
                 "validator": "",
                 "visible": true
@@ -295,7 +295,7 @@
             "id": "heatmapXlimDown",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:integer"
                 ]
@@ -304,7 +304,7 @@
                 "default": 1000,
                 "enquote": false,
                 "order": 0,
-                "required": true,
+                "required": false,
                 "type": "number",
                 "validator": "",
                 "visible": true
@@ -321,7 +321,7 @@
             "id": "plotAvgXlimUp",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:integer"
                 ]
@@ -330,7 +330,7 @@
                 "default": 1000,
                 "enquote": false,
                 "order": 0,
-                "required": true,
+                "required": false,
                 "type": "number",
                 "validator": "",
                 "visible": true
@@ -347,7 +347,7 @@
             "id": "plotAvgXlimDown",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:integer"
                 ]
@@ -356,7 +356,7 @@
                 "default": 1000,
                 "enquote": false,
                 "order": 0,
-                "required": true,
+                "required": false,
                 "type": "number",
                 "validator": "",
                 "visible": true
@@ -373,7 +373,7 @@
             "id": "asOutput",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:string"
                 ]
@@ -390,7 +390,7 @@
                     }
                 ],
                 "order": 1,
-                "required": true,
+                "required": false,
                 "type": "enumeration",
                 "visible": true
             }
@@ -432,7 +432,7 @@
             "id": "annoLevel",
             "semantics": {
                 "maxCardinality": 1,
-                "minCardinality": 1,
+                "minCardinality": 0,
                 "ontology": [
                     "xs:string"
                 ]
@@ -449,7 +449,7 @@
                     }
                 ],
                 "order": 7,
-                "required": true,
+                "required": false,
                 "type": "enumeration",
                 "visible": true
             }
@@ -564,9 +564,35 @@
                 "validator": null,
                 "visible": true
             }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Assign peak genomic annotation or not",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "annoAssign",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": true,
+                "enquote": false,
+                "order": 17,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
         }
     ],
-    "revision": 3,
+    "revision": 5,
     "shortDescription": "Annotating ChIP-seq data",
     "tags": [
         "Beta"
