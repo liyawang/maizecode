@@ -124,7 +124,7 @@
     ],
     "isPublic": false,
     "label": "Scythe",
-    "lastModified": "2018-04-26T13:40:21.000-05:00",
+    "lastModified": "2018-06-14T13:56:38.000-05:00",
     "longDescription": "A Bayesian adapter trimmer for high throughput sequence data",
     "modules": [],
     "name": "Scythe",
@@ -134,10 +134,10 @@
     "outputs": [
         {
             "details": {
-                "description": "Output",
-                "label": "Output"
+                "description": "Output1",
+                "label": "Output1"
             },
-            "id": "sc",
+            "id": "sc1",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -149,6 +149,26 @@
             "value": {
                 "default": "",
                 "order": 1,
+                "validator": null
+            }
+        },
+        {
+            "details": {
+                "description": "Output2",
+                "label": "Output2"
+            },
+            "id": "sc2",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "",
+                "order": 2,
                 "validator": null
             }
         }
@@ -193,7 +213,7 @@
             }
         }
     ],
-    "revision": 11,
+    "revision": 12,
     "shortDescription": "3'-end adapter trimmer",
     "tags": [
         "Beta"

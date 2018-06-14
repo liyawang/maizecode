@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "HOMER_findPeaks",
-    "lastModified": "2018-05-21T15:06:14.000-05:00",
+    "lastModified": "2018-06-14T14:02:35.000-05:00",
     "longDescription": "HOMER contains a program called findPeaks that performs all of the peak calling and transcript identification analysis",
     "modules": [],
     "name": "HOMER_findPeaks",
@@ -107,9 +107,9 @@
         {
             "details": {
                 "description": "",
-                "label": "homerPeaksOut (-o)"
+                "label": "homerPeaksOut1 (-o)"
             },
-            "id": "homerPeaks",
+            "id": "homerPeaks1",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -119,7 +119,27 @@
                 "ontology": []
             },
             "value": {
-                "default": "homerPeaks",
+                "default": "homerPeaks1",
+                "order": 0,
+                "validator": null
+            }
+        },
+        {
+            "details": {
+                "description": "",
+                "label": "homerPeaksOut2"
+            },
+            "id": "homerPeaks2",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "homerPeaks2",
                 "order": 0,
                 "validator": null
             }
@@ -281,7 +301,7 @@
             }
         }
     ],
-    "revision": 2,
+    "revision": 3,
     "shortDescription": "Finding Enriched Peaks, Regions, and Transcripts",
     "tags": [
         "Beta"

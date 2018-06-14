@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "Sickle",
-    "lastModified": "2018-04-26T13:43:19.000-05:00",
+    "lastModified": "2018-06-14T14:00:50.000-05:00",
     "longDescription": "Sickle is a tool that uses sliding windows along with quality and length thresholds to trim FASTQ files",
     "modules": [],
     "name": "Sickle",
@@ -106,10 +106,10 @@
     "outputs": [
         {
             "details": {
-                "description": "Sickle trimmed FASTQ output",
-                "label": "Output"
+                "description": "Sickle trimmed FASTQ output1",
+                "label": "Output1"
             },
-            "id": "ss",
+            "id": "ss1",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -121,6 +121,26 @@
             "value": {
                 "default": "",
                 "order": 1,
+                "validator": null
+            }
+        },
+        {
+            "details": {
+                "description": "Sickle trimmed FASTQ output2",
+                "label": "Output2"
+            },
+            "id": "ss2",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "",
+                "order": 2,
                 "validator": null
             }
         }
@@ -217,7 +237,7 @@
             }
         }
     ],
-    "revision": 14,
+    "revision": 15,
     "shortDescription": "A windowed adaptive trimming tool",
     "tags": [
         "Beta"

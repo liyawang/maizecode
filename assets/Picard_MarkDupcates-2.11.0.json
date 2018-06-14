@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "Picard_MarkDup",
-    "lastModified": "2018-05-14T11:08:09.000-05:00",
+    "lastModified": "2018-06-14T13:55:04.000-05:00",
     "longDescription": "This tool locates and tags duplicate reads in a BAM or SAM file, where duplicate reads are defined as originating from a single fragment of DNA. Duplicates can arise during sample preparation e.g. library construction using PCR.",
     "modules": [],
     "name": "Picard_MarkDupcates",
@@ -79,9 +79,29 @@
         {
             "details": {
                 "description": "",
-                "label": "Output (OUTPUT)"
+                "label": "Output1 (OUTPUT1)"
             },
-            "id": "picard",
+            "id": "picard1",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "",
+                "order": 0,
+                "validator": null
+            }
+        },
+        {
+            "details": {
+                "description": "",
+                "label": "Output2 (OUTPUT2)"
+            },
+            "id": "picard2",
             "semantics": {
                 "fileTypes": [
                     "raw-0"
@@ -163,7 +183,7 @@
             }
         }
     ],
-    "revision": 7,
+    "revision": 8,
     "shortDescription": "Identifies duplicate reads",
     "tags": [
         "Beta"
