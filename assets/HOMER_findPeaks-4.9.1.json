@@ -96,7 +96,7 @@
     ],
     "isPublic": false,
     "label": "HOMER_findPeaks",
-    "lastModified": "2018-07-05T10:24:44.000-05:00",
+    "lastModified": "2018-07-05T13:55:20.000-05:00",
     "longDescription": "HOMER contains a program called findPeaks that performs all of the peak calling and transcript identification analysis",
     "modules": [],
     "name": "HOMER_findPeaks",
@@ -104,26 +104,6 @@
         "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
     ],
     "outputs": [
-        {
-            "details": {
-                "description": "",
-                "label": "homerPeaksOut1 (-o)"
-            },
-            "id": "homerPeaks1",
-            "semantics": {
-                "fileTypes": [
-                    "raw-0"
-                ],
-                "maxCardinality": 1,
-                "minCardinality": 1,
-                "ontology": []
-            },
-            "value": {
-                "default": "homerPeaks1",
-                "order": 0,
-                "validator": null
-            }
-        },
         {
             "details": {
                 "description": "",
@@ -140,6 +120,26 @@
             },
             "value": {
                 "default": "homerPeaks2",
+                "order": 0,
+                "validator": null
+            }
+        },
+        {
+            "details": {
+                "description": "",
+                "label": "homerPeaksOut1 (-o)"
+            },
+            "id": "homerPeaks1",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "homerPeaks1",
                 "order": 0,
                 "validator": null
             }
@@ -165,9 +165,12 @@
                 ]
             },
             "value": {
-                "default": null,
+                "default": "",
                 "enquote": false,
                 "enum_values": [
+                    {
+                        "": "default"
+                    },
                     {
                         "factor": "factor"
                     },
@@ -301,7 +304,7 @@
             }
         }
     ],
-    "revision": 4,
+    "revision": 5,
     "shortDescription": "Finding Enriched Peaks, Regions, and Transcripts",
     "tags": [
         "Beta"
