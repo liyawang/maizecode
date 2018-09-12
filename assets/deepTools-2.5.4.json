@@ -66,7 +66,7 @@
     ],
     "isPublic": false,
     "label": "deepTools",
-    "lastModified": "2018-09-12T09:32:37.000-05:00",
+    "lastModified": "2018-09-12T10:46:52.000-05:00",
     "longDescription": "deepTools contains useful modules to process the mapped reads data for multiple quality checks and creating normalized coverage files.   treatment and control). Using such normalized and standardized files, it can create many publication-ready visualizations to identify enrichments and for functional annotations of the genome.",
     "modules": [],
     "name": "deepTools",
@@ -214,19 +214,19 @@
                         "": "running multiBamSummary to plot correlaiton, default"
                     },
                     {
-                        "None": "no normalization is performed for bamCoverage"
+                        "None": "NONE (no normalization is performed for bamCoverage)"
                     },
                     {
-                        "RPKM": "Reads Per Kilobase per Million mapped reads"
+                        "RPKM": "RPKM (Reads Per Kilobase per Million mapped reads)"
                     },
                     {
-                        "CPM": "Counts Per Million mapped reads"
+                        "CPM": "CPM (Counts Per Million mapped reads)"
                     },
                     {
-                        "BPM": "Bins Per Million mapped reads"
+                        "BPM": "BPM (Bins Per Million mapped reads) "
                     },
                     {
-                        "RPGC": "reads per genomic content (1x normalization)"
+                        "RPGC": "RPGC (reads per genomic content, 1x normalization)"
                     }
                 ],
                 "order": 3,
@@ -350,7 +350,7 @@
             "details": {
                 "argument": null,
                 "description": "",
-                "label": "Heatmap or Pairwise Scatter Plots for plotCorrelation (--whatToPlot or -p)",
+                "label": "Plot Type for plotCorrelation (--whatToPlot or -p)",
                 "repeatArgument": false,
                 "showArgument": false
             },
@@ -588,7 +588,7 @@
             }
         }
     ],
-    "revision": 1,
+    "revision": 2,
     "shortDescription": "A suite of user-friendly tools for visualization, quality control and normalization of sequencing data.",
     "tags": [
         "Beta"
