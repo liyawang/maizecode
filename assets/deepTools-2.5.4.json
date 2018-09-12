@@ -1,0 +1,600 @@
+{
+    "_links": {
+        "executionSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
+        },
+        "history": {
+            "href": "https://agave.iplantc.org/apps/v2/deepTools-2.5.4/history"
+        },
+        "metadata": {
+            "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%225645999283672444440-242ac11f-0001-005%22%7D"
+        },
+        "owner": {
+            "href": "https://agave.iplantc.org/profiles/v2/xiaofei_iplant"
+        },
+        "permissions": {
+            "href": "https://agave.iplantc.org/apps/v2/deepTools-2.5.4/pems"
+        },
+        "self": {
+            "href": "https://agave.iplantc.org/apps/v2/deepTools-2.5.4"
+        },
+        "storageSystem": {
+            "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
+        }
+    },
+    "available": true,
+    "checkpointable": true,
+    "defaultMaxRunTime": "35:56:00",
+    "defaultMemoryPerNode": 32,
+    "defaultNodeCount": 1,
+    "defaultProcessorsPerNode": 1,
+    "defaultQueue": "debug2",
+    "deploymentPath": "xiaofei_iplant/application/deepTools_2.5.4",
+    "deploymentSystem": "data.iplantcollaborative.org",
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "helpURI": "https://deeptools.readthedocs.io/en/develop/content/list_of_tools.html",
+    "icon": null,
+    "id": "deepTools-2.5.4",
+    "inputs": [
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Input BAM file",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "bamFiles",
+            "semantics": {
+                "fileTypes": [],
+                "maxCardinality": 10,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": [
+                    ""
+                ],
+                "enquote": false,
+                "order": 1,
+                "required": true,
+                "validator": null,
+                "visible": true
+            }
+        }
+    ],
+    "isPublic": false,
+    "label": "deepTools",
+    "lastModified": "2018-09-12T09:32:37.000-05:00",
+    "longDescription": "deepTools contains useful modules to process the mapped reads data for multiple quality checks and creating normalized coverage files.   treatment and control). Using such normalized and standardized files, it can create many publication-ready visualizations to identify enrichments and for functional annotations of the genome.",
+    "modules": [],
+    "name": "deepTools",
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "outputs": [
+        {
+            "details": {
+                "description": null,
+                "label": "readCountOut"
+            },
+            "id": "readCount",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 10,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "",
+                "order": 1,
+                "validator": null
+            }
+        },
+        {
+            "details": {
+                "description": null,
+                "label": "plotCorOut"
+            },
+            "id": "plotCor",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 10,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "",
+                "order": 2,
+                "validator": null
+            }
+        },
+        {
+            "details": {
+                "description": null,
+                "label": "plotFingerPrintOut"
+            },
+            "id": "plotFingerPrint",
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": 10,
+                "minCardinality": 1,
+                "ontology": []
+            },
+            "value": {
+                "default": "",
+                "order": 3,
+                "validator": null
+            }
+        }
+    ],
+    "owner": "xiaofei_iplant",
+    "parallelism": "PARALLEL",
+    "parameters": [
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "User Defined Labels (--labels or -l)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "labels",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 1,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Smart Labels (--smartLabels)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "smartLabels",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 2,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Normalization Method for bamCoverage (--normalizeUsing)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "normMe",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "": "running multiBamSummary to plot correlaiton, default"
+                    },
+                    {
+                        "None": "no normalization is performed for bamCoverage"
+                    },
+                    {
+                        "RPKM": "Reads Per Kilobase per Million mapped reads"
+                    },
+                    {
+                        "CPM": "Counts Per Million mapped reads"
+                    },
+                    {
+                        "BPM": "Bins Per Million mapped reads"
+                    },
+                    {
+                        "RPGC": "reads per genomic content (1x normalization)"
+                    }
+                ],
+                "order": 3,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Bin Size in Bases for bamCoverage (--binSize or -bs)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "binSize1",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 50,
+                "enquote": false,
+                "order": 4,
+                "required": false,
+                "type": "number",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Effective Genome Size for bamCoverage (--effectiveGenomeSize)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "effectiveGenSize",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 5,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Bin Size in Bases for multiBigwigSummary or multiBamSummary (--binSize or -bs)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "binSize2",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 10000,
+                "enquote": false,
+                "order": 6,
+                "required": false,
+                "type": "number",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Correlation Method for plotCorrelation (--corMethod or -c)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "corMethod",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "pearson",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "pearson": "Pearson"
+                    },
+                    {
+                        "spearman": "Spearman"
+                    }
+                ],
+                "order": 7,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Heatmap or Pairwise Scatter Plots for plotCorrelation (--whatToPlot or -p)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "whatToPlot",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "heatmap",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "heatmap": "Heatmap"
+                    },
+                    {
+                        "scatterplot": "Scatterplot"
+                    }
+                ],
+                "order": 8,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Plot Correlation on Heatmap for plotCorrelation (--plotNumbers)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "plotNumbers",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 9,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Plot Title for plotCorrelation (--plotTitle or -T)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "plotTitle",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 10,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Remove Bins with Large Counts for plotCorrelation (--removeOutliers)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "removeOutliers",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 11,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Minimum Mapping Quality for plotFingerprint (--minMappingQuality)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "minMappingQuality",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 30,
+                "enquote": false,
+                "order": 12,
+                "required": false,
+                "type": "number",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Ignore Duplicates for plotFingerprint (--ignoreDuplicates)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "ignoreDuplicates",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 13,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Bin Size in Bases for plotFingerprint (--binSize or -bs)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "binSize3",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:integer"
+                ]
+            },
+            "value": {
+                "default": 10000,
+                "enquote": false,
+                "order": 14,
+                "required": false,
+                "type": "number",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Plot Title for plotFingerprint (--plotTitle or -T)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "plotTitleFinger",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "",
+                "enquote": false,
+                "order": 15,
+                "required": false,
+                "type": "string",
+                "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Ignore Regions with 0 Reads for all BAMs for plotCorrelation and plotFingerprint (--skipZeros)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "skipZeros",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:boolean"
+                ]
+            },
+            "value": {
+                "default": false,
+                "enquote": false,
+                "order": 16,
+                "required": false,
+                "type": "bool",
+                "validator": null,
+                "visible": true
+            }
+        }
+    ],
+    "revision": 1,
+    "shortDescription": "A suite of user-friendly tools for visualization, quality control and normalization of sequencing data.",
+    "tags": [
+        "Beta"
+    ],
+    "templatePath": "deeptools_readCount_plotCor_plotFinger_wrapper.sh",
+    "testPath": "deeptools_readCount_plotCor_plotFinger_test.sh",
+    "uuid": "5645999283672444440-242ac11f-0001-005",
+    "version": "2.5.4"
+}
