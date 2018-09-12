@@ -66,7 +66,7 @@
     ],
     "isPublic": false,
     "label": "deepTools",
-    "lastModified": "2018-09-12T10:46:52.000-05:00",
+    "lastModified": "2018-09-12T12:24:59.000-05:00",
     "longDescription": "deepTools contains useful modules to process the mapped reads data for multiple quality checks and creating normalized coverage files.   treatment and control). Using such normalized and standardized files, it can create many publication-ready visualizations to identify enrichments and for functional annotations of the genome.",
     "modules": [],
     "name": "deepTools",
@@ -435,6 +435,45 @@
             "details": {
                 "argument": null,
                 "description": "",
+                "label": "Plot Format for plotCorrelation (--plotFileFormat)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "plotFileFormat0",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "png",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "png": "png"
+                    },
+                    {
+                        "eps": "eps"
+                    },
+                    {
+                        "pdf": "pdf"
+                    },
+                    {
+                        "svg": "svg"
+                    }
+                ],
+                "order": 11,
+                "required": false,
+                "type": "enumeration",
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
                 "label": "Remove Bins with Large Counts for plotCorrelation (--removeOutliers)",
                 "repeatArgument": false,
                 "showArgument": false
@@ -450,7 +489,7 @@
             "value": {
                 "default": false,
                 "enquote": false,
-                "order": 11,
+                "order": 12,
                 "required": false,
                 "type": "bool",
                 "validator": null,
@@ -476,7 +515,7 @@
             "value": {
                 "default": 30,
                 "enquote": false,
-                "order": 12,
+                "order": 13,
                 "required": false,
                 "type": "number",
                 "validator": null,
@@ -502,7 +541,7 @@
             "value": {
                 "default": false,
                 "enquote": false,
-                "order": 13,
+                "order": 14,
                 "required": false,
                 "type": "bool",
                 "validator": null,
@@ -528,7 +567,7 @@
             "value": {
                 "default": 10000,
                 "enquote": false,
-                "order": 14,
+                "order": 15,
                 "required": false,
                 "type": "number",
                 "validator": null,
@@ -554,10 +593,52 @@
             "value": {
                 "default": "",
                 "enquote": false,
-                "order": 15,
+                "order": 16,
                 "required": false,
                 "type": "string",
                 "validator": null,
+                "visible": true
+            }
+        },
+        {
+            "details": {
+                "argument": null,
+                "description": "",
+                "label": "Plot Format for plotFingerprint (--plotFileFormat)",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "id": "plotFileFormat",
+            "semantics": {
+                "maxCardinality": 1,
+                "minCardinality": 0,
+                "ontology": [
+                    "xs:string"
+                ]
+            },
+            "value": {
+                "default": "png",
+                "enquote": false,
+                "enum_values": [
+                    {
+                        "png": "png"
+                    },
+                    {
+                        "eps": "eps"
+                    },
+                    {
+                        "pdf": "pdf"
+                    },
+                    {
+                        "svg": "svg"
+                    },
+                    {
+                        "plotly": "plotly"
+                    }
+                ],
+                "order": 17,
+                "required": false,
+                "type": "enumeration",
                 "visible": true
             }
         },
@@ -580,7 +661,7 @@
             "value": {
                 "default": false,
                 "enquote": false,
-                "order": 16,
+                "order": 18,
                 "required": false,
                 "type": "bool",
                 "validator": null,
@@ -588,7 +669,7 @@
             }
         }
     ],
-    "revision": 2,
+    "revision": 3,
     "shortDescription": "A suite of user-friendly tools for visualization, quality control and normalization of sequencing data.",
     "tags": [
         "Beta"
