@@ -68,7 +68,7 @@
     ],
     "isPublic": false,
     "label": "FastQC",
-    "lastModified": "2018-09-19T14:47:15.000-05:00",
+    "lastModified": "2018-09-19T15:08:24.000-05:00",
     "longDescription": "A quality control tool for high throughput sequence data",
     "modules": [],
     "name": "FastQC",
@@ -79,7 +79,7 @@
         {
             "details": {
                 "description": "",
-                "label": "ZipOut"
+                "label": "Output2 (OUTPUT2)"
             },
             "id": "fastqcZip",
             "semantics": {
@@ -99,7 +99,7 @@
         {
             "details": {
                 "description": "",
-                "label": "Output"
+                "label": "Output1 (OUTPUT1)"
             },
             "id": "fastqcOut",
             "semantics": {
@@ -111,7 +111,7 @@
                 "ontology": []
             },
             "value": {
-                "default": "fastqcOut",
+                "default": "",
                 "order": 0,
                 "validator": null
             }
@@ -147,7 +147,7 @@
             }
         }
     ],
-    "revision": 14,
+    "revision": 15,
     "shortDescription": "Quality control",
     "tags": [
         "Beta"
