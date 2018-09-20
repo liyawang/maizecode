@@ -11,7 +11,7 @@ Execute an image like "**singularity exec -B /scratch:/scratch /scratch/tacc/ima
 * bowtie2_2.3.2--py36pl5.22.0_1.img                          
 * cufflinks_2.2.1--py36_1.img                          
 * cutadapt_1.14--py36_0.img       
-* deeptools_2.5.4--py35_0.img
+* deeptools_3.1.2-2018-09-13-949882d538f5.img
 * fastqc-2016-08-01-1fa01d83b22a.img fastqc_0.11.5--cshl.img
 * fastx_toolkit_0.0.14--2.img
 * freebayes_1.1.0--py36_1.img                                
