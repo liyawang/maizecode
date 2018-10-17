@@ -9,7 +9,7 @@ To speed up staging input data from CyVerse Data Store to TACC clusters, we stag
 
 Created indexes
 -----------------------
-Indexes are organized similar with [CyVerse indexes](http://datacommons.cyverse.org/browse/iplant/home/shared/iplantcollaborative/genomeservices/builds/1.0.0/24_77/Arabidopsis.TAIR10/de_support). Following apps are executed to create various indexes:
+Indexes are organized similarly with [CyVerse indexes](http://datacommons.cyverse.org/browse/iplant/home/shared/iplantcollaborative/genomeservices/builds/1.0.0/24_77/Arabidopsis.TAIR10/de_support). Following apps are executed to create various indexes:
 * picard-tools-1.141 (NormalizeFasta, CreateSequenceDictionary)
 * bwa (index)
 * samtools (faidx)
