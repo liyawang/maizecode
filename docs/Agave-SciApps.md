@@ -23,6 +23,7 @@ Optimizing modular Agave apps for SciApps
   * This will ensure that the same workflow can be easily pointed to XSEDE/Stampede2 or other cloud for execution
   * When running on a different cloud, we will add the image to the bin folder, gzip it, and pass it with the wrapper script
   * Contact support@SciApps.org if you need new images installed
+* Try to use [pre-staged genome indexes](Genome-Services.md) instead of creating your own
 * Modify wrapper script to optimize data transfer
   * Try to compress all inputs, intermediate outputs, and results if possible
   * Try to delete inputs, temporary files, wrapper scripts, libraries, etc at the end of the wrapper script (especially when job crashes)
