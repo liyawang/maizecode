@@ -7,6 +7,15 @@ To speed up staging input data from CyVerse Data Store to TACC clusters, we stag
 * Homo sapiens (GRCh38)
 * Mus musculus (GRCm38)
 
+Following apps are executed to create various indexes
+-----------------------
+* picard-tools-1.141 (NormalizeFasta, CreateSequenceDictionary)
+* bwa (index)
+* samtools (faidx)
+* star_2.5.3a (--runMode genomeGenerate)
+* bismark (bismark_genome_preparation)
+* bowtie_1.2.1.1 (bowtie-build)
+* bowtie2_2.3.2 (bowtie2-build)
 
 Using Genome Services for building Agave apps
 -----------------------
