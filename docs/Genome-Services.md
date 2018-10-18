@@ -80,4 +80,7 @@ Using Genome Services for building Agave apps
         "executionSystem": "stampede2-01102018-1518-lwang",
         "defaultMaxRunTime": "7:59:50",
         "defaultQueue": "normal",
+        "modules": [
+                "load tacc-singularity"
+        ],
   ```
