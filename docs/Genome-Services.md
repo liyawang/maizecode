@@ -74,3 +74,10 @@ Using Genome Services for building Agave apps
         ref=/work/01308/lwang/genomes/${genomeIndex}
         ref_fasta=${ref}/genome.fa
   ```
+ 
+  3. Use following Stampede2 system for app development
+  ```sh
+        "executionSystem": "stampede2-01102018-1518-lwang",
+        "defaultMaxRunTime": "7:59:50",
+        "defaultQueue": "normal",
+  ```
