@@ -11,10 +11,10 @@ Created indexes
 -----------------------
 Indexes are organized similarly with [CyVerse indexes](http://datacommons.cyverse.org/browse/iplant/home/shared/iplantcollaborative/genomeservices/builds/1.0.0/24_77/Arabidopsis.TAIR10/de_support). Following apps are executed to create various indexes:
 * picard-tools-1.141 (NormalizeFasta, CreateSequenceDictionary)
-* bwa (index)
-* samtools (faidx)
+* bwa-0.7.12 (index)
+* samtools-1.2 (faidx)
 * star_2.5.3a (--runMode genomeGenerate)
-* bismark (bismark_genome_preparation)
+* bismark_0.14.4 (bismark_genome_preparation)
 * bowtie_1.2.1.1 (bowtie-build)
 * bowtie2_2.3.2 (bowtie2-build)
 
