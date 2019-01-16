@@ -1,0 +1,161 @@
+{
+  "id": "RSEM_de-1.3.0",
+  "name": "RSEM_de",
+  "icon": null,
+  "uuid": "3672616841507827225-242ac117-0001-005",
+  "parallelism": "SERIAL",
+  "defaultProcessorsPerNode": 1,
+  "defaultMemoryPerNode": 24,
+  "defaultNodeCount": 1,
+  "defaultMaxRunTime": "08:00:00",
+  "defaultQueue": "debug",
+  "version": "1.3.0",
+  "revision": 8,
+  "isPublic": false,
+  "helpURI": "https://github.com/bli25ucb/RSEM_tutorial",
+  "label": "Differential expression analysis with RSEM and Ebseq",
+  "owner": "lwang",
+  "shortDescription": "Differential expression analysis with RSEM and Ebseq",
+  "longDescription": "Differential expression analysis with RSEM and Ebseq",
+  "tags": [
+    "Differential expression"
+  ],
+  "ontology": [
+    "Differential expression"
+  ],
+  "executionType": "HPC",
+  "executionSystem": "sciapps.org",
+  "deploymentPath": "lwang/apps/rnaseq/rsem/de",
+  "deploymentSystem": "data.iplantcollaborative.org",
+  "templatePath": "rsem-de.sh",
+  "testPath": "rsem-de-test.sh",
+  "checkpointable": false,
+  "lastModified": "2018-04-23T08:37:56.000-05:00",
+  "modules": [],
+  "available": true,
+  "inputs": [
+    {
+      "id": "sample1",
+      "value": {
+        "validator": null,
+        "visible": true,
+        "required": true,
+        "order": 1,
+        "enquote": false,
+        "default": [
+          ""
+        ]
+      },
+      "details": {
+        "label": "Specify replicates of Sample 1",
+        "description": null,
+        "argument": null,
+        "showArgument": false,
+        "repeatArgument": false
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 10,
+        "ontology": [],
+        "fileTypes": []
+      }
+    },
+    {
+      "id": "sample2",
+      "value": {
+        "validator": null,
+        "visible": true,
+        "required": true,
+        "order": 4,
+        "enquote": false,
+        "default": [
+          ""
+        ]
+      },
+      "details": {
+        "label": "Specify replicates of Sample 2",
+        "description": null,
+        "argument": null,
+        "showArgument": false,
+        "repeatArgument": false
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 10,
+        "ontology": [],
+        "fileTypes": []
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "id": "FDR",
+      "value": {
+        "visible": true,
+        "required": true,
+        "type": "number",
+        "order": 2,
+        "enquote": false,
+        "default": 0.05,
+        "validator": null
+      },
+      "details": {
+        "label": "False discovery rate",
+        "description": null,
+        "argument": null,
+        "showArgument": false,
+        "repeatArgument": false
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [
+          "xs:float"
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "id": "deg",
+      "value": {
+        "validator": null,
+        "order": 1,
+        "default": "GeneMat.de.txt"
+      },
+      "details": {
+        "label": "Differentially expressed genes",
+        "description": null
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "maxCardinality": 1,
+        "ontology": [],
+        "fileTypes": []
+      }
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "https://agave.iplantc.org/apps/v2/RSEM_de-1.3.0"
+    },
+    "executionSystem": {
+      "href": "https://agave.iplantc.org/systems/v2/sciapps.org"
+    },
+    "storageSystem": {
+      "href": "https://agave.iplantc.org/systems/v2/data.iplantcollaborative.org"
+    },
+    "history": {
+      "href": "https://agave.iplantc.org/apps/v2/RSEM_de-1.3.0/history"
+    },
+    "metadata": {
+      "href": "https://agave.iplantc.org/meta/v2/data/?q=%7B%22associationIds%22%3A%223672616841507827225-242ac117-0001-005%22%7D"
+    },
+    "owner": {
+      "href": "https://agave.iplantc.org/profiles/v2/lwang"
+    },
+    "permissions": {
+      "href": "https://agave.iplantc.org/apps/v2/RSEM_de-1.3.0/pems"
+    }
+  }
+}
