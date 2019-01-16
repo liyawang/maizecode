@@ -1,7 +1,7 @@
 {
     "name": "HOMER_annoPeaks",
     "parallelism": "PARALLEL",
-    "version": "2015.11.10",
+    "version": "4.9.1",
     "helpURI": "http://homer.salk.edu",
     "label": "HOMER_annoPeaks",
     "shortDescription": "Performing peak annotation",
@@ -38,7 +38,7 @@
             },
             "details": {
                 "label": "ChIP-seq Peak File",
-                "description": "Peak files (in HOMER peak or BED format)"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -62,7 +62,7 @@
             },
             "details": {
                 "label": "Reference Fasta",
-                "description": "Using Custom Genomes"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -86,7 +86,7 @@
             },
             "details": {
                 "label": "Genome Anno File (-gtf/-gff/-gff3)",
-                "description": "Using Custom Annotations"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -111,8 +111,8 @@
                 "order": 1
             },
             "details": {
-                "label": "Genome Version (e.g. hg18)",
-                "description": "Pre-configured genome",
+                "label": "Genome Version (Pre-configured genome, e.g. hg18)",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -125,7 +125,7 @@
 
     "outputs": [
         {
-            "id": "homerAnnoOut",
+            "id": "homerPeaksAnno",
             "details": {
                 "label": "homerAnnoOut",
                 "description": "Peaks annotation output"
@@ -139,7 +139,7 @@
                 ]
             },
             "value": {
-                "default": "homerAnnoOut",
+                "default": "",
                 "required": true,
                 "type": "string",
                 "visible": true
@@ -148,3 +148,4 @@
 
     ]
 }
+

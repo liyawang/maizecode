@@ -20,26 +20,30 @@ quality="${quality}"
 
 runthis=''
 
-read1Out=$read1
+# read1Out=$read1
+output_id1="sc1"
+output_id2="sc2"
+
 
 
 data_ext="${read1##*.}"
 if [ ${data_ext} = "gz" ]; then 
 	# gunzip $read1
-	read1Out=${read1%.*}
+	read1Out=${output_id1}_${read1%.*}
 else
-	read1Out=$read1
+	read1Out={output_id1}_$read1
 fi # can't use ${read1} for $read1, as long as rename a variable
 
 if [ -n "$read2" ]; then
-	read2Out=$read2
+	# read2Out=$read2
 	data_ext="${read2##*.}"
 	if [ ${data_ext} = "gz" ]; then 
 		# gunzip $read2
 		read2Out=${read2%.*}
+		read2Out=${output_id2}_${read2%.*}
 	else
 		read2Out=$read2
-		
+		read2Out={output_id2}_$read2
 	fi
 fi
 
@@ -62,14 +66,14 @@ if [ -n "${quality}" ]; then runthis="$runthis -q ${quality}"; fi
 singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img scythe --version
 
 
-# scythe $runthis -o "sc_"$read1Out $read1
-echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img scythe $runthis -o "sc_"$read1Out $read1"
-singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img scythe $runthis -o "sc_"$read1Out $read1
+# scythe $runthis -o $read1Out $read1
+echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img scythe $runthis -o $read1Out $read1"
+singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img scythe $runthis -o $read1Out $read1
 
 if [ -n "$read2" ]; then	
-	# scythe $runthis -o "sc_"$read2Out $read2
-	echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img scythe $runthis -o "sc_"$read2Out $read2"
-	singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img scythe $runthis -o "sc_"$read2Out $read2
+	# scythe $runthis -o $read2Out $read2
+	echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img scythe $runthis -o $read2Out $read2"
+	singularity exec -B /scratch:/scratch /scratch/tacc/images/scythe-2017-09-18-c7268f0a8cd0.img scythe $runthis -o $read2Out $read2
 
 fi
 
@@ -89,19 +93,21 @@ fi
 
 
 
-gzip sc_*
+gzip sc1_*
+gzip sc2_*
+
+#gzip sc*
+
+# mkdir scytheOutR1
+
+# mv "sc_"$read1Out.gz scytheOutR1
 
 
-mkdir scytheOutR1
+# mkdir scytheOutR2
 
-mv "sc_"$read1Out.gz scytheOutR1
-
-
-mkdir scytheOutR2
-
-if [ -n "$read2" ]; then
-    mv "sc_"$read2Out.gz scytheOutR2
-fi
+# if [ -n "$read2" ]; then
+#     mv "sc_"$read2Out.gz scytheOutR2
+# fi
 
 
 
@@ -123,8 +129,13 @@ fi
 
 
 
-ls | grep -v scytheOut | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf
-trap "ls | grep -v scytheOut | grep -v "\.err" | grep -v "\.out"  | grep -v ipcexe | xargs rm -rf" exit
+ls | grep -v "sc1_" | grep -v "sc2_" | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf
+trap "ls | grep -v "sc1_" | grep -v "sc2_" | grep -v "\.err" | grep -v "\.out"  | grep -v ipcexe | xargs rm -rf" exit
+
+#ls | grep -v "sc" | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf
+#trap "ls | grep -v "sc" | grep -v "\.err" | grep -v "\.out"  | grep -v ipcexe | xargs rm -rf" exit
+
+
 
 
 

@@ -1,7 +1,7 @@
 {
     "name": "HOMER_findPeaks",
     "parallelism": "PARALLEL",
-    "version": "2015.11.10",
+    "version": "4.9.1",
     "helpURI": "http://homer.salk.edu",
     "label": "HOMER_findPeaks",
     "shortDescription": "Finding Enriched Peaks, Regions, and Transcripts",
@@ -38,7 +38,7 @@
             },
             "details": {
                 "label": "ChIP-seq Tag Directory",
-                "description": "HOMER tag directory of ChIP-seq against protein of interest"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -62,7 +62,7 @@
             },
             "details": {
                 "label": "Input Tag Directory (-i)",
-                "description": "Directory of Control (INPUT, IgG, MOCK, etc.)"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -81,7 +81,6 @@
                     {
             "id": "style",
             "value": {
-                "default": "factor",
                 "type": "enumeration",
                 "enum_values": [
                     { "factor": "factor"},
@@ -98,7 +97,7 @@
             },
             "details": {
                 "label": "STYLE (-style)",
-                "description": "Specialized options for specific analysis strategies",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -111,19 +110,20 @@
                     {
             "id": "size",
             "value": {
-                "type": "number",
+                "default": "auto",
+                "type": "string",
                 "required": false,
                 "visible": true,
                 "order": 2
             },
             "details": {
                 "label": "Peak Size (-size)",
-                "description": "Specifies the width of peaks",
+                "description": "Default: auto",
                 "visible": true
             },
             "semantics": {
                 "ontology": [
-                    "xs:interger"
+                    "xs:string"
                 ]
             }
         },
@@ -131,19 +131,19 @@
                             {
             "id": "minDist",
             "value": {
-                "type": "number",
+                "type": "string",
                 "required": false,
                 "visible": true,
                 "order": 3
             },
             "details": {
                 "label": "Minimum Distance (-minDist)",
-                "description": "Minimum distance between peaks",
+                "description": "Default: peak size x2",
                 "visible": true
             },
             "semantics": {
                 "ontology": [
-                    "xs:interger"
+                    "xs:string"
                 ]
             }
         },
@@ -151,19 +151,20 @@
         {
             "id": "gsize",
             "value": {
-                "type": "number",
+                "default": "2e9",
+                "type": "string",
                 "required": false,
                 "visible": true,
                 "order": 4
             },
             "details": {
                 "label": "Genome Size (-gsize)",
-                "description": "Effective mappable genome size",
+                "description": "",
                 "visible": true
             },
             "semantics": {
                 "ontology": [
-                    "xs:interger"
+                    "xs:string"
                 ]
             }
         },
@@ -193,10 +194,10 @@
 
     "outputs": [
         {
-            "id": "homerPeaksOut",
+            "id": "homerPeaks1",
             "details": {
-                "label": "homerPeaksOut (-o)",
-                "description": "homer peaks output"
+                "label": "homerPeaksOut1 (-o)",
+                "description": ""
             },
             "semantics": {
                 "ontology": [],
@@ -207,7 +208,29 @@
                 ]
             },
             "value": {
-                "default": "homerPeaksOut",
+                "default": "homerPeaks1",
+                "required": true,
+                "type": "string",
+                "visible": true
+            }
+        },
+
+        {
+            "id": "homerPeaks2",
+            "details": {
+                "label": "homerPeaksOut2",
+                "description": ""
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "homerPeaks2",
                 "required": true,
                 "type": "string",
                 "visible": true
@@ -216,3 +239,4 @@
 
     ]
 }
+

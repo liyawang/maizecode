@@ -7,26 +7,28 @@ read2="${read2}"
 echo $read1
 echo $read2
 
+output_id1="bwa_mem"
+
 # echo $read1
 # echo $read2
 ## PRE-PROCESSING INPUTS, move out read fastq files if inputs are folders.
 
-if [ -d "$read1" -a $(ls $read1 | wc -l) == 1 ]; then
-	inp_name=$(ls $read1)
-	mv $read1/$inp_name .
-	# rm -rf $read1
-	read1=${inp_name}
-fi
+# if [ -d "$read1" -a $(ls $read1 | wc -l) == 1 ]; then
+# 	inp_name=$(ls $read1)
+# 	mv $read1/$inp_name .
+# 	# rm -rf $read1
+# 	read1=${inp_name}
+# fi
 
-# if [ -d "$read2" -a $(ls $read2 | wc -l) == 1 ]; then
-if [ -d "$read2" ]; then
-    inp_name=$(ls $read2)
-    if [ $(ls $read2 | wc -l) != 0 ]; then
-    	mv $read2/$inp_name .
-    fi
-	# rm -rf $read2
-	read2=${inp_name}
-fi
+# # if [ -d "$read2" -a $(ls $read2 | wc -l) == 1 ]; then
+# if [ -d "$read2" ]; then
+#     inp_name=$(ls $read2)
+#     if [ $(ls $read2 | wc -l) != 0 ]; then
+#     	mv $read2/$inp_name .
+#     fi
+# 	# rm -rf $read2
+# 	read2=${inp_name}
+# fi
 
 # if [ -d "$read1" ]; then
 #     folderItems=$(ls $read1 | grep -v single)
@@ -45,8 +47,8 @@ fi
 #     read2=${inp_name}
 # fi
 
-echo $read1
-echo $read2
+# echo $read1
+# echo $read2
 
 # gunzip input files if needed
 data_ext="${read1##*.}"
@@ -61,7 +63,15 @@ if [ -n "$read2" ]; then
 fi
 # echo $read1
 
-smpId=${read1%.*}
+# smpId=${read1%.*}
+
+if [[ "$read1" =~ ss1_sc1_* ]]; then
+	smpId=${read1#ss1_sc1_}
+	smpId=${smpId%.*}
+else
+	smpId=${read1%.*}
+fi
+
 
 if [[ "$smpId" =~ .*_R1* ||  "$smpId" =~ .*_r1* || "$smpId" =~ .*-R1* || "$smpId" =~ .*-r1* ]]; then
 	smpId=${smpId/_R1/}
@@ -74,36 +84,43 @@ fi
 # processing reference
 tarIdxRefBundle="${tarIdxRefBundle}"
 
-if [ -d ${tarIdxRefBundle} -a $(ls $tarIdxRefBundle | wc -l) == 1 ]; then
-	inp_name=$(ls ${tarIdxRefBundle})
-        mv ${tarIdxRefBundle}/${inp_name} .
-        # rm -rf ${tarIdxRefBundle}
-        tarIdxRefBundle=${inp_name}
-fi
+# if [ -d ${tarIdxRefBundle} -a $(ls $tarIdxRefBundle | wc -l) == 1 ]; then
+# 	inp_name=$(ls ${tarIdxRefBundle})
+#         mv ${tarIdxRefBundle}/${inp_name} .
+#         # rm -rf ${tarIdxRefBundle}
+#         tarIdxRefBundle=${inp_name}
+# fi
 
-# uncompress reference bundle
+# uncompress reference bundle old
 
-if [[ "$tarIdxRefBundle" =~ .*\.tar\.gz$ ]]; then 
+# if [[ "$tarIdxRefBundle" =~ .*\.tar\.gz$ ]]; then 
+# 	tar -xzvf $tarIdxRefBundle
+# 	IdxRefFolderNm=$(basename $tarIdxRefBundle .tar.gz)
+# 	idxbase="$(ls $IdxRefFolderNm/*.fa)"
+# 	# idxDic="$(ls $IdxRefFolderNm/*.dict)"
+# 	mv ${IdxRefFolderNm}/* ./
+# else
+# 	if [[ "$tarIdxRefBundle" =~ .*\.tgz$ ]]; then
+# 		tar -xzvf $tarIdxRefBundle
+# 		IdxRefFolderNm=$(basename $tarIdxRefBundle .tgz)
+# 		if [ -d "$IdxRefFolderNm" ]; then
+# 			idxbase="$(ls $IdxRefFolderNm/*.fa)"
+# 			# idxDic="$(ls $IdxRefFolderNm/*.dict)"
+# 			mv ${IdxRefFolderNm}/* ./
+# 		else
+# 			idxbase="$(ls ./*.fa)"
+# 			# idxDic="$(ls ./*.dict)"
+# 		fi
+
+# 	fi
+
+# fi
+
+# uncompress reference bundle new
+
+if [[ "$tarIdxRefBundle" =~ .*\.tar\.gz$ || "$tarIdxRefBundle" =~ .*\.tgz$ ]]; then 
 	tar -xzvf $tarIdxRefBundle
-	IdxRefFolderNm=$(basename $tarIdxRefBundle .tar.gz)
-	idxbase="$(ls $IdxRefFolderNm/*.fa)"
-	# idxDic="$(ls $IdxRefFolderNm/*.dict)"
-	mv ${IdxRefFolderNm}/* ./
-else
-	if [[ "$tarIdxRefBundle" =~ .*\.tgz$ ]]; then
-		tar -xzvf $tarIdxRefBundle
-		IdxRefFolderNm=$(basename $tarIdxRefBundle .tgz)
-		if [ -d "$IdxRefFolderNm" ]; then
-			idxbase="$(ls $IdxRefFolderNm/*.fa)"
-			# idxDic="$(ls $IdxRefFolderNm/*.dict)"
-			mv ${IdxRefFolderNm}/* ./
-		else
-			idxbase="$(ls ./*.fa)"
-			# idxDic="$(ls ./*.dict)"
-		fi
-
-	fi
-
+	idxbase="$(ls ./*.fa)"
 fi
 
 # echo $IdxRefFolderNm
@@ -164,42 +181,43 @@ fi
 
 
 if [ -n "$read2" ]; then
-singularity exec -B /scratch:/scratch /scratch/tacc/images/bwa_0.7.13--1.img bwa mem -t 8 "${idxbase}" $runthis "$read1" "$read2" > ${smpId}".sam"
-echo "bwa mem -t 8 "${idxbase}" $runthis "$read1" "$read2" > ${smpId}".sam""
+singularity exec -B /scratch:/scratch /scratch/tacc/images/bwa_0.7.13--1.img bwa mem -t 8 "${idxbase}" $runthis "$read1" "$read2" > ${output_id1}_${smpId}".sam"
+echo "bwa mem -t 8 "${idxbase}" $runthis "$read1" "$read2" > ${output_id1}_${smpId}".sam""
 else
-singularity exec -B /scratch:/scratch /scratch/tacc/images/bwa_0.7.13--1.img bwa mem -t 8 "${idxbase}" $runthis "$read1" > ${smpId}".sam"
-echo "bwa mem -t 8 "${idxbase}" $runthis "$read1" > ${smpId}".sam""
+singularity exec -B /scratch:/scratch /scratch/tacc/images/bwa_0.7.13--1.img bwa mem -t 8 "${idxbase}" $runthis "$read1" > ${output_id1}_${smpId}".sam"
+echo "bwa mem -t 8 "${idxbase}" $runthis "$read1" > ${output_id1}_${smpId}".sam""
 fi
 
 
 
 #################################
 
-if [ -n "${miniMapQual}" ]; then runthis2="$runthis2 -q $min_score"; fi
+if [ -n "${miniMapQual}" ]; then runthis2="$runthis2 -q ${miniMapQual}"; fi
 if [ -n "${requiredAlignment}" ]; then runthis2="$runthis2 -f ${requiredAlignment}"; fi
 
 
 
 if [ -n "${sort_type}" ]; then runthis3="$runthis3 -n"; fi
 
-echo "samtools view -bS $runthis2 -o ${smpId}".bam" ${smpId}".sam""
-singularity exec -B /scratch:/scratch /scratch/tacc/images/samtools_1.5--2.img samtools view -bS $runthis2 -o ${smpId}".bam" ${smpId}".sam"
+echo "samtools view -bS $runthis2 -o ${output_id1}_${smpId}".bam" ${output_id1}_${smpId}".sam""
+singularity exec -B /scratch:/scratch /scratch/tacc/images/samtools_1.5--2.img samtools view -bS $runthis2 -o ${output_id1}_${smpId}".bam" ${output_id1}_${smpId}".sam"
 
 # echo "samtools sort $runthis3 "bwa.bam" ${Output}"
 #samtools sort $runthis3 "bwa.bam" $"Output"
-singularity exec -B /scratch:/scratch /scratch/tacc/images/samtools_1.5--2.img samtools sort $runthis3 -o ${smpId}".sorted.bam" -T ${smpId}".sorted" ${smpId}".bam"
+singularity exec -B /scratch:/scratch /scratch/tacc/images/samtools_1.5--2.img samtools sort $runthis3 -o ${output_id1}_${smpId}".sorted.bam" -T ${output_id1}_${smpId}".sorted" ${output_id1}_${smpId}".bam"
 
-echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/samtools_1.5--2.img samtools sort $runthis3 -o ${smpId}".sorted.bam" -T ${smpId}".sorted" ${smpId}".bam""
+echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/samtools_1.5--2.img samtools sort $runthis3 -o ${output_id1}_${smpId}".sorted.bam" -T ${output_id1}_${smpId}".sorted" ${output_id1}_${smpId}".bam""
 
-singularity exec -B /scratch:/scratch /scratch/tacc/images/samtools_1.5--2.img samtools index ${smpId}".sorted.bam"
+singularity exec -B /scratch:/scratch /scratch/tacc/images/samtools_1.5--2.img samtools index ${output_id1}_${smpId}".sorted.bam"
 
-mkdir bwa_mem_out
-mv *sorted* bwa_mem_out
+# mkdir bwa_mem_out
+# mv *sorted* bwa_mem_out
 
-ls | grep -v bwa_mem_out | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf
+ls | grep -v "sorted.bam" | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf
 
-trap "ls | grep -v bwa_mem_out | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf" exit
+trap "ls | grep -v "sorted.bam" | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf" exit
 #
+
 
 
 

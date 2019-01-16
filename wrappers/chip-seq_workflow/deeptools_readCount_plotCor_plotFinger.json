@@ -1,0 +1,543 @@
+{
+    "name": "deepTools",
+    "parallelism": "PARALLEL",
+    "version": "3.1.2",
+    "helpURI": "https://deeptools.readthedocs.io/en/develop/content/list_of_tools.html",
+    "label": "deepTools",
+    "shortDescription": "A suite of user-friendly tools for visualization, quality control and normalization of sequencing data.",
+    "longDescription": "deepTools contains useful modules to process the mapped reads data for multiple quality checks and creating normalized coverage files.   treatment and control). Using such normalized and standardized files, it can create many publication-ready visualizations to identify enrichments and for functional annotations of the genome.",
+    "author": "Xiaofei Wang",
+    "datePublished": "09/10/17",
+    "tags": [
+        "Beta"
+    ],
+    "ontology": [
+        "http://sswapmeet.sswap.info/sequenceServices/SequenceServices"
+    ],
+    "defaultMaxRunTime": "35:56:00",
+    "defaultQueue": "debug2",
+    "defaultNodeCount": 1,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 1,
+    "executionSystem": "sciapps.org",
+    "executionType": "HPC",
+    "deploymentPath": "xiaofei_iplant/application/deepTools_3.1.2",
+    "templatePath": "deeptools_readCount_plotCor_plotFinger_wrapper.sh",
+    "testPath": "deeptools_readCount_plotCor_plotFinger_test.sh",
+    "checkpointable": true,
+    "modules": [],
+    "inputs": [
+        {
+            "id": "bamFiles",
+            "value": {
+                "validator": null,
+                "visible": true,
+                "required": true,
+                "order": 1,
+                "enquote": false,
+                "default": [
+                    ""
+                ]
+            },
+            "details": {
+                "label": "Input BAM file",
+                "description": "",
+                "argument": null,
+                "showArgument": false,
+                "repeatArgument": false
+            },
+            "semantics": {
+                "minCardinality": 1,
+                "maxCardinality": 10,
+                "ontology": [],
+                "fileTypes": []
+            }
+        }
+    ],
+    "parameters": [
+
+        {
+            "id": "labels",
+            "value": {
+                "default": "",
+                "type": "string",
+                "required": false,
+                "visible": true,
+                "order": 1
+            },
+            "details": {
+                "label": "User Defined Labels (--labels or -l)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+        {
+           "id": "smartLabels",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 2
+            },
+            "details": {
+                "label": "Smart Labels (--smartLabels)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        },        
+
+        {
+            "id": "normMe",
+            "value": {
+                "default": "",
+                "type": "enumeration",
+                "enum_values": [
+                    { "": "running multiBamSummary to plot correlaiton, default"},
+                    { "None": "NONE (no normalization is performed for bamCoverage)"},
+                    { "RPKM": "RPKM (Reads Per Kilobase per Million mapped reads)"},
+                    { "CPM": "CPM (Counts Per Million mapped reads)"},
+                    { "BPM": "BPM (Bins Per Million mapped reads) "},
+                    { "RPGC": "RPGC (reads per genomic content, 1x normalization)"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 3
+
+            },
+            "details": {
+                "label": "Normalization Method for bamCoverage (--normalizeUsing)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+        {
+            "id": "binSize1",
+            "value": {
+                "default": 50,
+                "type": "number",
+                "required": false,
+                "visible": true,
+                "order": 4
+            },
+            "details": {
+                "label": "Bin Size in Bases for bamCoverage (--binSize or -bs)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:integer"
+                ]
+            }
+        },
+
+        {
+            "id": "effectiveGenSize",
+            "value": {
+                "default": "",
+                "type": "string",
+                "required": false,
+                "visible": true,
+                "order": 5
+            },
+            "details": {
+                "label": "Effective Genome Size for bamCoverage (--effectiveGenomeSize)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+        {
+            "id": "binSize2",
+            "value": {
+                "default": 10000,
+                "type": "number",
+                "required": false,
+                "visible": true,
+                "order": 6
+            },
+            "details": {
+                "label": "Bin Size in Bases for multiBigwigSummary or multiBamSummary (--binSize or -bs)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:integer"
+                ]
+            }
+        },
+
+        {
+            "id": "corMethod",
+            "value": {
+                "default": "pearson",
+                "type": "enumeration",
+                "enum_values": [
+                    { "pearson": "Pearson"},
+                    { "spearman": "Spearman"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 7
+
+            },
+            "details": {
+                "label": "Correlation Method for plotCorrelation (--corMethod or -c)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+        {
+            "id": "whatToPlot",
+            "value": {
+                "default": "heatmap",
+                "type": "enumeration",
+                "enum_values": [
+                    { "heatmap": "Heatmap"},
+                    { "scatterplot": "Scatterplot"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 8
+
+            },
+            "details": {
+                "label": "Plot Type for plotCorrelation (--whatToPlot or -p)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+        {
+           "id": "plotNumbers",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 9
+            },
+            "details": {
+                "label": "Plot Correlation on Heatmap for plotCorrelation (--plotNumbers)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        }, 
+
+        {
+            "id": "plotTitle",
+            "value": {
+                "default": "",
+                "type": "string",
+                "required": false,
+                "visible": true,
+                "order": 10
+            },
+            "details": {
+                "label": "Plot Title for plotCorrelation (--plotTitle or -T)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },        
+
+        {
+            "id": "plotFileFormat0",
+            "value": {
+                "default": "png",
+                "type": "enumeration",
+                "enum_values": [
+                    { "png": "png"},
+                    { "eps": "eps"},
+                    { "pdf": "pdf"},
+                    { "svg": "svg"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 11
+
+            },
+            "details": {
+                "label": "Plot Format for plotCorrelation (--plotFileFormat)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+        {
+           "id": "removeOutliers",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 12
+            },
+            "details": {
+                "label": "Remove Bins with Large Counts for plotCorrelation (--removeOutliers)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        }, 
+
+        {
+            "id": "minMappingQuality",
+            "value": {
+                "default": 30,
+                "type": "number",
+                "required": false,
+                "visible": true,
+                "order": 13
+            },
+            "details": {
+                "label": "Minimum Mapping Quality for plotFingerprint (--minMappingQuality)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:integer"
+                ]
+            }
+        },
+
+        {
+           "id": "ignoreDuplicates",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 14
+            },
+            "details": {
+                "label": "Ignore Duplicates for plotFingerprint (--ignoreDuplicates)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        }, 
+
+        {
+            "id": "binSize3",
+            "value": {
+                "default": 10000,
+                "type": "number",
+                "required": false,
+                "visible": true,
+                "order": 15
+            },
+            "details": {
+                "label": "Bin Size in Bases for plotFingerprint (--binSize or -bs)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:integer"
+                ]
+            }
+        },
+
+        {
+            "id": "plotTitleFinger",
+            "value": {
+                "default": "",
+                "type": "string",
+                "required": false,
+                "visible": true,
+                "order": 16
+            },
+            "details": {
+                "label": "Plot Title for plotFingerprint (--plotTitle or -T)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },  
+
+        {
+            "id": "plotFileFormat",
+            "value": {
+                "default": "png",
+                "type": "enumeration",
+                "enum_values": [
+                    { "png": "png"},
+                    { "eps": "eps"},
+                    { "pdf": "pdf"},
+                    { "svg": "svg"},
+                    { "plotly": "plotly"}
+                ],
+                "required": false,
+                "visible": true,
+                "order": 17
+
+            },
+            "details": {
+                "label": "Plot Format for plotFingerprint (--plotFileFormat)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:string"
+                ]
+            }
+        },
+
+        {
+           "id": "skipZeros",
+            "value": {
+                "default": false,
+                "type": "bool",
+                "required": false,
+                "visible": true,
+                "order": 18
+            },
+            "details": {
+                "label": "Ignore Regions with 0 Reads for all BAMs for plotCorrelation and plotFingerprint (--skipZeros)",
+                "description": "",
+                "visible": true
+            },
+            "semantics": {
+                "ontology": [
+                    "xs:boolean"
+                ]
+            }
+        }
+
+    ],
+
+    "outputs": [
+        {
+            "id": "readCount",
+            "details": {
+                "label": "readCountOut",
+                "description": null
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 10,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "",
+                "required": true,
+                "type": "string",
+                "order": 1,
+                "visible": true
+            }
+        },
+
+        {
+            "id": "plotCor",
+            "details": {
+                "label": "plotCorOut",
+                "description": null
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 10,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "",
+                "required": true,
+                "type": "string",
+                "order": 2,
+                "visible": true
+            }
+        },
+
+        {
+            "id": "plotFingerPrint",
+            "details": {
+                "label": "plotFingerPrintOut",
+                "description": null
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 10,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "",
+                "required": true,
+                "type": "string",
+                "order": 3,
+                "visible": true
+            }
+        }        
+    ]
+}

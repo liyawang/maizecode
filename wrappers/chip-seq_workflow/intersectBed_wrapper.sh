@@ -19,25 +19,25 @@ bInput="${bInput}"
 
 
 
-if [ -d "$aInput" ]; then
-    folderItems=$(ls $aInput | grep -i '\.bed')
-    folderItemsArray=(${folderItems////})
-    inp_name=${folderItemsArray[0]}
-    mv $aInput/$inp_name .
-    aInput=${inp_name}
-fi
+# if [ -d "$aInput" ]; then
+#     folderItems=$(ls $aInput | grep -i '\.bed')
+#     folderItemsArray=(${folderItems////})
+#     inp_name=${folderItemsArray[0]}
+#     mv $aInput/$inp_name .
+#     aInput=${inp_name}
+# fi
 
 
-if [ -d "$bInput" ]; then
-    folderItems=$(ls $bInput | grep -i '\.bed')
-    folderItemsArray=(${folderItems////})
-    inp_name=${folderItemsArray[0]}
-    mv $bInput/$inp_name .
-    bInput=${inp_name}
-fi
+# if [ -d "$bInput" ]; then
+#     folderItems=$(ls $bInput | grep -i '\.bed')
+#     folderItemsArray=(${folderItems////})
+#     inp_name=${folderItemsArray[0]}
+#     mv $bInput/$inp_name .
+#     bInput=${inp_name}
+# fi
 
-echo "aInput", ${aInput}, $aInput
-echo "bInput", ${bInput}, $bInput
+# echo "aInput", ${aInput}, $aInput
+# echo "bInput", ${bInput}, $bInput
 
 
 #When using BAM input (-abam), the format of output, "-ubam" and "-bed". Default writes compressed BAM.
@@ -104,7 +104,7 @@ strand="${strand}"
 
 runthis=''
 
-echo wa $wa, wb $wb, u $u, v $v, c $c
+echo wa $wa"," wb $wb"," u $u"," v $v"," c $c
 
 ################
 
@@ -161,33 +161,35 @@ if [ -n "$bInput" ]; then runthis="$runthis -b $bInput"; fi
 #InputRep2=$(basename ${bInput});
 
 #outputFolder=${outputFolder}
-mkdir commonPeaks
+# mkdir commonPeaks
 
-smpId=${aInput%.*}_${bInput%.*}
+#smpId=${aInput%.*}_${bInput%.*}
+smpId="commonPeaks"
+output_id1="intersectBed"
 
 
 #if [ -n "${aInput}" ]; then intersectBed $runthis | sort -k1,1n -k2,2n > commonPeaks/${smpName}_interSect.bed; fi
 
 if [ -n "${aInput}" ]; then
-    echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > commonPeaks/${smpId}.bed"
-    singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > commonPeaks/${smpId}.bed
+    echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed" $runthis "| sort -k1,1n -k2,2n >" ${output_id1}_${smpId}.bed
+    singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > ${output_id1}_${smpId}.bed
 fi
 
 
 if [ -n "${abam}" ]; then
     if [[ "${bamInpOutFormat}" == "bed" ]]; then
-        echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > commonPeaks/${smpId}.bed"
-        singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > commonPeaks/${smpId}.bed
+        echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > ${output_id1}_${smpId}.bed"
+        singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > ${output_id1}_${smpId}.bed
 
     else
-        echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > commonPeaks/${smpId}.bam"
-        singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > commonPeaks/${smpId}.bam
+        echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > ${output_id1}_${smpId}.bed"
+        singularity exec -B /scratch:/scratch /scratch/tacc/images/bedtools_2.26.0gx--0.img intersectBed $runthis | sort -k1,1n -k2,2n > ${output_id1}_${smpId}.bed
     fi
 fi
 
-ls | grep -v commonPeaks | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf
+ls | grep -v intersectBed | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf
 
-trap "ls | grep -v commonPeaks | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf" exit
+trap "ls | grep -v intersectBed | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf" exit
 
 
 

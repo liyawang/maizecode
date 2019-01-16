@@ -2,6 +2,7 @@
 
 
 # Input can be either a file or a folder.
+# now input is a file rather than a folder
 seqFile="${seqFile}"
 
 #output folder name, fixed
@@ -34,7 +35,7 @@ runthis=''
 #data_ext="${seqFile##*.}"
 #if [ ${data_ext} = "gz" ]; then gunzip $seqFile; seqFile=${seqFile%.*}; fi
 
-
+smpId=${seqFile%%.*}
 
 ################
 if [ "$extract" = 1 ]; then
@@ -50,23 +51,30 @@ fi
 #fi
 
 
-mkdir fastqcOut
-runthis="$runthis --outdir fastqcOut"
+output_id1="fastqcOut"
+output_id2="fastqcZip"
+
 
 echo $runthis
 
-if [ -d "$seqFile" ]; then
-	echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc -t 4 ${runthis} $seqFile/*"
-	singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc -t 4 ${runthis} $seqFile/*
-else
-	echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc -t 4 ${runthis} $seqFile"
-	singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc -t 4 ${runthis} $seqFile
-fi
+#if [ -d "$seqFile" ]; then
+#	echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc -t 4 ${runthis} $seqFile/*"
+#	singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc -t 4 ${runthis} $seqFile/*
+#else
+#	echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc -t 4 ${runthis} $seqFile"
+#	singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc -t 4 ${runthis} $seqFile
+#fi
+
+echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc ${runthis} $seqFile"
+singularity exec -B /scratch:/scratch /scratch/tacc/images/fastqc-2016-08-01-1fa01d83b22a.img fastqc ${runthis} $seqFile
+
+mv *.html ${output_id1}_${smpId}.html
+mv *.zip ${output_id2}_${smpId}.zip
 
 
+ls | grep -v fastqcOut | grep -v fastqc | grep -v "\.err" | grep -v "\.out" | xargs rm -rf
+trap "ls | grep -v fastqcOut | grep -v fastqc | grep -v "\.err" | grep -v "\.out" | xargs rm -rf" exit
 
-ls | grep -v fastqcOut | grep -v "\.err" | grep -v "\.out" | xargs rm -rf
-trap "ls | grep -v fastqcOut | grep -v "\.err" | grep -v "\.out" | xargs rm -rf" exit
 
 
 

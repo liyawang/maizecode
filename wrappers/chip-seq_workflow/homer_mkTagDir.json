@@ -116,27 +116,6 @@
                     "xs:boolean"
                 ]
             }
-        },
-
-        {
-           "id": "ctrlIndicator",
-            "value": {
-                "default": false,
-                "type": "bool",
-                "required": false,
-                "visible": true,
-                "order": 4
-            },
-            "details": {
-                "label": "ctrlIndicator",
-                "description": "Indicate if the sample is backgroud control which is useful for downstream peak calling app",
-                "visible": true
-            },
-            "semantics": {
-                "ontology": [
-                    "xs:boolean"
-                ]
-            }
         }
 
     ],
@@ -168,3 +147,4 @@
         }
     ]
 }
+

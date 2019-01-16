@@ -82,8 +82,8 @@
         {
             "id": "fastqcOut",
             "details": {
-                "label": "Output Directory",
-                "description": "Output directory."
+                "label": "Output",
+                "description": ""
             },
             "semantics": {
                 "ontology": [],
@@ -99,6 +99,29 @@
                 "type": "string",
                 "visible": false
             }
+        },
+
+        {
+            "id": "fastqcZip",
+            "details": {
+                "label": "ZipOut",
+                "description": ""
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "fastqcZip",
+                "required": true,
+                "type": "string",
+                "visible": false
+            }
         }
     ]
 }
+

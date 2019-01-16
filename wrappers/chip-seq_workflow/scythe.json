@@ -37,7 +37,7 @@
                 "order": 1
             },
             "details": {
-                "label": "Read1 input",
+                "label": "Read1 Input",
                 "description": "Input fastq file R1 (can take *.gz)"
             },
             "semantics": {
@@ -61,7 +61,7 @@
                 "order": 2
             },
             "details": {
-                "label": "Read2 input (PE)",
+                "label": "Read2 Input (PE)",
                 "description": "Input fastq file R2 (can take *.gz)"
             },
             "semantics": {
@@ -86,7 +86,7 @@
             },
             "details": {
                 "label": "Adapters File (-a)",
-                "description": "Adapter contaminants file"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -118,7 +118,7 @@
             },
             "details": {
                 "label": "Quality Type (--quality-type)",
-                "description": "Quality type, either illumina, solexa, or sanger",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -132,10 +132,10 @@
 
     "outputs": [
         {
-            "id": "scytheOutR1",
+            "id": "sc1",
             "details": {
-                "label": "Output Directory1",
-                "description": "Output directory1"
+                "label": "Output1",
+                "description": "Output1"
             },
             "semantics": {
                 "ontology": [],
@@ -146,7 +146,7 @@
                 ]
             },
             "value": {
-                "default": "scytheOutR1",
+                "default": "",
                 "required": true,
                 "type": "string",
                 "visible": false,
@@ -155,10 +155,10 @@
         },
 
         {
-            "id": "scytheOutR2",
+            "id": "sc2",
             "details": {
-                "label": "Output Directory2",
-                "description": "Output directory2"
+                "label": "Output2",
+                "description": "Output2"
             },
             "semantics": {
                 "ontology": [],
@@ -169,7 +169,7 @@
                 ]
             },
             "value": {
-                "default": "scytheOutR2",
+                "default": "",
                 "required": true,
                 "type": "string",
                 "visible": false,
@@ -178,3 +178,4 @@
         }
     ]
 }
+

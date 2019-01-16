@@ -28,7 +28,7 @@
     "modules": [],
     "inputs": [
         {
-            "id": "seqDir1",
+            "id": "seq1",
             "value": {
                 "default": "",
                 "validator": "",
@@ -37,8 +37,8 @@
                 "order": 1
             },
             "details": {
-                "label": "Read1 input",
-                "description": "Input fastq file OR input paired-end forward fastq file"
+                "label": "Read1 Input",
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -52,7 +52,7 @@
         },
 
                 {
-            "id": "seqDir2",
+            "id": "seq2",
             "value": {
                 "default": "",
                 "validator": "",
@@ -61,8 +61,8 @@
                 "order": 2
             },
             "details": {
-                "label": "Read2 input (PE)",
-                "description": "Input paired-end reverse fastq file"
+                "label": "Read2 Input (PE)",
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -95,7 +95,7 @@
             },
             "details": {
                 "label": "Quality Type (--qual-type)",
-                "description": "Quality type, either illumina, solexa, or sanger",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -116,7 +116,7 @@
             },
             "details": {
                 "label": "Minimum Length (--length-threshold)",
-                "description": "Length threshold to keep a read trimmed",
+                "description": "",
                 "visible": true,
                 "order": 2
             },
@@ -137,7 +137,7 @@
             },
             "details": {
                 "label": "Quality Threshold (--qual-threshold)",
-                "description": "Threshold for trimming based on average quality in a window",
+                "description": "",
                 "visible": true,
                 "order": 3
             },
@@ -152,10 +152,10 @@
 
     "outputs": [
         {
-            "id": "sickleOutR1",
+            "id": "ss1",
             "details": {
-                "label": "Output Directory1",
-                "description": "Sickle trimmed FASTQ output directory1"
+                "label": "Output1",
+                "description": "Sickle trimmed FASTQ output1"
             },
             "semantics": {
                 "ontology": [],
@@ -166,7 +166,7 @@
                 ]
             },
             "value": {
-                "default": "sickleOutR1",
+                "default": "",
                 "required": true,
                 "type": "string",
                 "visible": true,
@@ -175,10 +175,10 @@
         },
 
         {
-            "id": "sickleOutR2",
+            "id": "ss2",
             "details": {
-                "label": "Output Directory2",
-                "description": "Sickle trimmed FASTQ output directory2"
+                "label": "Output2",
+                "description": "Sickle trimmed FASTQ output2"
             },
             "semantics": {
                 "ontology": [],
@@ -189,7 +189,7 @@
                 ]
             },
             "value": {
-                "default": "sickleOutR2",
+                "default": "",
                 "required": true,
                 "type": "string",
                 "visible": true,
@@ -199,3 +199,4 @@
 
     ]
 }
+

@@ -5,24 +5,37 @@ ctrlDir="${ctrlDir}"
 # marksDir="marksDir"
 marksDir="${marksDir}"
 
-if [ -d "$marksDir" -a "$ctrlDir" == "$marksDir" ]; then
-	inp_name=$(ls $marksDir | grep ctrl)
-	mv $marksDir/$inp_name .
-	ctrlDir=$inp_name
-	inp_name2=$(ls $marksDir)
-	mv $marksDir/$inp_name2 .
-	marksDir=$inp_name2
+echo "${ctrlDir}"
+echo "${marksDir}"
+
+# if [ -d "$marksDir" -a "$ctrlDir" == "$marksDir" ]; then
+# 	inp_name=$(ls $marksDir | grep ctrl)
+# 	mv $marksDir/$inp_name .
+# 	ctrlDir=$inp_name
+# 	inp_name2=$(ls $marksDir)
+# 	mv $marksDir/$inp_name2 .
+# 	marksDir=$inp_name2
+# fi
+
+
+# if [ -d "$marksDir" -a "$ctrlDir" = "" ]; then
+# 	inp_name=$(ls $marksDir)
+# 	mv $marksDir/$inp_name .
+# 	marksDir=$inp_name
+# fi
+
+# smpId=${marksDir%_*}
+if [[ "$marksDir" =~ homerTagDir_* ]]; then
+	smpId=${marksDir#homerTagDir_}
+    smpId=${smpId%%.*}
+else
+	smpId=${marksDir%%.*}
 fi
 
-
-if [ -d "$marksDir" -a "$ctrlDir" = "" ]; then
-	inp_name=$(ls $marksDir)
-	mv $marksDir/$inp_name .
-	marksDir=$inp_name
-fi
+output_id1="homerPeaks1"
+output_id2="homerPeaks2"
 
 
-smpId=${marksDir%_*}
 
 # region=1
 # style=""
@@ -62,24 +75,25 @@ fi
 # homerOut="homerPeaksOut.txt"
 # homerBedOut="homerPeaksOut.bed"
 
-echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/homer-2015-11-10-4604b6dca295.img /home/user1/homer/bin/findPeaks $marksDir $runthis -o $smpId.txt"
-singularity exec -B /scratch:/scratch /scratch/tacc/images/homer-2015-11-10-4604b6dca295.img /home/user1/homer/bin/findPeaks $marksDir $runthis -o $smpId.txt
+echo "singularity exec -B /scratch:/scratch /scratch/tacc/images/homer_4.9.1--pl5.22.0_5.img findPeaks $marksDir $runthis -o ${output_id1}_${smpId}.txt"
+singularity exec -B /scratch:/scratch /scratch/tacc/images/homer_4.9.1--pl5.22.0_5.img findPeaks $marksDir $runthis -o ${output_id1}_${smpId}.txt
 
-grep -v '#' $smpId.txt | cut -f 1-6 | awk -v OFS='\t' '{print $2,$3-1,$4,$1,$6,$5}' > $smpId.bed
+grep -v '#' ${output_id1}_${smpId}.txt | cut -f 1-6 | awk -v OFS='\t' '{print $2,$3-1,$4,$1,$6,$5}' > ${output_id2}_${smpId}.bed
 
 
-mkdir homerPeaksOut
-mv $smpId.txt homerPeaksOut
-mv $smpId.bed homerPeaksOut
+# mkdir homerPeaksOut
+# mv $smpId.txt homerPeaksOut
+# mv $smpId.bed homerPeaksOut
 
-ls | grep -v homerPeaksOut | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf
+ls | grep -v homerPeaks | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf
 
-trap "ls | grep -v homerPeaksOut | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf" exit
+trap "ls | grep -v homerPeaks | grep -v "\.err" | grep -v "\.out" | grep -v ipcexe | xargs rm -rf" exit
 
 
 
 
 ######################################
+
 
 
 

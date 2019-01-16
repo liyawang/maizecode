@@ -38,7 +38,7 @@
             },
             "details": {
                 "label": "Input SAM/BAM (INPUT)",
-                "description": "Input SAM/BAM to be processed"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -68,7 +68,7 @@
             },
             "details": {
                 "label": "Validation Stringency (VALIDATION_STRINGENCY)",
-                "description": "Validation stringency for all SAM files",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -89,7 +89,7 @@
             },
             "details": {
                 "label": "Remove Duplicates (REMOVE_DUPLICATES)",
-                "description": "Locate and tag duplicate reads",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -101,10 +101,10 @@
     ],
     "outputs": [
         {
-            "id": "picardOut",
+            "id": "picard1",
             "details": {
-                "label": "Output Directory (OUTPUT)",
-                "description": "Output directory"
+                "label": "Output1 (OUTPUT1)",
+                "description": ""
             },
             "semantics": {
                 "ontology": [],
@@ -115,7 +115,29 @@
                 ]
             },
             "value": {
-                "default": "picardOut",
+                "default": "",
+                "required": true,
+                "type": "string",
+                "visible": true
+            }
+        },
+
+        {
+            "id": "picard2",
+            "details": {
+                "label": "Output2 (OUTPUT2)",
+                "description": ""
+            },
+            "semantics": {
+                "ontology": [],
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "fileTypes": [
+                    "raw-0"
+                ]
+            },
+            "value": {
+                "default": "",
                 "required": true,
                 "type": "string",
                 "visible": true
@@ -124,3 +146,4 @@
 
     ]
 }
+

@@ -38,7 +38,7 @@
             },
             "details": {
                 "label": "Select a bed/gff/vcf file(-a)",
-                "description": "Each feature in A is compared to B in search of overlaps"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -62,7 +62,7 @@
             },
             "details": {
                 "label": "Or select a bam file (-abam)",
-                "description": "BEDTools intersectBed works with both BED/GFF/VCF and BAM files as input"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -87,7 +87,7 @@
             },
             "details": {
                 "label": "Select a bed/gff/vcf file (-b)",
-                "description": "B file is to search of overlaps"
+                "description": ""
             },
             "semantics": {
                 "ontology": [
@@ -118,7 +118,7 @@
             },
             "details": {
                 "label": "When using BAM as input, write as uncompressed BAM/BED output (-ubam/-bed)",
-                "description": "Output format for BAM input",
+                "description": "",
                 "visible": true
             },
             "semantics": {
@@ -372,7 +372,7 @@
 
     "outputs": [
         {
-            "id": "commonPeaks",
+            "id": "intersectBed",
             "details": {
                 "description": "Intersected genomic features output folder"
             },
@@ -385,7 +385,7 @@
                 ]
             },
             "value": {
-                "default": "commonPeaks",
+                "default": "",
                 "required": true,
                 "type": "string",
                 "visible": true,
