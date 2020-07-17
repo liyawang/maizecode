@@ -20,4 +20,4 @@
 # Upload to CyVerse
 ## local_directory is B73 or NC350 or Til11 or W22
 
-    iput -rfPT /local_directory /iplant/home/shared/maizecode/misc/indexFiles
+    iput -P -K -f --retries 3 --lfrestart checkpoint_file /local_directory /iplant/home/shared/maizecode/misc/indexFiles
