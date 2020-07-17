@@ -11,11 +11,12 @@
 
 # Convert the annotation file
 
-    gffread -T Zea_mays.AGPv4.33.gff3 -o Zea_mays.AGPv4.33.gtf
+    gffread -T Zea_mays.AGPv4.33.gff3 -o annotation.gtf
 
 # Then start the index
+## Make sure the genome file is named as 'genome.fa' and the annotation file is named as 'annotation.gtf'
 
-    STAR --runMode genomeGenerate --genomeDir ./ --genomeFastaFiles Zea_mays.AGPv4.dna.toplevel.fa --sjdbGTFfile Zea_mays.AGPv4.33.gtf --runThreadN 12
+    STAR --runMode genomeGenerate --genomeDir ./ --genomeFastaFiles genome.fa --sjdbGTFfile annotation.gtf --runThreadN 12
 
 # Upload to CyVerse
 ## local_directory is B73 or NC350 or Til11 or W22
