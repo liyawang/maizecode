@@ -16,3 +16,8 @@
 # Then start the index
 
     STAR --runMode genomeGenerate --genomeDir ./ --genomeFastaFiles Zea_mays.AGPv4.dna.toplevel.fa --sjdbGTFfile Zea_mays.AGPv4.33.gtf --runThreadN 12
+
+# Upload to CyVerse
+## local_directory is B73 or NC350 or Til11 or W22
+
+    iput -rfPT /local_directory /iplant/home/shared/maizecode/misc/indexFiles
