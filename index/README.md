@@ -13,6 +13,13 @@
 
     gffread -T Zea_mays.AGPv4.33.gff3 -o annotation.gtf
 
+# Add Mt, Pt if they are not in above files
+   
+    iget /iplant/home/shared/maizecode/misc/indexFiles/MtPt.fa
+    iget /iplant/home/shared/maizecode/misc/indexFiles/MtPt.gtf
+    cat genome.fa MtPt.fa > genomenew.fa && mv genomenew.fa genome.fa
+    cat annotation.gtf MtPt.gtf > annotationnew.gtf && mv annotationnew.gtf annotation.gtf
+    
 # Then start the index
 ## Make sure the genome file is named as 'genome.fa' and the annotation file is named as 'annotation.gtf'
 
