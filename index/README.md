@@ -26,7 +26,8 @@
     STAR --runMode genomeGenerate --genomeDir ./ --genomeFastaFiles genome.fa --sjdbGTFfile annotation.gtf --runThreadN 12
 
 # Upload to CyVerse
-## local_directory is B73 or NC350 or Til11 or W22. genome.fa, annotation.gtf, and index files should be under the local_directory folder without sub-folders.
+## local_directory is B73 or NC350 or Til11 or W22. 
+## genome.fa, annotation.gtf, and index files should be under the local_directory folder without sub-folders.
     
     tar cvzf local_direcotry.tar.gz local_directory
     iput -P -K -f --retries 3 --lfrestart checkpoint_file local_directory.tar.gz /iplant/home/shared/maizecode/misc/indexFiles
