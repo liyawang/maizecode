@@ -27,7 +27,7 @@ if [ -z "$4" ]; then assy="RNAseq"; else assy="$4"; fi
 cp $assy.json rnaseq1.json
 sed -i -e "s/B73v5/${gindex}/g" rnaseq1.json
 sed -i -e "s/B73/${genome}/g" rnaseq1.json
-sed -i -e "s/cn_rep/${tise}_rep/g" rnaseq1.json
+sed -i -e "s/root_rep/${tise}_rep/g" rnaseq1.json
 
 case "${tise}" in
    "cn") tise2="CNs"
