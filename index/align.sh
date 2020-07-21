@@ -7,7 +7,9 @@
 # e.g. ./align.sh cn B73 B73v5 RAMPAGE
 
 # Retrieve SciApps token for job submission
-export SciApps_HDR="Authorization: Bearer $(curl -sk -H 'user: YOUR_CyVerse_USERNAME' -H 'pass: YOUR_CyVerse_PASSWORD' https://www.sciapps.org/user | jq '.data.token')"
+token=$(curl -sk -H 'user: YOUR_CyVerse_USERNAME' -H 'pass: YOUR_CyVerse_PASSWORD' https://www.sciapps.org/user | jq '.data.token')
+token=$(eval echo \$$token)
+export SciApps_HDR="Authorization: Bearer $token"
 #echo $SciApps_HDR
 
 # Prepare workflow submission file
@@ -38,7 +40,7 @@ case "${tise}" in
    ;;
 esac    
 
-workflow_desc="${assy}%20of%20maize%3A%20${genome}%20${tise2}%20with%20two%20replicates%20(aligned%20to%20${gindex}) "
+workflow_desc="${assy}%20of%20maize%3A%20${genome}%20${tise2}%20with%20two%20replicates%20%28aligned%20to%20${gindex}%29"
 
 # Submit the workflow and retrieve the workflow id
 ARG="https://www.sciapps.org/workflowJob/new?runWorkflowJob=1&workflow_name=M_${genome}_${gindex}_${tise}_${assy}&workflow_desc=${workflow_desc}"
