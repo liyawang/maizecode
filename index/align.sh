@@ -41,7 +41,7 @@ esac
 workflow_desc="${assy}%20of%20maize%3A%20${genome}%20${tise2}%20with%20two%20replicates%20(aligned%20to%20${gindex}) "
 
 # Submit the workflow and retrieve the workflow id
-ARG="https://www.sciapps.org/workflowJob/new?runWorkflowJob=1&workflow_name=M_${genome}_${tise}_${assy}&workflow_desc=${workflow_desc}"
+ARG="https://www.sciapps.org/workflowJob/new?runWorkflowJob=1&workflow_name=M_${genome}_${gindex}_${tise}_${assy}&workflow_desc=${workflow_desc}"
 #echo $ARG
 id=$(curl -X POST -sk -H "user: maizecode" -H "$SciApps_HDR" "$ARG" -F "fileToUpload=@rnaseq1.json" | jq '.data.workflow_id')
 id=$(eval echo \$$id) # To get rid of double quotes
