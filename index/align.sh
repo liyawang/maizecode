@@ -27,18 +27,18 @@ if [ -z "$4" ]; then assy="RNAseq"; else assy="$4"; fi
 rootP="/iplant/home/shared/maizecode/released/$genome/Long_Rampage"
 
 cp $assy.json rnaseq1.json
-sed -i -e "s/B73v5/${gindex}/g" rnaseq1.json
 sed -i -e "s/B73/${genome}/g" rnaseq1.json
+sed -i -e "s/index/${gindex}/g" rnaseq1.json
 sed -i -e "s/root_rep/${tise}_rep/g" rnaseq1.json
 
 case "${tise}" in
    "cn") tise2="CNs"
    ;;
    "endo") tise2="endosperm"
-   ;; 
+   ;;
    *) tise2="${tise}"
    ;;
-esac    
+esac
 
 workflow_desc="${assy}%20of%20maize%3A%20${genome}%20${tise2}%20with%20two%20replicates%20%28aligned%20to%20${gindex}%29"
 

@@ -1,0 +1,9 @@
+{
+  "wf_step_1:inputSequence1": "agave://data.iplantcollaborative.org/shared/maizecode/released/Ti11/Long_Rampage/root_rep1/RNAseq/root_rep1_R1.fq.gz",
+  "wf_step_1:inputSequence2": "agave://data.iplantcollaborative.org/shared/maizecode/released/Ti11/Long_Rampage/root_rep1/RNAseq/root_rep1_R2.fq.gz",
+  "wf_step_2:inputSequence1": "agave://data.iplantcollaborative.org/shared/maizecode/released/Ti11/Long_Rampage/root_rep2/RNAseq/root_rep2_R1.fq.gz",
+  "wf_step_2:inputSequence2": "agave://data.iplantcollaborative.org/shared/maizecode/released/Ti11/Long_Rampage/root_rep2/RNAseq/root_rep2_R2.fq.gz",
+  "wf_step_1:genomeIndex": "Zea_mays_B73v5",
+  "wf_step_2:genomeIndex": "Zea_mays_B73v5",  
+  "_derived_from": "8d29dcc5-e072-4808-a69d-144a9405f37f"
+}
