@@ -10,9 +10,6 @@
 export SciApps_HDR="Authorization: Bearer $(curl -sk -H 'user: YOUR_CyVerse_USERNAME' -H 'pass: YOUR_CyVerse_PASSWORD' https://www.sciapps.org/user | jq '.data.token')"
 #echo $SciApps_HDR
 
-# Define path for MaizeCODE raw data
-rootP="/iplant/home/shared/maizecode/released/$genome/Long_Rampage"
-
 # Prepare workflow submission file
 if [ -z "$1" ]; then
   echo -e "\nPlease provide tissue (cn, ears, endo, pollen, root) to run this script"
@@ -23,6 +20,9 @@ fi
 if [ -z "$2" ]; then genome="B73"; else genome="$2"; fi
 if [ -z "$3" ]; then gindex="B73v5"; else gindex="$3"; fi
 if [ -z "$4" ]; then assy="RNAseq"; else assy="$4"; fi
+
+# Define path for MaizeCODE raw data
+rootP="/iplant/home/shared/maizecode/released/$genome/Long_Rampage"
 
 cp $assy.json rnaseq1.json
 sed -i -e "s/B73v5/${gindex}/g" rnaseq1.json
