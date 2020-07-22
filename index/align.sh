@@ -47,5 +47,5 @@ ARG="https://www.sciapps.org/workflowJob/new?runWorkflowJob=1&workflow_name=M_${
 #echo $ARG
 id=$(curl -X POST -sk -H "user: maizecode" -H "$SciApps_HDR" "$ARG" -F "fileToUpload=@rnaseq1.json" | jq '.data.workflow_id')
 id=$(eval echo \$$id) # To get rid of double quotes
-echo "${id} ${genome} ${tise2} ${assy} ${gindex}"
+echo "${id} ${genome} ${tise} ${assy} ${gindex}"
 sleep 2m
