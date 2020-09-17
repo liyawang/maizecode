@@ -1,0 +1,30 @@
+      {
+         "style" : {
+            "pos_color" : "XXX5",
+            "height" : 50
+         },
+         "key" : "XXX3 forward (XXX6 XXX7)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/XXX1/sig_f_XXX2.bw",
+         "label" : "XXX3 forward (XXX6 XXX7)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE XXX6/XXX3/XXX7",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=XXX4"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "XXX5",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "XXX3 reverse (XXX6 XXX7)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/XXX1/sig_r_XXX2.bw",
+         "label" : "XXX3 reverse (XXX6 XXX7)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE XXX6/XXX3/XXX7",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=XXX4"
+         }
+      },
