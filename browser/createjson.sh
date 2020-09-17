@@ -9,8 +9,7 @@ echo $1
 
 for STEPS in 1 2
 do
-  input1=$(curl -X GET --header "Accept: application/json" "https://www.sciapps.org/workflow/$1" | jq ".data.steps[] | select(.id==$STEPS or .id==\"$STEPS\") | .inputs.in
-putSequence1")
+  input1=$(curl -X GET --header "Accept: application/json" "https://www.sciapps.org/workflow/$1" | jq ".data.steps[] | select(.id==$STEPS or .id==\"$STEPS\") | .inputs.inputSequence1")
   #echo "input1: $input1"
   input2=$(echo "$input1" | sed 's/[][]//g')
   #echo "input2: $input2"
