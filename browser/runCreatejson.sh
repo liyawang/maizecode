@@ -1,11 +1,17 @@
 #!/bin/sh
-# create trackList.json
 
+if [ -z "$1" ]; then
+  echo -e "\nPlease provide input file to run this script"
+  exit 1
+else
+  input="$1"
+fi
+# create trackList.json
 # put header in
 cat header.json > trackList.json
 
 # put workflow ids line by line in a file and read into a bash array: arr1
-IFS=$'\r\n' GLOBIGNORE='*' command eval  'arr1=($(cat workflows.txt))'
+IFS=$'\r\n' GLOBIGNORE='*' command eval  'arr1=($(cat $input))'
 
 for i in "${arr1[@]}"
   do

@@ -10,13 +10,13 @@ echo $1
 for STEPS in 1 2
 do
   input1=$(curl -X GET --header "Accept: application/json" "https://www.sciapps.org/workflow/$1" | jq ".data.steps[] | select(.id==$STEPS or .id==\"$STEPS\") | .inputs.inputSequence1")
-  #echo "input1: $input1"
+  # echo "input1: $input1"
   input2=$(echo "$input1" | sed 's/[][]//g')
-  #echo "input2: $input2"
-  input=$(echo $input2 | sed -e 's/\r//g')
-  #echo "input: $input"
+  # echo "input2: $input2"
+  input=$(echo $input2 | sed -e $'s/\r//g')
+  # echo "input: $input"
   inputSequence1=$(eval echo \$$input)
-  #echo "inputSequence1: $inputSequence1"
+  # echo "inputSequence1: $inputSequence1"
   jobid=$(curl -X GET --header "Accept: application/json" "https://www.sciapps.org/workflow/$1" | jq ".data.steps[] | select(.id==$STEPS or .id==\"$STEPS\") | .jobId")
   job_id=$(eval echo \$$jobid) # To get rid of double quotes
   #echo "job_id: $job_id"
@@ -28,8 +28,10 @@ do
 
   fname=`basename $inputSequence1`
   x2="${fname%%.*}"
-  
+
   x3="${x2%???}"
+  # echo "x2: " + $x2
+  # echo "x3: " + $x3
 
   case "$inputSequence1" in
     *RNAseq*) assy="RNAseq"
@@ -42,7 +44,9 @@ do
        exit 1
        ;;
   esac
- 
+
+  # echo $inputSequence1
+
   case "$inputSequence1" in
     *B73*) genm="B73"
        ;;
@@ -51,7 +55,9 @@ do
     *W22*) genm="W22"
        ;;
     *Ti11*) genm="Ti11"
-       ;; 
+       ;;
+    *BTx623*) genm="BTx623"
+       ;;
     *) echo "Unknown genome"
        exit 1
        ;;
@@ -73,20 +79,19 @@ done
 exit
 
 
-#      {
-#         "style" : {
-#            "pos_color" : "XXX5",
-#            "height" : 50
-#         },
-#         "key" : "XXX3 forward",
-#         "autoscale" : "local",
-#         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/XXX1/sig_f_XXX2.bw",
-#         "label" : "XXX3 forward",
-#         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-#         "category" : "MaizeCODE XXX6/XXX3/XXX7",
-#         "onClick"  : {
-#             "url": "https://www.sciapps.org/?wf_id=XXX4"
-#         }
-#      },
+     # {
+     #    "style" : {
+     #       "pos_color" : "XXX5",
+     #       "height" : 50
+     #    },
+     #    "key" : "XXX3 forward",
+     #    "autoscale" : "local",
+     #    "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/XXX1/sig_f_XXX2.bw",
+     #    "label" : "XXX3 forward",
+     #    "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+     #    "category" : "MaizeCODE XXX6/XXX3/XXX7",
+     #    "onClick"  : {
+     #        "url": "https://www.sciapps.org/?wf_id=XXX4"
+     #    }
+     # },
 #
-    
