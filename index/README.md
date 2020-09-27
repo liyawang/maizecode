@@ -25,9 +25,23 @@
 
     STAR --runMode genomeGenerate --genomeDir ./ --genomeFastaFiles genome.fa --sjdbGTFfile annotation.gtf --runThreadN 12
 
+# Create RSEM index
+Run the [RSEM_ref_prepare-1.3.0 app from SciApps](https://www.sciapps.org/login?app_id=RSEM_ref_prepare-1.3.0) using the genome.fa and annotation.gtf files.
+
+Once this job is finished download the rsemIndex_genome.tgz file, unzip it using.
+
+    tar -xvzf rsemIndex_genome.tgz
+
+And put the unzipped files in the same folder as the output from STAR.
+
+# Create an FAI index file
+Run this command in the folder containing all the output files.
+
+    samtools faidx genome.fa
+
 # Upload to CyVerse
-## local_directory is B73 or NC350 or Til11 or W22. 
-## genome.fa, annotation.gtf, and index files should be under the local_directory folder without sub-folders.
+## Make sure that the local folder that contains all the output files is named according to this format: Zea_mays_GERMPLASM NAME
+## genome.fa, annotation.gtf, and all index files should be under the local_directory folder without sub-folders.
     
-    tar cvzf local_direcotry.tar.gz local_directory
+    tar cvzf local_directory.tar.gz local_directory
     iput -P -K -f --retries 3 --lfrestart checkpoint_file local_directory.tar.gz /iplant/home/shared/maizecode/misc/indexFiles
