@@ -1,0 +1,18 @@
+/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_1178f179-fa34-4d15-affb-f37cd2b5614f:
+  .agave.log
+  Log.out
+  ears_rep2_R1.Log.final.out
+  ears_rep2_R1.Log.out
+  ears_rep2_R1.Log.progress.out
+  ears_rep2_R1.ReadsPerGene.out.tab
+  ears_rep2_R1.SJ.out.tab
+  job-for-mcrna-0-0-1.err
+  job-for-mcrna-0-0-1.out
+  multiqc_report.html
+  rsem_ears_rep2_R1.txt
+  sig_f_ears_rep2_R1.bw
+  sig_r_ears_rep2_R1.bw
+  star_ears_rep2_R1.bam
+  str_ears_rep2_R1.gtf
+  C- /iplant/home/maizecode/sci_data/results/MCrna-0.0.1_1178f179-fa34-4d15-affb-f37cd2b5614f/.cache
+  C- /iplant/home/maizecode/sci_data/results/MCrna-0.0.1_1178f179-fa34-4d15-affb-f37cd2b5614f/.config

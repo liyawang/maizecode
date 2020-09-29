@@ -1,0 +1,133 @@
+./job-for-mcrna-0-0-1.ipcexe: line 47: module: command not found
+./job-for-mcrna-0-0-1.ipcexe: line 79: 2: No such file or directory
+java -Djava.library.path=/usr/local/opt/bbmap-37.78/jni/ -ea -Xmx8g -Xms8g -cp /usr/local/opt/bbmap-37.78/current/ jgi.BBDukF -Xmx8g in=ears_rep2_R1.fq.gz in2=ears_rep2_R2.fq.gz out=bb1_ears_rep2_R1.fq.gz out2=bb2_ears_rep2_R2.fq.gz ref=adapter.fa threads=14 k=19 mink=5 hdist=1 hdist2=0 ktrim=r qtrim=r minlength=26 trimq=20
+Executing jgi.BBDukF [-Xmx8g, in=ears_rep2_R1.fq.gz, in2=ears_rep2_R2.fq.gz, out=bb1_ears_rep2_R1.fq.gz, out2=bb2_ears_rep2_R2.fq.gz, ref=adapter.fa, threads=14, k=19, mink=5, hdist=1, hdist2=0, ktrim=r, qtrim=r, minlength=26, trimq=20]
+Version 37.78 [-Xmx8g, in=ears_rep2_R1.fq.gz, in2=ears_rep2_R2.fq.gz, out=bb1_ears_rep2_R1.fq.gz, out2=bb2_ears_rep2_R2.fq.gz, ref=adapter.fa, threads=14, k=19, mink=5, hdist=1, hdist2=0, ktrim=r, qtrim=r, minlength=26, trimq=20]
+
+Set threads to 14
+maskMiddle was disabled because useShortKmers=true
+Initial:
+Memory: max=8232m, free=7974m, used=258m
+
+Added 34262 kmers; time: 	0.088 seconds.
+Memory: max=8232m, free=7545m, used=687m
+
+Input is being processed as paired
+Started output streams:	0.088 seconds.
+Processing time:   		496.766 seconds.
+
+Input:                  	141384818 reads 		21349107518 bases.
+QTrimmed:               	74836502 reads (52.93%) 	2623495556 bases (12.29%)
+KTrimmed:               	2943838 reads (2.08%) 	44388233 bases (0.21%)
+Total Removed:          	6794112 reads (4.81%) 	2667883789 bases (12.50%)
+Result:                 	134590706 reads (95.19%) 	18681223729 bases (87.50%)
+
+Time:   			496.962 seconds.
+Reads Processed:        141m 	284.50k reads/sec
+Bases Processed:      21349m 	42.96m bases/sec
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Started analysis of ears_rep2_R1.fq.gz
+Started analysis of ears_rep2_R2.fq.gz
+Started analysis of bb1_ears_rep2_R1.fq.gz
+Started analysis of bb2_ears_rep2_R2.fq.gz
+Approx 5% complete for bb1_ears_rep2_R1.fq.gz
+Approx 5% complete for bb2_ears_rep2_R2.fq.gz
+Approx 5% complete for ears_rep2_R2.fq.gz
+Approx 5% complete for ears_rep2_R1.fq.gz
+Approx 10% complete for bb1_ears_rep2_R1.fq.gz
+Approx 10% complete for bb2_ears_rep2_R2.fq.gz
+Approx 10% complete for ears_rep2_R2.fq.gz
+Approx 10% complete for ears_rep2_R1.fq.gz
+Approx 15% complete for bb2_ears_rep2_R2.fq.gz
+Approx 15% complete for bb1_ears_rep2_R1.fq.gz
+Approx 15% complete for ears_rep2_R2.fq.gz
+Approx 15% complete for ears_rep2_R1.fq.gz
+Approx 20% complete for bb2_ears_rep2_R2.fq.gz
+Approx 20% complete for bb1_ears_rep2_R1.fq.gz
+Approx 20% complete for ears_rep2_R2.fq.gz
+Approx 20% complete for ears_rep2_R1.fq.gz
+Approx 25% complete for bb2_ears_rep2_R2.fq.gz
+Approx 25% complete for bb1_ears_rep2_R1.fq.gz
+Approx 25% complete for ears_rep2_R2.fq.gz
+Approx 25% complete for ears_rep2_R1.fq.gz
+Approx 30% complete for bb2_ears_rep2_R2.fq.gz
+Approx 30% complete for bb1_ears_rep2_R1.fq.gz
+Approx 30% complete for ears_rep2_R2.fq.gz
+Approx 30% complete for ears_rep2_R1.fq.gz
+Approx 35% complete for bb2_ears_rep2_R2.fq.gz
+Approx 35% complete for bb1_ears_rep2_R1.fq.gz
+Approx 35% complete for ears_rep2_R2.fq.gz
+Approx 35% complete for ears_rep2_R1.fq.gz
+Approx 40% complete for bb2_ears_rep2_R2.fq.gz
+Approx 40% complete for bb1_ears_rep2_R1.fq.gz
+Approx 45% complete for bb2_ears_rep2_R2.fq.gz
+Approx 40% complete for ears_rep2_R2.fq.gz
+Approx 40% complete for ears_rep2_R1.fq.gz
+Approx 45% complete for bb1_ears_rep2_R1.fq.gz
+Approx 50% complete for bb2_ears_rep2_R2.fq.gz
+Approx 50% complete for bb1_ears_rep2_R1.fq.gz
+Approx 45% complete for ears_rep2_R2.fq.gz
+Approx 45% complete for ears_rep2_R1.fq.gz
+Approx 55% complete for bb2_ears_rep2_R2.fq.gz
+Approx 55% complete for bb1_ears_rep2_R1.fq.gz
+Approx 50% complete for ears_rep2_R2.fq.gz
+Approx 50% complete for ears_rep2_R1.fq.gz
+Approx 60% complete for bb2_ears_rep2_R2.fq.gz
+Approx 60% complete for bb1_ears_rep2_R1.fq.gz
+Approx 55% complete for ears_rep2_R2.fq.gz
+Approx 55% complete for ears_rep2_R1.fq.gz
+Approx 65% complete for bb2_ears_rep2_R2.fq.gz
+Approx 65% complete for bb1_ears_rep2_R1.fq.gz
+Approx 60% complete for ears_rep2_R2.fq.gz
+Approx 60% complete for ears_rep2_R1.fq.gz
+Approx 70% complete for bb2_ears_rep2_R2.fq.gz
+Approx 70% complete for bb1_ears_rep2_R1.fq.gz
+Approx 65% complete for ears_rep2_R2.fq.gz
+Approx 65% complete for ears_rep2_R1.fq.gz
+Approx 75% complete for bb2_ears_rep2_R2.fq.gz
+Approx 75% complete for bb1_ears_rep2_R1.fq.gz
+Approx 70% complete for ears_rep2_R2.fq.gz
+Approx 70% complete for ears_rep2_R1.fq.gz
+Approx 80% complete for bb2_ears_rep2_R2.fq.gz
+Approx 80% complete for bb1_ears_rep2_R1.fq.gz
+Approx 85% complete for bb2_ears_rep2_R2.fq.gz
+Approx 75% complete for ears_rep2_R2.fq.gz
+Approx 75% complete for ears_rep2_R1.fq.gz
+Approx 85% complete for bb1_ears_rep2_R1.fq.gz
+Approx 90% complete for bb2_ears_rep2_R2.fq.gz
+Approx 80% complete for ears_rep2_R2.fq.gz
+Approx 90% complete for bb1_ears_rep2_R1.fq.gz
+Approx 80% complete for ears_rep2_R1.fq.gz
+Approx 95% complete for bb2_ears_rep2_R2.fq.gz
+Approx 95% complete for bb1_ears_rep2_R1.fq.gz
+Approx 85% complete for ears_rep2_R2.fq.gz
+Approx 85% complete for ears_rep2_R1.fq.gz
+Approx 90% complete for ears_rep2_R2.fq.gz
+Approx 90% complete for ears_rep2_R1.fq.gz
+Approx 95% complete for ears_rep2_R2.fq.gz
+Approx 95% complete for ears_rep2_R1.fq.gz
+[WARNING]         multiqc : MultiQC Version v1.9 now available!
+[INFO   ]         multiqc : This is MultiQC v1.2
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching 'fastqc'
+[INFO   ]          fastqc : Found 4 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : multiqc_report.html
+[INFO   ]         multiqc : Data        : multiqc_data
+[INFO   ]         multiqc : MultiQC complete
+[E::bgzf_uncompress] Inflate operation failed: progress temporarily not possible, or in() / out() returned an error
+[E::bgzf_read] Read block operation failed with error -1 after 106 of 285 bytes
+samtools index: failed to create index for "star_ears_rep2_R1.bam"
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").

@@ -7,7 +7,7 @@
 # e.g. ./align.sh cn B73 B73v5 RAMPAGE
 
 # Retrieve SciApps token for job submission
-token=$(curl -sk -H 'user: YOUR_CyVerse_USERNAME' -H 'pass: YOUR_CyVerse_PASSWORD' https://www.sciapps.org/user | jq '.data.token')
+token=$(curl -sk -H 'user: ivarmeijs' -H 'pass: YOUR_CyVerse_PASSWORD' https://www.sciapps.org/user | jq '.data.token')
 token=$(eval echo \$$token)
 export SciApps_HDR="Authorization: Bearer $token"
 #echo $SciApps_HDR

@@ -1,0 +1,629 @@
+{
+   "tracks" : [
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "cn_rep1 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_5fae1a46-8a09-4a54-ba89-3f787dc1a1e0/sig_f_cn_rep1_R1.bw",
+         "label" : "cn_rep1 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/cn_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=00f4023c-79c8-436f-bedb-3858bbf7b467"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "cn_rep1 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_5fae1a46-8a09-4a54-ba89-3f787dc1a1e0/sig_r_cn_rep1_R1.bw",
+         "label" : "cn_rep1 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/cn_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=00f4023c-79c8-436f-bedb-3858bbf7b467"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "cn_rep2 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_79b32610-b505-44a3-ba2c-af79cfde8f03/sig_f_cn_rep2_R1.bw",
+         "label" : "cn_rep2 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/cn_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=00f4023c-79c8-436f-bedb-3858bbf7b467"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "cn_rep2 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_79b32610-b505-44a3-ba2c-af79cfde8f03/sig_r_cn_rep2_R1.bw",
+         "label" : "cn_rep2 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/cn_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=00f4023c-79c8-436f-bedb-3858bbf7b467"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "ears_rep2 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_9eae65a9-9755-4763-84e4-ab49598d4262/sig_f_ears_rep2_R1.bw",
+         "label" : "ears_rep2 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/ears_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=65dfde7c-7944-4156-a797-c973a9c80bf4"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "ears_rep2 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_9eae65a9-9755-4763-84e4-ab49598d4262/sig_r_ears_rep2_R1.bw",
+         "label" : "ears_rep2 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/ears_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=65dfde7c-7944-4156-a797-c973a9c80bf4"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "ears_rep1 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_833c2809-cddc-4007-8d49-2a3880e1e2f5/sig_f_ears_rep1_R1.bw",
+         "label" : "ears_rep1 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/ears_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=65dfde7c-7944-4156-a797-c973a9c80bf4"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "ears_rep1 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_833c2809-cddc-4007-8d49-2a3880e1e2f5/sig_r_ears_rep1_R1.bw",
+         "label" : "ears_rep1 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/ears_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=65dfde7c-7944-4156-a797-c973a9c80bf4"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "endo_rep1 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_25f21e6b-9f8d-4c22-a258-26b833a0f9c1/sig_f_endo_rep1_R1.bw",
+         "label" : "endo_rep1 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/endo_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=f52239f1-b400-4ca0-97aa-87b48f0571ea"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "endo_rep1 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_25f21e6b-9f8d-4c22-a258-26b833a0f9c1/sig_r_endo_rep1_R1.bw",
+         "label" : "endo_rep1 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/endo_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=f52239f1-b400-4ca0-97aa-87b48f0571ea"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "endo_rep2 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_e5540c17-cc6f-4c0f-82ca-c1901538f029/sig_f_endo_rep2_R1.bw",
+         "label" : "endo_rep2 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/endo_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=f52239f1-b400-4ca0-97aa-87b48f0571ea"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "endo_rep2 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_e5540c17-cc6f-4c0f-82ca-c1901538f029/sig_r_endo_rep2_R1.bw",
+         "label" : "endo_rep2 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/endo_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=f52239f1-b400-4ca0-97aa-87b48f0571ea"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "pollen_rep1 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_450ef81f-2a2a-4e66-8842-8f1bd9e89824/sig_f_pollen_rep1_R1.bw",
+         "label" : "pollen_rep1 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/pollen_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=f7099259-04fd-4546-9ced-dc1a5fa67017"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "pollen_rep1 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_450ef81f-2a2a-4e66-8842-8f1bd9e89824/sig_r_pollen_rep1_R1.bw",
+         "label" : "pollen_rep1 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/pollen_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=f7099259-04fd-4546-9ced-dc1a5fa67017"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "pollen_rep2 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_86b61458-3185-4ecd-9fdb-e8f2472ae9b7/sig_f_pollen_rep2_R1.bw",
+         "label" : "pollen_rep2 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/pollen_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=f7099259-04fd-4546-9ced-dc1a5fa67017"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "pollen_rep2 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_86b61458-3185-4ecd-9fdb-e8f2472ae9b7/sig_r_pollen_rep2_R1.bw",
+         "label" : "pollen_rep2 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/pollen_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=f7099259-04fd-4546-9ced-dc1a5fa67017"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "root_rep1 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_f1b7587a-e1b1-4573-b80b-44ea328bd0ba/sig_f_root_rep1_R1.bw",
+         "label" : "root_rep1 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/root_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=ac7b63fd-882f-4736-8cf1-4617528a9977"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "root_rep1 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_f1b7587a-e1b1-4573-b80b-44ea328bd0ba/sig_r_root_rep1_R1.bw",
+         "label" : "root_rep1 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/root_rep1/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=ac7b63fd-882f-4736-8cf1-4617528a9977"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "root_rep2 forward (NC350 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_d550d86b-b479-4927-b26d-541765d7a4dc/sig_f_root_rep2_R1.bw",
+         "label" : "root_rep2 forward (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/root_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=ac7b63fd-882f-4736-8cf1-4617528a9977"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "root_rep2 reverse (NC350 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_d550d86b-b479-4927-b26d-541765d7a4dc/sig_r_root_rep2_R1.bw",
+         "label" : "root_rep2 reverse (NC350 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/root_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=ac7b63fd-882f-4736-8cf1-4617528a9977"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "cn_rep1 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_9a0beac2-61fa-4a04-a985-ae7636a69f20/sig_f_cn_rep1_R2.bw",
+         "label" : "cn_rep1 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/cn_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=8bc07fdb-b753-4e7b-8b5b-6e076f8eeb32"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "cn_rep1 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_9a0beac2-61fa-4a04-a985-ae7636a69f20/sig_r_cn_rep1_R2.bw",
+         "label" : "cn_rep1 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/cn_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=8bc07fdb-b753-4e7b-8b5b-6e076f8eeb32"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "cn_rep2 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_7ae4e756-25a8-4811-83b4-1ea83f430931/sig_f_cn_rep2_R2.bw",
+         "label" : "cn_rep2 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/cn_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=8bc07fdb-b753-4e7b-8b5b-6e076f8eeb32"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "cn_rep2 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_7ae4e756-25a8-4811-83b4-1ea83f430931/sig_r_cn_rep2_R2.bw",
+         "label" : "cn_rep2 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/cn_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=8bc07fdb-b753-4e7b-8b5b-6e076f8eeb32"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "ears_rep1 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_e6b94403-8cda-4e47-9415-5d6cd8d40deb/sig_f_ears_rep1_R2.bw",
+         "label" : "ears_rep1 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/ears_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=1c2d6f3a-9a9f-453e-afb1-4cececb0b99d"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "ears_rep1 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_e6b94403-8cda-4e47-9415-5d6cd8d40deb/sig_r_ears_rep1_R2.bw",
+         "label" : "ears_rep1 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/ears_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=1c2d6f3a-9a9f-453e-afb1-4cececb0b99d"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "ears_rep2 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_4932fe4c-79de-4d3f-b69c-d198145fd8a9/sig_f_ears_rep2_R2.bw",
+         "label" : "ears_rep2 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/ears_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=1c2d6f3a-9a9f-453e-afb1-4cececb0b99d"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "ears_rep2 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_4932fe4c-79de-4d3f-b69c-d198145fd8a9/sig_r_ears_rep2_R2.bw",
+         "label" : "ears_rep2 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/ears_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=1c2d6f3a-9a9f-453e-afb1-4cececb0b99d"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "endo_rep1 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_ac7dac28-56c8-430a-b296-107e7b8ff341/sig_f_endo_rep1_R2.bw",
+         "label" : "endo_rep1 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/endo_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=deee796f-58a8-4e0d-b4ba-9b02b41dd7f8"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "endo_rep1 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_ac7dac28-56c8-430a-b296-107e7b8ff341/sig_r_endo_rep1_R2.bw",
+         "label" : "endo_rep1 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/endo_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=deee796f-58a8-4e0d-b4ba-9b02b41dd7f8"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "endo_rep2 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_7c216a6e-fedb-483e-ac1e-a8cb5c026562/sig_f_endo_rep2_R2.bw",
+         "label" : "endo_rep2 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/endo_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=deee796f-58a8-4e0d-b4ba-9b02b41dd7f8"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "endo_rep2 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_7c216a6e-fedb-483e-ac1e-a8cb5c026562/sig_r_endo_rep2_R2.bw",
+         "label" : "endo_rep2 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/endo_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=deee796f-58a8-4e0d-b4ba-9b02b41dd7f8"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "pollen_rep1 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_d9ad0ec5-e799-4d17-a9ec-95b44520d55e/sig_f_pollen_rep1_R2.bw",
+         "label" : "pollen_rep1 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/pollen_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=fb68c5da-1f30-43dd-a3e9-9802711da4df"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "pollen_rep1 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_d9ad0ec5-e799-4d17-a9ec-95b44520d55e/sig_r_pollen_rep1_R2.bw",
+         "label" : "pollen_rep1 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/pollen_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=fb68c5da-1f30-43dd-a3e9-9802711da4df"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "pollen_rep2 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_f37ccab9-2fb9-410c-84c7-8b827957387f/sig_f_pollen_rep2_R2.bw",
+         "label" : "pollen_rep2 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/pollen_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=fb68c5da-1f30-43dd-a3e9-9802711da4df"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "pollen_rep2 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_f37ccab9-2fb9-410c-84c7-8b827957387f/sig_r_pollen_rep2_R2.bw",
+         "label" : "pollen_rep2 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/pollen_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=fb68c5da-1f30-43dd-a3e9-9802711da4df"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "root_rep1 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_11dcd9c6-4abb-4e11-be67-34d86b17a5b1/sig_f_root_rep1_R2.bw",
+         "label" : "root_rep1 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/root_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=5fa50265-9596-404b-b196-2dc3dc32c7c0"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "root_rep1 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_11dcd9c6-4abb-4e11-be67-34d86b17a5b1/sig_r_root_rep1_R2.bw",
+         "label" : "root_rep1 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/root_rep1/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=5fa50265-9596-404b-b196-2dc3dc32c7c0"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "key" : "root_rep2 forward (NC350 RAMPAGE)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_86f2216f-7c04-4293-9ee6-904e6ba1eb0c/sig_f_root_rep2_R2.bw",
+         "label" : "root_rep2 forward (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/root_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=5fa50265-9596-404b-b196-2dc3dc32c7c0"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "teal",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "root_rep2 reverse (NC350 RAMPAGE)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_86f2216f-7c04-4293-9ee6-904e6ba1eb0c/sig_r_root_rep2_R2.bw",
+         "label" : "root_rep2 reverse (NC350 RAMPAGE)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE NC350/root_rep2/RAMPAGE",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=5fa50265-9596-404b-b196-2dc3dc32c7c0"
+         }
+      },
+      {
+         "chunkSize" : 20000,
+         "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-",
+         "type" : "SequenceTrack",
+         "label" : "DNA",
+         "key" : "Reference sequence"
+      },
+      {
+         "style" : {
+            "className" : "feature"
+         },
+         "key" : "B73_v4.59",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/B73_v4.59/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "B73_v4.59"
+      }
+   ],
+   "names" : {
+      "url" : "names/",
+      "type" : "Hash"
+   },
+   "formatVersion" : 1
+}

@@ -4,7 +4,7 @@
 # e.g., ./check.sh wf_id B73 endo Rampage B73v5
 
 # Retrieve SciApps token for job submission
-token=$(curl -sk -H 'user: YOUR_CyVerse_USERNAME' -H 'pass: YOUR_CyVerse_PASSWD' https://www.sciapps.org/user | jq '.data.token')
+token=$(curl -sk -H 'user: ivarmeijs' -H 'pass: azD-zHB-9r4-MXS' https://www.sciapps.org/user | jq '.data.token')
 token=$(eval echo \$$token)
 export SciApps_HDR="Authorization: Bearer $token"
 #echo $SciApps_HDR
@@ -24,7 +24,7 @@ fi
 id=$(eval echo \$$jobid)
 status=$(curl -s -X GET --header 'Accept: application/json' "https://www.sciapps.org/job/$id" | jq '.data.status')
 status=$(eval echo \$$status)
-#echo "$status" 
+#echo "$status"
 
 if [[ "$status" != "FAILED" ]]; then
    jobid=$(curl -s -X GET --header 'Accept: application/json' "https://www.sciapps.org/workflow/$1" | jq '.data.steps[] | select(.id=="2") | .jobId')
@@ -34,7 +34,7 @@ if [[ "$status" != "FAILED" ]]; then
    #echo "$id $status2"
    if [[ "$status2" != "FAILED" ]]; then
      echo "Workflow is OK!"
-     exit 0
+     exit 
    fi
 fi
 echo "Need to rerun the workflow"
