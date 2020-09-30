@@ -5,7 +5,7 @@
    },
    "key" : "XXX3 forward",
    "autoscale" : "local",
-   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/XXX1/sig_f_XXX2.bw",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/XXX1/sig_XXX2.bw",
    "label" : "XXX3 forward",
    "type" : "JBrowse/View/Track/Wiggle/XYPlot",
    "category" : "MaizeCODE XXX6/XXX3/XXX7",
