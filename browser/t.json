@@ -1,15 +1,30 @@
-{
-   "style" : {
-      "pos_color" : "purple",
-      "height" : 50
-   },
-   "key" : "stem_mid_internode_anthesis_rep2 forward",
-   "autoscale" : "local",
-   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_dd39a4a3-d695-499c-b955-f55ca927bf3e/sig_stem_mid_internode_anthesis_rep2_R1.bw",
-   "label" : "stem_mid_internode_anthesis_rep2 forward",
-   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-   "category" : "MaizeCODE BTx623/stem_mid_internode_anthesis_rep2/RNAseq",
-   "onClick"  : {
-       "url": "https://www.sciapps.org/?wf_id=1738633a-2ba5-4dc8-ad2f-4cd2787391b0"
-   }
-},
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "key" : "stem_mid_internode_anthesis_rep2 forward (BTx623 RNAseq)",
+         "autoscale" : "local",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_b6ea0c10-27e7-44e9-a7a3-f60c4d0a18ac/sig_f_stem_mid_internode_anthesis_rep2_R1.bw",
+         "label" : "stem_mid_internode_anthesis_rep2 forward (BTx623 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE BTx623/stem_mid_internode_anthesis_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=a0cd00a6-01ac-4c3b-8210-c08248aef38f"
+         }
+      },
+      {
+         "style" : {
+            "pos_color" : "purple",
+            "height" : 50
+         },
+         "autoscale" : "local",
+         "key" : "stem_mid_internode_anthesis_rep2 reverse (BTx623 RNAseq)",
+         "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_b6ea0c10-27e7-44e9-a7a3-f60c4d0a18ac/sig_r_stem_mid_internode_anthesis_rep2_R1.bw",
+         "label" : "stem_mid_internode_anthesis_rep2 reverse (BTx623 RNAseq)",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "MaizeCODE BTx623/stem_mid_internode_anthesis_rep2/RNAseq",
+         "onClick"  : {
+             "url": "https://www.sciapps.org/?wf_id=a0cd00a6-01ac-4c3b-8210-c08248aef38f"
+         }
+      },
