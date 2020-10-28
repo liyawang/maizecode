@@ -20,16 +20,16 @@ Execute an image like "**singularity exec -B /scratch:/scratch /scratch/tacc/ima
 * macs2_2.1.1.20160309--py27r3.3.2_0.img                    
 * maker_2.31.9--0.img            
 * picard_2.11.0--py27_0.img picard MarkDuplicates
-* plink_1.90b4–0.img
+* plink_1.90b4--0.img
 * rsem_1.3.0--boost1.61_0.img
 * samtools_1.5--2.img
 * scythe-2017-09-18-c7268f0a8cd0.img /work/projects/singularity/cyverse/scythe-0.991--cshl.img
-* shapeit_2.r837–0.img
+* shapeit_2.r837--0.img
 * sickle_0.5--py36_0.img use scythe image instead
 * snpeff_4.3.1q--0.img                                       
 * star-fusion_1.0.0--pl5.22.0_0.img                         
 * star_2.5.3a--0.img                        
-* stringtie_1.3.3--py27_1.img.bz2                               
-* taco_v0.7.0--py27_0.img.bz2                                    
-* tophat_2.1.1--py27_1.img.bz2                                  
-* trimmomatic_0.36--5.img.bz2
+* stringtie_1.3.3--py27_1.img                         
+* taco_v0.7.0--py27_0.img                               
+* tophat_2.1.1--py27_1.img                                 
+* trimmomatic_0.36--5.img
