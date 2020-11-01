@@ -1,0 +1,29 @@
+{
+   "tracks" : [
+      {
+         "chunkSize" : 20000,
+         "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-",
+         "type" : "SequenceTrack",
+         "label" : "DNA",
+         "key" : "Reference sequence"
+      },
+      {
+         "style" : {
+            "className" : "feature"
+         },
+         "key" : "B73_v4.59",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/B73_v4.59/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "B73_v4.59"
+      }
+   ],
+   "names" : {
+      "url" : "names/",
+      "type" : "Hash"
+   },
+   "formatVersion" : 1
+}

@@ -1,7 +1,7 @@
-fc12c594-1e7c-4c71-8eb1-9101891c35c8
-d19f0a32-cc82-40e7-b6e3-47f8daa355a0
-29d24da2-67bb-47df-961c-465cdd1801d6
-d63ebc02-ceb8-4abb-b82e-aa616c48f5f4
-ba727d0f-81b7-41c6-a808-e2092ab30d1a
-bf079177-7d2e-41ec-9c31-f9c1e02431d8
-510f9474-d75d-4b7f-b4e5-159ccd1e25a5
+b7b02075-eb6b-43b8-b5f3-8982a33943ac	BTx623	leaf_lower_whorl_vegetative	RNAseq	Tx2783
+e561dfb9-0aaf-44b5-a3f4-32a7ed590ff7	BTx623	leaf_upper_growing_anthesis	RNAseq	Tx2783
+6edb5d4e-ec28-40be-8f96-b4606a8c6206	BTx623	panicle_upper_anthesis	RNAseq	Tx2783
+ba8bcbe8-7a3c-4198-8464-16900509f555	BTx623	root_bottom_anthesis	RNAseq	Tx2783
+ed507b84-49e1-459d-9289-630d3aa1035f	BTx623	root_top_vegetative	RNAseq	Tx2783
+65a82fde-969d-4437-809a-5915255db249	BTx623	stem_1cm_vegetative	RNAseq	Tx2783
+0f6a7205-db10-4571-87fe-988e255f8465	BTx623	stem_mid_internode_anthesis	RNAseq	Tx2783

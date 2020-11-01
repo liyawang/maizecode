@@ -6,7 +6,7 @@
    "key" : "XXX3",
    "autoscale" : "local",
    "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/XXX1/sig_XXX2.bw",
-   "label" : "XXX3 forward",
+   "label" : "XXX3",
    "type" : "JBrowse/View/Track/Wiggle/XYPlot",
    "category" : "SorghumBase XXX6/XXX3/XXX7",
    "onClick"  : {

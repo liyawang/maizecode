@@ -1,0 +1,344 @@
+{
+   "tracks" : [
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "leaf_lower_whorl_vegetative_rep1",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_6d825a0b-6ccd-4a43-afff-9e941062af3f/sig_leaf_lower_whorl_vegetative_rep1_R1.bw",
+   "label" : "leaf_lower_whorl_vegetative_rep1",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/leaf_lower_whorl_vegetative_rep1/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=af46157e-472a-4128-8561-53d117faffcf"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "leaf_lower_whorl_vegetative_rep2",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_d88dedb6-2564-43c4-a29b-8b8b550c5401/sig_leaf_lower_whorl_vegetative_rep2_R1.bw",
+   "label" : "leaf_lower_whorl_vegetative_rep2",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/leaf_lower_whorl_vegetative_rep2/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=af46157e-472a-4128-8561-53d117faffcf"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "leaf_lower_whorl_vegetative_rep3",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_aedeb44e-90d1-4b35-953f-c80f07a1576a/sig_leaf_lower_whorl_vegetative_rep3_R1.bw",
+   "label" : "leaf_lower_whorl_vegetative_rep3",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/leaf_lower_whorl_vegetative_rep3/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=af46157e-472a-4128-8561-53d117faffcf"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "leaf_upper_growing_anthesis_rep1",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_d2a2a409-b309-4e12-92c6-fbb0839f0ec2/sig_leaf_upper_growing_anthesis_rep1_R1.bw",
+   "label" : "leaf_upper_growing_anthesis_rep1",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/leaf_upper_growing_anthesis_rep1/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=d9148689-f26f-47ad-8c8b-143004394d2e"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "leaf_upper_growing_anthesis_rep2",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_fe9d58e5-ced9-412e-9079-2be856ccc5bb/sig_leaf_upper_growing_anthesis_rep2_R1.bw",
+   "label" : "leaf_upper_growing_anthesis_rep2",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/leaf_upper_growing_anthesis_rep2/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=d9148689-f26f-47ad-8c8b-143004394d2e"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "leaf_upper_growing_anthesis_rep3",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_7946bc35-2958-4d22-a5d9-48f537fe8234/sig_leaf_upper_growing_anthesis_rep3_R1.bw",
+   "label" : "leaf_upper_growing_anthesis_rep3",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/leaf_upper_growing_anthesis_rep3/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=d9148689-f26f-47ad-8c8b-143004394d2e"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "panicle_upper_anthesis_rep1",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_786c2fd9-a060-4912-a4a6-f867ce9531d9/sig_panicle_upper_anthesis_rep1_R1.bw",
+   "label" : "panicle_upper_anthesis_rep1",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/panicle_upper_anthesis_rep1/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=ff0efb21-3335-4193-89c5-a5b665caf7b1"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "panicle_upper_anthesis_rep2",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_05db0e59-1447-4397-8100-e4ab991c4f9a/sig_panicle_upper_anthesis_rep2_R1.bw",
+   "label" : "panicle_upper_anthesis_rep2",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/panicle_upper_anthesis_rep2/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=ff0efb21-3335-4193-89c5-a5b665caf7b1"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "panicle_upper_anthesis_rep3",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_8789a1a4-3edd-4304-970b-342e9fed65cd/sig_panicle_upper_anthesis_rep3_R1.bw",
+   "label" : "panicle_upper_anthesis_rep3",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/panicle_upper_anthesis_rep3/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=ff0efb21-3335-4193-89c5-a5b665caf7b1"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "root_bottom_anthesis_rep1",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_e8b7934d-21da-4d7b-9397-4c8ceb2c6f17/sig_root_bottom_anthesis_rep1_R1.bw",
+   "label" : "root_bottom_anthesis_rep1",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/root_bottom_anthesis_rep1/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=19dbf89c-1d1b-4be6-964e-203be03b96e6"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "root_bottom_anthesis_rep2",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_a7a12ab3-3fe9-4c04-905f-fb114a4a22cf/sig_root_bottom_anthesis_rep2_R1.bw",
+   "label" : "root_bottom_anthesis_rep2",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/root_bottom_anthesis_rep2/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=19dbf89c-1d1b-4be6-964e-203be03b96e6"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "root_bottom_anthesis_rep3",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_95614053-b53f-46fa-b2ea-ec201e567723/sig_root_bottom_anthesis_rep3_R1.bw",
+   "label" : "root_bottom_anthesis_rep3",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/root_bottom_anthesis_rep3/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=19dbf89c-1d1b-4be6-964e-203be03b96e6"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "root_top_vegetative_rep1",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_5cbc3f02-69f7-48c3-aa63-f34bda842243/sig_root_top_vegetative_rep1_R1.bw",
+   "label" : "root_top_vegetative_rep1",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/root_top_vegetative_rep1/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=935ef039-26e5-4d0e-bbad-77925ef08aa2"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "root_top_vegetative_rep2",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_5392dbf9-f119-4e5a-9df2-a60aae389cc6/sig_root_top_vegetative_rep2_R1.bw",
+   "label" : "root_top_vegetative_rep2",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/root_top_vegetative_rep2/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=935ef039-26e5-4d0e-bbad-77925ef08aa2"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "root_top_vegetative_rep3",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_4337906d-14a1-4eb8-b9c4-f4190690f4ac/sig_root_top_vegetative_rep3_R1.bw",
+   "label" : "root_top_vegetative_rep3",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/root_top_vegetative_rep3/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=935ef039-26e5-4d0e-bbad-77925ef08aa2"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "stem_1cm_vegetative_rep1",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_77170b7c-d672-4c8c-8295-24b23e364be8/sig_stem_1cm_vegetative_rep1_R1.bw",
+   "label" : "stem_1cm_vegetative_rep1",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/stem_1cm_vegetative_rep1/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=a6bf30ae-214e-4a0f-9693-86b7a74a370f"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "stem_1cm_vegetative_rep2",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_79aee99c-5657-441e-be0f-64800dc1127b/sig_stem_1cm_vegetative_rep2_R1.bw",
+   "label" : "stem_1cm_vegetative_rep2",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/stem_1cm_vegetative_rep2/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=a6bf30ae-214e-4a0f-9693-86b7a74a370f"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "stem_1cm_vegetative_rep3",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_4b29fe8b-0476-40ab-9dc6-f0215207b902/sig_stem_1cm_vegetative_rep3_R1.bw",
+   "label" : "stem_1cm_vegetative_rep3",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/stem_1cm_vegetative_rep3/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=a6bf30ae-214e-4a0f-9693-86b7a74a370f"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "stem_mid_internode_anthesis_rep1",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_2ca92e56-f530-4c43-928e-d4cc3b2cf220/sig_stem_mid_internode_anthesis_rep1_R1.bw",
+   "label" : "stem_mid_internode_anthesis_rep1",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/stem_mid_internode_anthesis_rep1/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=a70bf7af-5c33-4009-82fd-15a65a1bb523"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "stem_mid_internode_anthesis_rep2",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_f756b16e-1226-41e1-b805-77deb9b993aa/sig_stem_mid_internode_anthesis_rep2_R1.bw",
+   "label" : "stem_mid_internode_anthesis_rep2",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/stem_mid_internode_anthesis_rep2/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=a70bf7af-5c33-4009-82fd-15a65a1bb523"
+   }
+},
+{
+   "style" : {
+      "pos_color" : "purple",
+      "height" : 50
+   },
+   "key" : "stem_mid_internode_anthesis_rep3",
+   "autoscale" : "local",
+   "urlTemplate" : "https://data.cyverse.org/dav-anon/iplant/home/maizecode/sci_data/results/MCrna-0.0.1_12ecb039-554c-4259-939b-43434ff1df81/sig_stem_mid_internode_anthesis_rep3_R1.bw",
+   "label" : "stem_mid_internode_anthesis_rep3",
+   "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+   "category" : "SorghumBase BTx623/stem_mid_internode_anthesis_rep3/RNAseq",
+   "onClick"  : {
+       "url": "https://www.sciapps.org/?wf_id=a70bf7af-5c33-4009-82fd-15a65a1bb523"
+   }
+},
+      {
+         "chunkSize" : 20000,
+         "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-",
+         "type" : "SequenceTrack",
+         "label" : "DNA",
+         "key" : "Reference sequence"
+      },
+      {
+         "style" : {
+            "className" : "feature"
+         },
+         "key" : "B73_v4.59",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/B73_v4.59/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "B73_v4.59"
+      }
+   ],
+   "names" : {
+      "url" : "names/",
+      "type" : "Hash"
+   },
+   "formatVersion" : 1
+}

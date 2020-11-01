@@ -7,7 +7,7 @@
 
 echo $1
 
-for STEPS in 1 2
+for STEPS in 1 2 3
 do
   input1=$(curl -X GET --header "Accept: application/json" "https://www.sciapps.org/workflow/$1" | jq ".data.steps[] | select(.id==$STEPS or .id==\"$STEPS\") | .inputs.inputSequence1")
   # echo "input1: $input1"
@@ -63,7 +63,7 @@ do
        ;;
   esac
 
-  cp my.json t.json
+  cp my_sorghum.json t.json
   sed -i -e "s/XXX1/$x1/g" t.json
   sed -i -e "s/XXX2/$x2/g" t.json
   sed -i -e "s/XXX3/$x3/g" t.json
